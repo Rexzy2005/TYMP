@@ -220,10 +220,10 @@ export const featureReview = {
 --------------------------------------------------------------------------- */
 export const testimonial = {
   quote:
-    "These podcasts are fantastic! They keep me informed and entertained during my commute, and the variety ensures I always have something new to listen to.",
-  author: "Kristin Walton",
-  role: "Services Manager",
-  initials: "PP",
+    "These podcasts are fantastic! They cover a variety of topics, making each episode exciting. Can't wait for the next one!",
+  author: "Kristin Watson",
+  role: "Marketing Specialist",
+  initials: "KW",
   sideAvatars: [
     { initials: "MS", color: "bg-podhub-orange" },
     { initials: "JT", color: "bg-podhub-apple" },
@@ -232,11 +232,42 @@ export const testimonial = {
   image: images.clientOne,
 };
 
+export const testimonials = [
+  {
+    quote:
+      "These podcasts are fantastic! They cover a variety of topics, making each episode exciting. Can't wait for the next one!",
+    author: "Kristin Watson",
+    role: "Marketing Specialist",
+    image: images.testimonialImage,
+  },
+  {
+    quote:
+      "Every episode feels carefully made. I always leave with a fresh idea, a better mood, or a story worth sharing.",
+    author: "Ronald Richard",
+    role: "Expert Product Designer",
+    image: images.clientTwo,
+  },
+  {
+    quote:
+      "PodHub is part of my morning routine. The hosts make complex topics feel clear, warm, and easy to enjoy.",
+    author: "Maya Hudson",
+    role: "Documentary Maker",
+    image: images.clientOne,
+  },
+  {
+    quote:
+      "The recommendations are spot on. I found three new shows in one week, and now my commute feels genuinely useful.",
+    author: "Mason Clarke",
+    role: "Wellness Coach",
+    image: images.clientThree,
+  },
+];
+
 export const testimonialHeader = {
   eyebrow: "Testimonials",
   title: "Stories from Our Awesome Listeners",
   body:
-    "We are proud of the work we have done. The biggest achievement is hearing how our shows fit into your everyday life.",
+    "Our listeners share how they’ve connected with our stories and found value in every episode.",
 };
 
 /* ---------------------------------------------------------------------------
@@ -244,21 +275,21 @@ export const testimonialHeader = {
 --------------------------------------------------------------------------- */
 export const hosts = [
   {
-    name: "Maya Hudson",
+    name: "Max Hudson",
     role: "Documentary Maker",
-    image: images.clientOne,
+    image: images.hostOne,
     socials: ["x", "instagram", "youtube", "tiktok"],
   },
   {
     name: "Ethan Carter",
     role: "Tech Analyst & Podcast Host",
-    image: images.clientTwo,
+    image: images.hostTwo,
     socials: ["x", "instagram", "youtube", "tiktok"],
   },
   {
     name: "Mason Clarke",
     role: "Health & Wellness Coach",
-    image: images.clientThree,
+    image: images.hostThree,
     socials: ["x", "instagram", "youtube", "tiktok"],
   },
 ];
@@ -270,7 +301,7 @@ export const hostsHeader = {
     "Our hosts bring unique voices, backgrounds, and beats to the platform - each one a different doorway into the world of audio.",
 };
 
-export const hostsCta = { label: "Browse All Hosts", href: "#hosts" };
+export const hostsCta = { label: "Show Our All Hosts", href: "#hosts" };
 
 /* ---------------------------------------------------------------------------
    Pricing
@@ -279,6 +310,8 @@ export const plans = [
   {
     name: "Individual Plan",
     price: "Free",
+    description:
+      "Enjoy ad-free music and offline playlists with one easy account!",
     cta: { label: "Start Listening with Subscribe", href: "#newsletter" },
     perks: [
       "Basic audio quality",
@@ -290,6 +323,8 @@ export const plans = [
     name: "Professional Plan",
     price: "$9.99",
     badge: "Most Popular",
+    description:
+      "Get rid of ads, download stuff offline, and manage your account like a pro!",
     cta: { label: "Start Listening with Subscribe", href: "#newsletter" },
     featured: true,
     perks: ["Ad-free listening", "High-quality audio", "Early access to new episodes"],
@@ -297,11 +332,13 @@ export const plans = [
   {
     name: "Premium Plan",
     price: "$19.99",
+    description:
+      "Get all the cool perks with just one account, like no ads and offline listening.",
     cta: { label: "Start Listening with Subscribe", href: "#newsletter" },
     perks: [
+      "All advanced features",
       "Exclusive content and podcasts",
       "Access to live podcast events",
-      "Priority support",
     ],
   },
 ];
@@ -310,7 +347,7 @@ export const pricingHeader = {
   eyebrow: "Pricing",
   title: "Upgrade Your Listening Today",
   body:
-    "We have a few plans our offer listening and managing the access and start is grab free plan and unlock the full PodHub library.",
+    "Pick a plan that suits your vibe! Whether you're looking for free access or want to grab some cool premium perks, we’ve got your back!",
 };
 
 /* ---------------------------------------------------------------------------
@@ -320,20 +357,26 @@ export const posts = [
   {
     title: "Breaking Down the Headlines: Best Podcasts for Current Affairs",
     category: "Trending",
+    date: "January 26, 24",
+    readTime: "20 mins read",
     featured: true,
-    image: images.episodeOne,
+    image: images.blogOne,
   },
   {
     title: "The Ultimate Guide to Finding Your Perfect Podcast",
     category: "Tips & Tricks",
+    date: "April 18, 2025",
+    readTime: "10 mins read",
     featured: false,
-    image: images.episodeTwo,
+    image: images.blogTwo,
   },
   {
     title: "Essential Podcast Apps and Tools for Every Listener",
     category: "Tools",
+    date: "April 8, 2025",
+    readTime: "10 mins read",
     featured: false,
-    image: images.episodeThree,
+    image: images.blogThree,
   },
 ];
 
@@ -341,20 +384,20 @@ export const blogHeader = {
   eyebrow: "Our Blog",
   title: "Stay Updated with Our Blogs",
   body:
-    "Discover insights, tips, and the latest trends in the world of audio - handpicked for curious listeners and creators alike.",
+    "Discover insights, tips, and the latest trends in the podcasting world. Stay informed and inspired with our curated articles.",
 };
 
-export const blogCta = { label: "Browse More Blogs", href: "#" };
+export const blogCta = { label: "Browse More Blogs", href: "#blog" };
 
 /* ---------------------------------------------------------------------------
    Newsletter
 --------------------------------------------------------------------------- */
 export const newsletter = {
   eyebrow: "Newsletter",
-  title: "Stay Updated and Subscribe to Our Newsletter!",
+  title: "Stay Updated and \nSubscribe to Our Newsletter!",
   body:
-    "Stay ahead of our newsletter for the latest updates, exclusive podcast drops, and creator stories - delivered straight to your inbox.",
-  cta: { label: "Subscribe", href: "#" },
+    "Hey there! Join our newsletter for the latest updates, fun podcast recommendations, and some awesome content delivered straight to your inbox!",
+  cta: { label: "Subscribe", href: "#newsletter" },
   subscriberCount: "4,824",
   subscriberAvatars: [
     { initials: "AB", color: "bg-podhub-orange" },

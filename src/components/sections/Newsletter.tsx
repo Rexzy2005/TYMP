@@ -1,58 +1,181 @@
-import { Mail } from "lucide-react";
+import Image from "next/image";
 
-import { Container } from "../ui/Container";
-import { SectionHeader } from "../ui/SectionHeader";
-import { NewsletterForm } from "../ui/NewsletterForm";
-import { AvatarStack } from "../ui/AvatarStack";
 import { MotionSection } from "../ui/MotionSection";
-import { newsletter } from "@/lib/content";
+import { listenOn, newsletter } from "@/lib/content";
+import { images } from "@/lib/assets";
+
+const TITLE_FONT = "var(--font-urbanist), Urbanist, sans-serif";
+const BODY_FONT = "var(--font-public-sans), Public Sans, sans-serif";
+
+function NewsletterForm() {
+  return (
+    <form className="flex w-full max-w-[459px] flex-col gap-3 sm:flex-row" action="#">
+      <label className="sr-only" htmlFor="newsletter-email">
+        Email address
+      </label>
+      <input
+        id="newsletter-email"
+        type="email"
+        placeholder="Enter your email"
+        className="h-[59px] min-w-0 flex-1 rounded-full border border-[#F17F3F] bg-transparent px-6 outline-none transition placeholder:text-[#4E5255] focus:border-[#D9662A]"
+        style={{
+          fontFamily: BODY_FONT,
+          fontWeight: 400,
+          fontSize: 18,
+          lineHeight: "normal",
+          letterSpacing: "-0.72px",
+          color: "#111418",
+        }}
+      />
+      <button
+        type="submit"
+        className="h-14 rounded-full bg-[#F17F3F] px-6 text-white transition hover:bg-[#D9662A] sm:w-[118px]"
+        style={{
+          fontFamily: TITLE_FONT,
+          fontWeight: 700,
+          fontSize: 16,
+          lineHeight: "16px",
+          letterSpacing: "-0.32px",
+        }}
+      >
+        {newsletter.cta.label}
+      </button>
+    </form>
+  );
+}
+
+function PlatformIcons() {
+  return (
+    <div className="flex items-center gap-3">
+      {listenOn.map((platform) => (
+        <span key={platform.name} className="relative size-6 shrink-0" title={platform.name}>
+          <Image src={platform.icon} alt={platform.name} fill className="object-contain" sizes="24px" />
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function ListenerCard() {
+  return (
+    <div className="absolute bottom-0 left-1/2 flex h-[118px] w-[min(376px,calc(100vw-48px))] -translate-x-1/2 items-center rounded-lg bg-white px-6 shadow-[0px_14px_250px_rgba(0,0,0,0.08)] lg:left-4 lg:translate-x-0">
+      <div className="w-[101px] shrink-0">
+        <p
+          style={{
+            fontFamily: TITLE_FONT,
+            fontWeight: 600,
+            fontSize: 32,
+            lineHeight: "normal",
+            letterSpacing: "0px",
+            color: "#111418",
+          }}
+        >
+          {newsletter.subscriberCount}
+        </p>
+        <p
+          className="mt-2"
+          style={{
+            fontFamily: BODY_FONT,
+            fontWeight: 400,
+            fontSize: 16,
+            lineHeight: "24px",
+            letterSpacing: "-0.64px",
+            color: "#4E5255",
+          }}
+        >
+          Total Listeners
+        </p>
+      </div>
+
+      <span className="mx-[38px] h-[51px] w-px bg-[#E7E7E8]" aria-hidden />
+
+      <div className="min-w-0">
+        <p
+          style={{
+            fontFamily: BODY_FONT,
+            fontWeight: 400,
+            fontSize: 16,
+            lineHeight: "24px",
+            letterSpacing: "-0.64px",
+            color: "#4E5255",
+          }}
+        >
+          Available on
+        </p>
+        <div className="mt-2">
+          <PlatformIcons />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NewsletterVisual() {
+  return (
+    <div className="relative mx-auto h-[435px] w-full max-w-[408px] lg:mx-0">
+      <div className="relative mx-auto size-[min(408px,calc(100vw-48px))] overflow-hidden rounded-full">
+        <Image
+          src={images.cta}
+          alt="Podcast microphone with headphones"
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 408px"
+        />
+      </div>
+      <ListenerCard />
+    </div>
+  );
+}
 
 export function Newsletter() {
   return (
-    <section id="newsletter" className="bg-podhub-cream py-20 md:py-28">
-      <Container>
-        <MotionSection>
-          <div className="relative overflow-hidden rounded-3xl bg-podhub-ink p-8 text-white shadow-card-dark md:p-14">
-            <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-podhub-orange/25 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-podhub-orange/15 blur-3xl" />
-
-            <div className="relative grid items-center gap-10 md:grid-cols-2">
-              <div className="space-y-5">
-                <SectionHeader
-                  eyebrow={newsletter.eyebrow}
-                  title={newsletter.title}
-                  align="left"
-                  tone="dark"
-                />
-                <p className="max-w-md text-sm text-white/65">{newsletter.body}</p>
-                <NewsletterForm ctaLabel={newsletter.cta.label} />
-              </div>
-
-              <div className="flex flex-col items-center gap-5">
-                <div className="relative flex h-40 w-40 items-center justify-center">
-                  <span className="absolute inset-0 rounded-full border border-podhub-orange/30" />
-                  <span className="absolute inset-3 rounded-full border border-podhub-orange/20" />
-                  <span className="absolute inset-6 rounded-full bg-podhub-orange/20" />
-                  <span className="grid size-14 place-items-center rounded-full bg-podhub-orange text-2xl text-white shadow-orange-glow">
-                    <Mail size={24} strokeWidth={1.5} />
-                  </span>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center -space-x-2">
-                    <AvatarStack items={newsletter.subscriberAvatars} size="md" />
-                  </div>
-                  <p className="mt-3 text-sm font-semibold text-white">
-                    {newsletter.subscriberCount}+ Users are currently subscribed
-                  </p>
-                  <p className="mt-1 text-xs text-white/50">
-                    Join our growing community of podcast lovers
-                  </p>
-                </div>
-              </div>
-            </div>
+    <section id="newsletter" className="relative overflow-hidden bg-white py-20 lg:h-[641px] lg:py-0">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-[-483px] z-0 h-[1607px] scale-110 blur-2xl"
+        style={{
+          backgroundImage: `url(${images.upgradeBgPattern})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+        }}
+      />
+      <div className="relative z-10 mx-auto grid w-full max-w-[1240px] items-center gap-12 px-6 sm:px-8 lg:h-full lg:grid-cols-[594px_408px] lg:justify-between lg:px-5">
+        <MotionSection className="mx-auto w-full max-w-[594px] text-center lg:mx-0 lg:text-left">
+          <h2
+            className="whitespace-pre-line"
+            style={{
+              fontFamily: TITLE_FONT,
+              fontWeight: 700,
+              fontSize: "clamp(40px, 4.7vw, 48px)",
+              lineHeight: "1.2",
+              letterSpacing: "-0.02em",
+              color: "#111418",
+            }}
+          >
+            {newsletter.title}
+          </h2>
+          <p
+            className="mt-6"
+            style={{
+              fontFamily: BODY_FONT,
+              fontWeight: 400,
+              fontSize: 16,
+              lineHeight: "24px",
+              letterSpacing: "-0.64px",
+              color: "#4E5255",
+            }}
+          >
+            {newsletter.body}
+          </p>
+          <div className="mt-8 flex justify-center lg:justify-start">
+            <NewsletterForm />
           </div>
         </MotionSection>
-      </Container>
+
+        <MotionSection>
+          <NewsletterVisual />
+        </MotionSection>
+      </div>
     </section>
   );
 }

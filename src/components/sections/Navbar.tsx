@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-30">
       {/* Matches hero container: 1440px section, 100px side padding */}
-      <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-[100px]">
+      <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 sm:px-8 lg:px-[100px]">
         <Logo />
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
@@ -19,7 +19,7 @@ export function Navbar() {
             </a>
           ))}
         </nav>
-        <Button href={navCta.href} variant="solid" size="md" trailingArrow>
+        <Button href={navCta.href} variant="solid" size="sm" trailingArrow className="md:h-10 md:px-5 md:text-sm">
           {navCta.label}
         </Button>
       </div>

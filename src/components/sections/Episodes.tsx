@@ -31,18 +31,18 @@ type EpisodeCardProps = {
 function EpisodeCard({ number, title, host, category, duration, image }: EpisodeCardProps) {
   return (
     <article
-      className="flex w-full gap-5 rounded-2xl bg-white p-3"
+      className="flex w-full flex-col gap-5 rounded-2xl bg-white p-3 sm:flex-row"
       style={{ boxShadow: "0 10px 40px -24px rgba(17,20,24,0.25)" }}
     >
       {/* Image — 179.5 x 252, radius 16 */}
-      <div className="relative h-[252px] w-[180px] shrink-0 overflow-hidden rounded-2xl">
-        <Image src={image} alt={title} fill className="object-cover" sizes="180px" />
+      <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[252px] sm:w-[180px]">
+        <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 640px) 100vw, 180px" />
       </div>
 
       {/* Body — 340 wide */}
       <div className="flex flex-1 flex-col py-3 pr-3">
         {/* Top info row: Episode # (left) + Author (right) */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <span
             className="flex items-center gap-1.5"
             style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#4E5255" }}
@@ -61,8 +61,8 @@ function EpisodeCard({ number, title, host, category, duration, image }: Episode
           style={{
             fontFamily: TITLE_FONT,
             fontWeight: 600,
-            fontSize: 24,
-            lineHeight: "28.8px",
+            fontSize: "clamp(21px, 4.8vw, 24px)",
+            lineHeight: "1.2",
             letterSpacing: "-0.72px",
             color: "#111418",
           }}
@@ -100,12 +100,12 @@ export function Episodes() {
   const [line1, line2] = episodesHeader.title.split("\n");
 
   return (
-    <section id="episodes" className="relative overflow-hidden bg-podhub-cream py-[100px]">
+    <section id="episodes" className="relative overflow-hidden bg-podhub-cream py-20 lg:py-[100px]">
       {/* Soft colour blushes (very subtle, like the design's blurred blobs) */}
       <div className="pointer-events-none absolute left-[-6%] top-[20%] z-0 h-[420px] w-[420px] rounded-full opacity-[0.07] blur-[140px]" style={{ background: "#FF5900" }} />
       <div className="pointer-events-none absolute right-[-6%] top-[20%] z-0 h-[420px] w-[420px] rounded-full opacity-[0.07] blur-[140px]" style={{ background: "#FF00BF" }} />
 
-      <div className="relative mx-auto w-[1240px]">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
         {/* Title — centered with Line2 underline under "Episodes" */}
         <MotionSection className="mx-auto text-center">
           <div className="relative inline-block">
@@ -114,9 +114,9 @@ export function Episodes() {
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
-                fontSize: 48,
-                lineHeight: "57.6px",
-                letterSpacing: "-0.96px",
+                fontSize: "clamp(34px, 8vw, 48px)",
+                lineHeight: "1.2",
+                letterSpacing: "-0.02em",
                 color: "#111418",
               }}
             >
@@ -126,20 +126,20 @@ export function Episodes() {
             </h2>
             {/* Line2 underline under the word "Episodes" (first line, right side) */}
             <div className="pointer-events-none absolute" style={{ right: 12, top: 44, width: 186, height: 8 }}>
-              <Image src={images.line2} alt="" width={186} height={8} className="h-full w-full object-contain" />
+              <Image src={images.line2} alt="" width={186} height={8} className="hidden h-full w-full object-contain sm:block" />
             </div>
           </div>
         </MotionSection>
 
         {/* Cards — 2x2 grid, 604px each, ~8px gap */}
-        <MotionSection className="mt-[72px] grid grid-cols-2 gap-2">
+        <MotionSection className="mt-12 grid grid-cols-1 gap-4 lg:mt-[72px] lg:grid-cols-2 lg:gap-2">
           {episodes.map((ep) => (
             <EpisodeCard key={ep.number} {...ep} />
           ))}
         </MotionSection>
 
         {/* CTA — orange outline, centered */}
-        <MotionSection className="mt-[72px] flex justify-center">
+        <MotionSection className="mt-12 flex justify-center lg:mt-[72px]">
           <HeroCta label={episodesCta.label} href={episodesCta.href} variant="outline" />
         </MotionSection>
       </div>

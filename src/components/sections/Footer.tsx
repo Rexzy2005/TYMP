@@ -21,7 +21,9 @@ export function Footer() {
           {/* Link columns */}
           {footer.columns.map((col) => (
             <div key={col.title} className="space-y-4">
-              <h4 className="text-sm font-semibold text-white">{col.title}</h4>
+              <h4 className="font-urbanist text-xl font-semibold leading-[30px] tracking-[-0.4px] text-podhub-orange">
+                {col.title}
+              </h4>
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>

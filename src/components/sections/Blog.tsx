@@ -1,96 +1,145 @@
 import Image from "next/image";
 
-import { Container } from "../ui/Container";
-import { SectionHeader } from "../ui/SectionHeader";
-import { Button } from "../ui/Button";
 import { MotionSection } from "../ui/MotionSection";
-import { posts, blogHeader, blogCta } from "@/lib/content";
+import { HeroCta } from "../ui/HeroCta";
+import { blogCta, blogHeader, posts } from "@/lib/content";
+import { images } from "@/lib/assets";
 
-type PostCardProps = {
-  title: string;
-  category: string;
-  featured?: boolean;
-  image: string;
-};
+const TITLE_FONT = "var(--font-urbanist), Urbanist, sans-serif";
+const BODY_FONT = "var(--font-public-sans), Public Sans, sans-serif";
 
-function PostCard({ title, category, featured = false, image }: PostCardProps) {
+type Post = (typeof posts)[number];
+
+function BlogHeading({ compact = false }: { compact?: boolean }) {
   return (
-    <article
-      className={`group flex gap-4 ${featured ? "flex-col" : ""}`}
-    >
-      <div
-        className={`relative overflow-hidden rounded-xl ${featured ? "aspect-[16/10] w-full" : "h-20 w-20 shrink-0"}`}
-      >
+    <div className={compact ? "mx-auto w-full max-w-[606px] text-center" : "h-[122px] w-[1200px] text-center"}>
+      <div className={compact ? "relative mx-auto inline-block" : "relative mx-auto h-[58px] w-[606px]"}>
+        <h2
+          className="relative z-10 whitespace-nowrap"
+          style={{
+            fontFamily: TITLE_FONT,
+            fontWeight: 700,
+            fontSize: compact ? "clamp(34px, 8vw, 48px)" : 48,
+            lineHeight: compact ? "1.12" : "57.6px",
+            letterSpacing: compact ? "-0.72px" : "-0.96px",
+            color: "#111418",
+          }}
+        >
+          {blogHeader.title}
+        </h2>
         <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover transition duration-300 group-hover:scale-[1.04]"
-          sizes={featured ? "(min-width: 768px) 38rem, 90vw" : "80px"}
+          src={images.blogUnderline}
+          alt=""
+          width={196}
+          height={12}
+          className={
+            compact
+              ? "absolute -bottom-1 left-[28%] z-0 h-3 w-[196px] max-w-[44%]"
+              : "absolute left-[108px] top-12 z-0 h-3 w-[196px]"
+          }
         />
       </div>
-      <div className={`flex flex-col ${featured ? "mt-4 gap-3" : "justify-center gap-1"}`}>
-        <span className="text-[10px] font-semibold uppercase tracking-wide text-podhub-orange">
-          {category}
-        </span>
-        <h3
-          className={`font-semibold text-podhub-ink transition group-hover:text-podhub-orange ${featured ? "text-lg leading-snug" : "text-sm line-clamp-2"}`}
-        >
-          {title}
-        </h3>
-        {featured && (
-          <span className="mt-1 text-xs text-podhub-muted">5 min read · 2 days ago</span>
-        )}
+      <p
+        className={compact ? "mx-auto mt-4 max-w-[502px]" : "mx-auto mt-4 w-[502px]"}
+        style={{
+          fontFamily: BODY_FONT,
+          fontWeight: 400,
+          fontSize: compact ? 15 : 16,
+          lineHeight: compact ? "22px" : "24px",
+          letterSpacing: compact ? "-0.45px" : "-0.64px",
+          color: "#4E5255",
+        }}
+      >
+        {blogHeader.body}
+      </p>
+    </div>
+  );
+}
+
+function PostMeta({ post, small = false }: { post: Post; small?: boolean }) {
+  return (
+    <div
+      className="flex items-center"
+      style={{
+        gap: small ? 22 : 28,
+        fontFamily: BODY_FONT,
+        fontWeight: 400,
+        fontSize: small ? 14 : 16,
+        lineHeight: small ? "21px" : "24px",
+        letterSpacing: small ? "-0.28px" : "-0.64px",
+        color: "#F7F7F7",
+      }}
+    >
+      <span>{post.date}</span>
+      <span>{post.readTime}</span>
+    </div>
+  );
+}
+
+function BlogImageCard({ post, feature = false }: { post: Post; feature?: boolean }) {
+  return (
+    <article
+      className="group relative w-full overflow-hidden rounded-2xl bg-[#111418]"
+      style={{
+        aspectRatio: feature ? "792 / 624" : "384 / 302.4",
+      }}
+    >
+      <Image
+        src={post.image}
+        alt=""
+        fill
+        sizes={feature ? "(max-width: 1024px) 66vw, 792px" : "(max-width: 1024px) 32vw, 384px"}
+        className="object-cover transition duration-700 group-hover:scale-[1.03]"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,20,24,0)_0%,rgba(17,20,24,0.16)_38%,rgba(17,20,24,0.74)_74%,rgba(0,0,0,0.96)_100%)]" />
+      <div
+        className={feature ? "absolute left-[4.04%] top-[74.36%]" : "absolute left-[6.51%] top-[64.8%]"}
+      >
+        <PostMeta post={post} small={!feature} />
       </div>
+      <h3
+        className={feature ? "absolute left-[4.04%] top-[79.49%] w-[82.83%]" : "absolute left-[6.51%] top-[74.07%] w-[86.9%]"}
+        style={{
+          fontFamily: TITLE_FONT,
+          fontWeight: 600,
+          fontSize: feature ? "clamp(20px, 2.78vw, 40px)" : "clamp(12px, 1.67vw, 24px)",
+          lineHeight: feature ? "1.2" : "1.2",
+          letterSpacing: feature ? "-0.04em" : "-0.03em",
+          color: "#FFFFFF",
+        }}
+      >
+        {post.title}
+      </h3>
     </article>
   );
 }
 
 export function Blog() {
-  const featuredPost = posts.find((p) => p.featured)!;
-  const sidePosts = posts.filter((p) => !p.featured);
+  const [featuredPost, topPost, bottomPost] = posts;
 
   return (
-    <section className="bg-podhub-bg py-20 md:py-28">
-      <Container>
-        <MotionSection>
-          <SectionHeader
-            eyebrow={blogHeader.eyebrow}
-            title={blogHeader.title}
-          />
-          <p className="mx-auto mt-4 max-w-xl text-center text-sm text-podhub-muted">
-            {blogHeader.body}
-          </p>
-        </MotionSection>
+    <section className="relative overflow-hidden bg-white pb-[60px] pt-[62px] lg:pb-[100px] lg:pt-[100px]" id="blog">
+      <MotionSection className="mx-auto px-6 sm:px-16 lg:px-0">
+        <BlogHeading compact />
+      </MotionSection>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-[1.4fr_1fr]">
-          <MotionSection>
-            <PostCard
-              title={featuredPost.title}
-              category={featuredPost.category}
-              featured
-              image={featuredPost.image}
-            />
-          </MotionSection>
-
-          <MotionSection className="flex flex-col gap-5">
-            {sidePosts.map((post) => (
-              <PostCard
-                key={post.title}
-                title={post.title}
-                category={post.category}
-                image={post.image}
-              />
-            ))}
-          </MotionSection>
+      <MotionSection className="mx-auto mt-12 hidden w-full max-w-[1200px] grid-cols-[minmax(0,792fr)_384fr] gap-6 px-6 sm:grid sm:px-16 lg:px-0">
+        <BlogImageCard post={featuredPost} feature />
+        <div className="grid content-between gap-6">
+          <BlogImageCard post={topPost} />
+          <BlogImageCard post={bottomPost} />
         </div>
+      </MotionSection>
 
-        <div className="mt-10 flex justify-center">
-          <Button href={blogCta.href} variant="solid" size="lg" trailingArrow>
-            {blogCta.label}
-          </Button>
-        </div>
-      </Container>
+      <MotionSection className="mx-auto mt-12 grid w-full gap-6 px-6 sm:hidden">
+        <BlogImageCard post={featuredPost} feature />
+        <BlogImageCard post={topPost} />
+        <BlogImageCard post={bottomPost} />
+      </MotionSection>
+
+      <MotionSection className="mt-10 flex justify-center lg:mt-16">
+        <HeroCta label={blogCta.label} href={blogCta.href} variant="outline" />
+      </MotionSection>
     </section>
   );
 }

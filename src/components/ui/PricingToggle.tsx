@@ -36,7 +36,7 @@ export function PricingToggle({
             role="tab"
             aria-selected={active}
             onClick={() => handle(opt.id)}
-            className={`relative h-9 rounded-full px-5 text-xs font-semibold transition ${
+            className={`font-copy relative h-9 rounded-full px-5 text-base font-normal tracking-[-0.64px] transition ${
               active
                 ? "bg-podhub-orange text-white shadow-orange-glow"
                 : "text-podhub-muted hover:text-podhub-ink"

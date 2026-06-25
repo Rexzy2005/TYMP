@@ -173,7 +173,7 @@ export function Categories() {
   const [t1, t2] = categoriesHeader.title.split("\n");
 
   return (
-    <section className="relative overflow-hidden bg-podhub-ink py-[100px]">
+    <section className="relative overflow-hidden bg-podhub-ink py-20 lg:py-[100px]">
       {/* Orange blur blobs from JSON — top-right + bottom-left */}
       <div
         className="pointer-events-none absolute right-0 top-0 h-[232px] w-[317px] rounded-full opacity-90"
@@ -184,14 +184,14 @@ export function Categories() {
         style={{ background: "#F17F3F", filter: "blur(180px)" }}
       />
 
-      <div className="relative mx-auto w-[1240px]">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
         {/* Title block — relative so CTA can be absolutely positioned */}
-        <div className="relative flex items-center" style={{ height: 116 }}>
+        <div className="relative flex flex-col items-center justify-between gap-8 text-center lg:h-[116px] lg:flex-row lg:text-left">
           {/* Title + underline (left) */}
-          <div className="relative" style={{ width: 554, height: 116 }}>
+          <div className="relative w-full max-w-[554px] lg:h-[116px]">
             <h2
               className="whitespace-pre-line"
-              style={{ fontFamily: TITLE_FONT, fontWeight: 700, fontSize: 48, lineHeight: "57.6px", letterSpacing: "-0.96px", color: "#FFFFFF" }}
+              style={{ fontFamily: TITLE_FONT, fontWeight: 700, fontSize: "clamp(34px, 8vw, 48px)", lineHeight: "1.2", letterSpacing: "-0.02em", color: "#FFFFFF" }}
             >
               {t1}
               {"\n"}
@@ -199,7 +199,7 @@ export function Categories() {
             </h2>
             {/* Orange wavy underline under "Mood!" — discovery.svg, relative to container: x=254.7 y=109.2 w=140 h=13 */}
             <div
-              className="pointer-events-none absolute"
+              className="pointer-events-none absolute hidden lg:block"
               style={{ left: 254.7, top: 109.2, width: 140, height: 13 }}
             >
               <Image
@@ -213,16 +213,13 @@ export function Categories() {
           </div>
 
           {/* CTA — right-aligned with cards, vertically centered in title block */}
-          <div
-            className="absolute"
-            style={{ left: 1094, top: 30, width: 226, height: 56 }}
-          >
+          <div className="lg:absolute lg:left-[1094px] lg:top-[30px] lg:h-14 lg:w-[226px]">
             <HeroCta label={categoriesHeader.cta.label} href={categoriesHeader.cta.href} variant="solid" />
           </div>
         </div>
 
         {/* Cards wrapper */}
-        <div className="mt-[56px] flex flex-col gap-6">
+        <div className="mt-12 hidden flex-col gap-6 lg:mt-[56px] lg:flex">
           {/* Row 1: Technology (large) | Comedy + Design (regulars) */}
           <div className="grid grid-cols-[588px_282px_282px] gap-6">
             <CategoryCard category={categories[0]} />
@@ -235,6 +232,11 @@ export function Categories() {
             <CategoryCard category={categories[4]} />
             <CategoryCard category={categories[5]} />
           </div>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:hidden">
+          {categories.map((category) => (
+            <CategoryCard key={category.title} category={category} />
+          ))}
         </div>
       </div>
     </section>
