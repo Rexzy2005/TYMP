@@ -416,18 +416,21 @@ export const footer = {
   socials: [
     { name: "Instagram", href: "#" },
     { name: "X", href: "#" },
-    { name: "YouTube", href: "#" },
-    { name: "TikTok", href: "#" },
-    { name: "Spotify", href: "#" },
+    { name: "LinkedIn", href: "#" },
+    { name: "Facebook", href: "#" },
   ],
+  contact: {
+    email: "hello@podhub.io",
+    addressLines: ["1428 Maple Drive, Tampa", "FL 33602"],
+  },
   columns: [
     {
       title: "Company",
       links: [
         { label: "About Us", href: "#" },
-        { label: "Our Team", href: "#" },
-        { label: "Newsletters", href: "#" },
-        { label: "Blog & Articles", href: "#" },
+        { label: "Our Host", href: "#hosts" },
+        { label: "Newsletter", href: "#newsletter" },
+        { label: "Blog & Articles", href: "#blog" },
       ],
     },
     {
@@ -435,26 +438,25 @@ export const footer = {
       links: [
         { label: "Home", href: "#home" },
         { label: "Episodes", href: "#episodes" },
-        { label: "Hosts", href: "#hosts" },
-        { label: "Pricing", href: "#pricing" },
+        { label: "Pricing Plan", href: "#pricing" },
       ],
     },
     {
       title: "Useful Links",
       links: [
         { label: "Contact Us", href: "#" },
-        { label: "Terms & Conditions", href: "#" },
         { label: "Privacy Policy", href: "#" },
+        { label: "Terms & Condition", href: "#" },
         { label: "Cookie Policy", href: "#" },
       ],
     },
     {
-      title: "Address",
+      title: "Listen on",
       links: [
-        { label: "hello@podhub.io", href: "mailto:hello@podhub.io" },
-        { label: "+1 (555) 230-4509", href: "tel:+15552304509" },
-        { label: "1428 Maple Drive, Tampa", href: "#" },
-        { label: "FL 33602", href: "#" },
+        { label: "Google Podcasts", href: "#" },
+        { label: "Spotify", href: "#" },
+        { label: "Apple Podcasts", href: "#" },
+        { label: "RSS Feed", href: "#" },
       ],
     },
   ],
