@@ -41,8 +41,8 @@ function FeatureIcon({ name, size = 38 }: { name: string; size?: number }) {
 function FeatureCard({ icon, title, text }: { icon: string; title: string; text: string }) {
   return (
     <article
-      className="flex flex-col rounded-2xl bg-white p-8"
-      style={{ width: 384, height: 281, border: "1px solid #EAEAEA" }}
+      className="flex min-h-[281px] w-full flex-col rounded-2xl bg-white p-8"
+      style={{ border: "1px solid #EAEAEA" }}
     >
       {/* Icon — 68x68 light-orange tile, 38px glyph centered */}
       <div
@@ -60,7 +60,7 @@ function FeatureCard({ icon, title, text }: { icon: string; title: string; text:
       </h3>
       <p
         className="mt-3"
-        style={{ fontFamily: BODY_FONT, fontWeight: 400, fontSize: 16, lineHeight: "24px", letterSpacing: "-0.64px", color: "#4E5255", width: 320 }}
+        style={{ fontFamily: BODY_FONT, fontWeight: 400, fontSize: 16, lineHeight: "24px", letterSpacing: "-0.64px", color: "#4E5255", maxWidth: 320 }}
       >
         {text}
       </p>
@@ -72,10 +72,10 @@ export function Features() {
   const [t1, t2] = featuresHeader.title.split("\n");
 
   return (
-    <section className="bg-white py-[100px]">
-      <div className="relative mx-auto w-[1240px]">
+    <section className="bg-white py-20 lg:py-[100px]">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
         {/* ── TOP BLOCK — content (left) + image (right), absolute per JSON ── */}
-        <div className="relative" style={{ height: 435.6 }}>
+        <div className="relative hidden lg:block" style={{ height: 435.6 }}>
           {/* Left Content — 579 wide, starts at y=63.8 */}
           <MotionSection
             className="absolute"
@@ -230,7 +230,37 @@ export function Features() {
         </div>
 
         {/* ── BOTTOM BLOCK — 3 feature cards ── */}
-        <div className="mt-[56px] flex gap-6">
+        <div className="grid gap-10 lg:hidden">
+          <MotionSection className="mx-auto max-w-[620px] text-center">
+            <h2
+              style={{
+                fontFamily: TITLE_FONT,
+                fontWeight: 700,
+                fontSize: "clamp(34px, 8vw, 48px)",
+                lineHeight: "1.2",
+                letterSpacing: "-0.02em",
+                color: "#111418",
+              }}
+            >
+              {featuresHeader.title.replace("\n", " ")}
+            </h2>
+            <p className="mt-6" style={{ fontFamily: BODY_FONT, fontWeight: 400, fontSize: 16, lineHeight: "24px", letterSpacing: "-0.64px", color: "#4E5255" }}>
+              {featuresHeader.body}
+            </p>
+            <div className="mt-8 flex justify-center">
+              <HeroCta label={featuresHeader.cta.label} href={featuresHeader.cta.href} variant="outline" labelColor="#111418" />
+            </div>
+          </MotionSection>
+
+          <MotionSection className="relative mx-auto aspect-[468/435.6] w-full max-w-[468px]">
+            <Image src={images.featureBg} alt="" fill className="pointer-events-none object-contain" />
+            <div className="absolute inset-x-0 top-[5%] aspect-[468/396.2] overflow-hidden rounded-2xl">
+              <Image src={featuresRight.photo} alt="Podcaster wearing headphones" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 468px" />
+            </div>
+          </MotionSection>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-[56px] lg:grid-cols-3">
           {features.map((f) => (
             <FeatureCard key={f.title} icon={f.icon} title={f.title} text={f.text} />
           ))}

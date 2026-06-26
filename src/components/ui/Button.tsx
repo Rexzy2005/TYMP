@@ -16,7 +16,7 @@ type ButtonProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-podhub-orange/40";
+  "font-display inline-flex items-center justify-center gap-2 rounded-full font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-podhub-orange/40";
 
 const sizes: Record<ButtonSize, string> = {
   sm: "h-9 px-4 text-xs",

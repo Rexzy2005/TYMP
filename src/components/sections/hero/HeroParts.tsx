@@ -134,15 +134,15 @@ type HeroVisualProps = {
 
 export function HeroVisual({ podcastCard, statsCard }: HeroVisualProps) {
   return (
-    <div className="relative" style={{ width: 634, height: 632 }}>
+    <div className="relative aspect-[634/632] w-full max-w-[634px]">
       {/* Orange blurred glow — tight spread, sits behind the human */}
       <div
         className="pointer-events-none absolute rounded-full"
         style={{
-          left: 130,
-          top: 280,
-          width: 380,
-          height: 340,
+          left: "20.5%",
+          top: "44.3%",
+          width: "59.9%",
+          height: "53.8%",
           background: "#F17F3F",
           opacity: 0.85,
           filter: "blur(70px)",
@@ -152,7 +152,7 @@ export function HeroVisual({ podcastCard, statsCard }: HeroVisualProps) {
       {/* Hero photo — 615x629, anchored to the bottom */}
       <div
         className="pointer-events-none absolute"
-        style={{ right: 0, bottom: 0, width: 615, height: 629 }}
+        style={{ right: 0, bottom: 0, width: "97%", height: "99.5%" }}
       >
         <Image
           src={images.hero}
@@ -168,7 +168,7 @@ export function HeroVisual({ podcastCard, statsCard }: HeroVisualProps) {
       {/* Decorative icon above head */}
       <div
         className="pointer-events-none absolute z-[1]"
-        style={{ left: 159, top: 19, width: 50, height: 50 }}
+        style={{ left: "25.1%", top: "3%", width: "7.9%", height: "7.9%" }}
       >
         <Image
           src={images.heroIcon}
@@ -180,12 +180,12 @@ export function HeroVisual({ podcastCard, statsCard }: HeroVisualProps) {
       </div>
 
       {/* Podcast card — bottom-left */}
-      <div className="absolute z-10" style={{ left: 0, bottom: 42 }}>
+      <div className="absolute z-10 origin-bottom-left scale-[0.78] sm:scale-90 lg:scale-100" style={{ left: 0, bottom: "6.6%" }}>
         <HeroPodcastCard title={podcastCard.title} host={podcastCard.host} />
       </div>
 
       {/* Stats card — overlapping */}
-      <div className="absolute z-10" style={{ left: 402, top: 290 }}>
+      <div className="absolute z-10 origin-top-right scale-[0.76] sm:scale-90 lg:scale-100" style={{ right: "0.5%", top: "45.9%" }}>
         <HeroStatsCard value={statsCard.value} label={statsCard.label} />
       </div>
     </div>

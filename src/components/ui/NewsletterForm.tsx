@@ -27,7 +27,7 @@ export function NewsletterForm({ ctaLabel, className = "" }: NewsletterFormProps
   return (
     <form
       onSubmit={submit}
-      className={`flex w-full max-w-md items-center gap-2 rounded-full border border-podhub-line bg-white p-1.5 shadow-soft ${className}`}
+      className={`flex w-full max-w-md flex-col items-stretch gap-2 rounded-3xl border border-podhub-line bg-white p-1.5 shadow-soft sm:flex-row sm:items-center sm:rounded-full ${className}`}
     >
       <input
         type="email"
@@ -35,7 +35,7 @@ export function NewsletterForm({ ctaLabel, className = "" }: NewsletterFormProps
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         aria-label="Email address"
-        className="min-w-0 flex-1 bg-transparent px-4 text-sm text-podhub-heading outline-none placeholder:text-podhub-muted"
+        className="font-copy min-h-12 min-w-0 flex-1 bg-transparent px-4 text-base font-normal tracking-[-0.72px] text-podhub-heading outline-none placeholder:text-podhub-muted sm:text-lg"
       />
       <Button type="submit" size="md" trailingArrow>
         {submitted ? (

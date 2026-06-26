@@ -6,23 +6,9 @@ import { hero as heroData } from "@/lib/content";
 import { images } from "@/lib/assets";
 import { HeroListenersBadge, HeroVisual } from "./hero/HeroParts";
 
-/* ---------------------------------------------------------------------------
-   Hero Section — exact geometry from hero_section.json
-     Section:        1440 x 792
-     Container:      1240 x 632, x=100 (left pad), y=160 (top)
-     Content Block:  530 wide, x=20, y=62.5 in container
-     Visual Block:   634 wide, x=586 in container  -> 36px gap
-
-   Vertical rhythm inside Content Block:
-     Title (231) + 16 gap -> Subtitle (48) [total 295, this is Title Block]
-     Title Block end (295) + 32 gap -> Buttons at y=327, height 56, end 383
-     Buttons end (383) + 64 gap -> Listeners at y=447, height 60, end 507
-     Content block height = 507, fits in 632 - 62.5 = 569.5
---------------------------------------------------------------------------- */
-
 export function Hero() {
   return (
-    <section id="home" className="relative h-[792px] overflow-hidden bg-podhub-ink">
+    <section id="home" className="relative flex min-h-[760px] justify-center overflow-hidden bg-podhub-ink pb-16 pt-28 sm:pt-32 lg:h-[792px] lg:pb-0 lg:pt-0">
       {/* Tight orange glow behind the human — contained spread */}
       <div
         className="pointer-events-none absolute z-0 h-[380px] w-[380px] rounded-full"
@@ -36,20 +22,18 @@ export function Hero() {
       />
 
       {/* Container: 1240 x 632, x=100 left pad, y=160 top */}
-      <div
-        className="relative mx-auto h-[632px] w-[1240px]"
-        style={{ paddingLeft: 100, paddingTop: 160 }}
-      >
-        <div className="grid h-full grid-cols-[530px_634px] gap-[36px]">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:h-[632px] lg:px-0 lg:pt-[160px]">
+        <div className="grid h-full items-center gap-10 lg:grid-cols-[minmax(0,530px)_minmax(0,634px)] lg:gap-[36px]">
           {/* ── LEFT: Content Block, x=20 in container ─────────── */}
           <MotionSection
-            className="flex w-[530px] flex-col"
-            style={{ marginLeft: 20, marginTop: 62.5 }}
+            className="mx-auto flex w-full max-w-[530px] flex-col text-center lg:mx-0 lg:text-left"
+            style={{ marginTop: 0 }}
           >
             {/* Title + Line2 underline (under "Episodes") */}
-            <div className="relative" style={{ width: 530, height: 231 }}>
+            <div className="relative w-full lg:h-[231px]">
+              
               <div
-                className="pointer-events-none absolute z-0"
+                className="pointer-events-none absolute z-0 hidden lg:block"
                 style={{ left: 0, top: 148, width: 220, height: 10 }}
               >
                 <Image
@@ -63,13 +47,13 @@ export function Hero() {
               </div>
 
               <h1
-                className="relative z-10 whitespace-pre-line text-left"
+                className="relative z-10 whitespace-pre-line text-center lg:text-left"
                 style={{
                   fontFamily: "var(--font-urbanist), Urbanist, sans-serif",
                   fontWeight: 700,
-                  fontSize: "64px",
-                  lineHeight: "76.8px",
-                  letterSpacing: "-2.56px",
+                  fontSize: "clamp(44px, 9vw, 64px)",
+                  lineHeight: "1.08",
+                  letterSpacing: "-0.04em",
                   color: "#FFFFFF",
                 }}
               >
@@ -79,10 +63,10 @@ export function Hero() {
 
             {/* Subtitle — 16px below the title (y=247 in content block) */}
             <p
-              className="text-left"
+              className="mx-auto text-center lg:mx-0 lg:text-left"
               style={{
                 marginTop: 16,
-                width: 497,
+                maxWidth: 497,
                 fontFamily: "var(--font-public-sans), Public Sans, sans-serif",
                 fontWeight: 400,
                 fontSize: "16px",
@@ -96,7 +80,7 @@ export function Hero() {
 
             {/* Buttons — 32px below subtitle, 16px gap between */}
             <div
-              className="flex items-center"
+              className="flex flex-col items-center gap-3 sm:flex-row lg:justify-start"
               style={{ marginTop: 32, gap: 16 }}
             >
               <HeroCta
@@ -113,7 +97,7 @@ export function Hero() {
             </div>
 
             {/* Listeners — 64px below buttons (y=447 in content block) */}
-            <div style={{ marginTop: 64 }}>
+            <div className="flex justify-center lg:justify-start" style={{ marginTop: 48 }}>
               <HeroListenersBadge
                 value={heroData.listenersBadge.value}
                 label={heroData.listenersBadge.label}
@@ -122,7 +106,7 @@ export function Hero() {
           </MotionSection>
 
           {/* ── RIGHT: Visual Block (634x632) ─────────────────── */}
-          <MotionSection className="relative h-[632px] w-[634px]">
+          <MotionSection className="relative mx-auto w-full max-w-[634px]">
             <HeroVisual podcastCard={heroData.podcastCard} statsCard={heroData.statsCard} />
           </MotionSection>
         </div>

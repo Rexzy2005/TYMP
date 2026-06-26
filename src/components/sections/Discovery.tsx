@@ -23,12 +23,12 @@ export function Discovery() {
   const [t1, t2] = discovery.title.split("\n");
 
   return (
-    <section className="relative overflow-hidden bg-white py-[100px]">
-      <div className="relative mx-auto w-[1240px]">
+    <section className="relative overflow-hidden bg-white py-20 lg:py-[100px]">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
         {/* ── TOP BLOCK ──────────────────────────────────────── */}
-        <div className="flex items-start gap-[44px]">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-[44px]">
           {/* Image Block — 552 x 414 */}
-          <MotionSection className="relative shrink-0" style={{ width: 552, height: 414 }}>
+          <MotionSection className="relative w-full max-w-[552px] shrink-0">
             {/* squiggle decoration — discovery Vector.svg (top-right) */}
             <div
               className="pointer-events-none absolute"
@@ -44,20 +44,20 @@ export function Discovery() {
             </div>
 
             {/* photo with rounded corners (rx=16 baked into svg) */}
-            <div className="relative h-[414px] w-[552px] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[552/414] w-full overflow-hidden rounded-2xl">
               <Image
                 src={discovery.image}
                 alt="Podcast host recording"
                 fill
                 className="object-cover"
-                sizes="552px"
+                sizes="(max-width: 1024px) 100vw, 552px"
                 priority
               />
 
               {/* caption pill — bottom, white 20% over dark, with play button */}
               <div
-                className="absolute flex items-center justify-between gap-3 rounded-full py-2 pl-4 pr-2"
-                style={{ left: 122, bottom: 24, width: 307, height: 48, background: "rgba(255,255,255,0.2)", backdropFilter: "blur(8px)" }}
+                className="absolute left-1/2 flex h-12 w-[min(307px,calc(100%-32px))] -translate-x-1/2 items-center justify-between gap-3 rounded-full py-2 pl-4 pr-2"
+                style={{ bottom: 24, background: "rgba(255,255,255,0.2)", backdropFilter: "blur(8px)" }}
               >
                 <span
                   style={{ fontFamily: BODY_FONT, fontWeight: 500, fontSize: 18, lineHeight: "27px", letterSpacing: "-0.72px", color: "#FFFFFF" }}
@@ -72,11 +72,11 @@ export function Discovery() {
           </MotionSection>
 
           {/* Content Block — flex fill */}
-          <MotionSection className="flex flex-1 flex-col pt-[15px]">
+          <MotionSection className="flex w-full max-w-[624px] flex-1 flex-col pt-0 text-center lg:pt-[15px] lg:text-left">
             {/* Title — Urbanist Bold 48, 2 lines */}
             <h2
               className="whitespace-pre-line"
-              style={{ fontFamily: TITLE_FONT, fontWeight: 700, fontSize: 48, lineHeight: "57.6px", letterSpacing: "-0.96px", color: "#111418", width: 624 }}
+              style={{ fontFamily: TITLE_FONT, fontWeight: 700, fontSize: "clamp(34px, 8vw, 48px)", lineHeight: "1.2", letterSpacing: "-0.02em", color: "#111418", maxWidth: 624 }}
             >
               {t1}
               {"\n"}
@@ -92,7 +92,7 @@ export function Discovery() {
             </p>
 
             {/* Bullets */}
-            <ul className="mt-8 flex flex-col gap-3">
+            <ul className="mt-8 flex flex-col items-start gap-3 lg:items-stretch">
               {discovery.bullets.map((b) => (
                 <li key={b} className="flex items-center gap-3">
                   <BadgeCheck size={22} className="text-[#111418]" strokeWidth={1.6} />
@@ -104,7 +104,7 @@ export function Discovery() {
             </ul>
 
             {/* CTA — Learn More, solid orange */}
-            <div className="mt-9">
+            <div className="mt-9 flex justify-center lg:justify-start">
               <HeroCta label={discovery.cta.label} href={discovery.cta.href} variant="solid" />
             </div>
           </MotionSection>
@@ -126,15 +126,15 @@ export function Discovery() {
 
         {/* ── BOTTOM BLOCK — stats panel (1200 x 164) ─────────── */}
         <MotionSection
-          className="mt-[88px] flex items-center justify-between rounded-3xl px-[44px]"
-          style={{ height: 164, background: "#F6F6F6" }}
+          className="mt-14 flex flex-col items-center justify-between gap-8 rounded-3xl px-6 py-8 lg:mt-[88px] lg:flex-row lg:px-[44px]"
+          style={{ minHeight: 164, background: "#F6F6F6" }}
         >
           {/* Listen on + platform icons */}
-          <div className="flex items-center gap-[32px]">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-[32px]">
             <span style={{ fontFamily: TITLE_FONT, fontWeight: 600, fontSize: 24, lineHeight: "28.8px", letterSpacing: "-0.72px", color: "#111418" }}>
               Listen on
             </span>
-            <div className="flex items-center" style={{ gap: 37 }}>
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-[37px]">
               {listenOn.map((p) => (
                 <div key={p.name} className="relative h-11 w-11 shrink-0" title={p.name}>
                   <Image src={p.icon} alt={p.name} fill className="object-contain" sizes="44px" />
@@ -144,7 +144,7 @@ export function Discovery() {
           </div>
 
           {/* Stats — 3 columns with spacing */}
-          <div className="flex items-start gap-[60px]">
+          <div className="grid w-full grid-cols-1 gap-8 text-center sm:grid-cols-3 lg:w-auto lg:gap-[60px] lg:text-left">
             {stats.map((s) => (
               <div key={s.label} className="flex min-w-[140px] flex-col">
                 <span
