@@ -159,7 +159,7 @@ export function AboutHero() {
         <GlowBlobs />
 
         {/* Heading — held in the upper portion so the card can overlap below it */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-[38vh] pt-28 text-center sm:px-8 lg:pt-32">
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-[30vh] pt-28 text-center sm:px-8 lg:pt-32">
           <MotionSection className="mx-auto w-full" style={{ maxWidth: 1050 }}>
             <h1
               className="whitespace-pre-line"
@@ -198,7 +198,7 @@ export function AboutHero() {
       {/* ── White card — stacked onto the bottom of the dark hero ── */}
       <MotionSection className="relative z-20 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-0">
         <div
-          className="-mt-24 rounded-[16px] bg-white p-4 shadow-[0_-24px_60px_-24px_rgba(0,0,0,0.4)] sm:-mt-28 sm:p-6 lg:-mt-[36vh] lg:p-8"
+          className="-mt-20 rounded-[16px] bg-white p-4 shadow-[0_-24px_60px_-24px_rgba(0,0,0,0.4)] sm:-mt-24 sm:p-6 lg:-mt-[28vh] lg:p-8"
         >
           {/* Image */}
           <div
