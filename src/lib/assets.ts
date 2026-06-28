@@ -44,4 +44,8 @@ export const images = {
   categoryHealth: asset("health.svg"),
   categoryBusiness: asset("business.svg"),
   categoryEducation: asset("education.svg"),
+  aboutHero: asset("aboutpage_hero_section_image.svg"),
+  storyHighlight: asset("inspired.png"),
+  approachImage: asset("Approach Image.png"),
+  storyVector: asset("story_vector.svg"),
 };
