@@ -32,16 +32,16 @@ function SocialGlyph({ name, size = 27 }: { name: string; size?: number }) {
 export function Footer() {
   return (
     <footer className="bg-[#251913] text-white">
-      <div className="mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-[100px]">
+      <div className="mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
         <div className="py-16 lg:py-[100px]">
           {/* Header: logo + social cluster */}
-          <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <Image
               src={images.logo}
               alt="PodHub"
-              width={112}
-              height={32}
-              className="h-[56px] w-auto lg:h-[68px]"
+              width={269}
+              height={68}
+              className="h-[44px] w-auto sm:h-[48px] lg:h-[68px]"
               priority={false}
             />
             <div className="flex flex-col gap-6">
@@ -114,7 +114,7 @@ export function Footer() {
                 </div>
               </div>
               <p
-                className="mt-[61px]"
+                className="mt-[61px] hidden lg:block"
                 style={{
                   fontFamily: BODY_FONT,
                   fontWeight: 400,
@@ -168,6 +168,21 @@ export function Footer() {
               ))}
             </div>
           </div>
+
+          {/* Copyright - shown at the very bottom on mobile (below the link grid) */}
+          <p
+            className="mt-12 lg:hidden"
+            style={{
+              fontFamily: BODY_FONT,
+              fontWeight: 400,
+              fontSize: 16,
+              lineHeight: "24px",
+              letterSpacing: "-0.64px",
+              color: "#CFD0D1",
+            }}
+          >
+            {footer.copyright}
+          </p>
         </div>
       </div>
     </footer>

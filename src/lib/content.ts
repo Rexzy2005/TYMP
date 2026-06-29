@@ -1,11 +1,143 @@
 import { images } from "./assets";
 
 /* ---------------------------------------------------------------------------
+   About Story
+--------------------------------------------------------------------------- */
+export const aboutStory = {
+  heading: "Inspired to Make a Difference",
+  body:
+    "We're driven by a love for storytelling, connecting people through meaningful conversations and inspiring ideas that matter.",
+  cards: [
+    {
+      title: "Our Story",
+      text: "TYMP started with a passion for podcasts, aiming to connect storytellers and listeners in one vibrant community.",
+    },
+    {
+      title: "Our Mission",
+      text: "Our mission is to make podcasting easy for everyone. We help podcasters share their ideas and offer listeners great content.",
+    },
+    {
+      title: "Our Vision",
+      text: "At TYMP, we aim to create a space where podcasts connect people and inspire creativity while amplifying diverse voices.",
+    },
+    {
+      title: "Our Value",
+      text: "At TYMP, we're all about bringing people together and sparking creativity with some really cool podcasts.",
+    },
+  ],
+  highlight: {
+    title: "Over 150K+ Podcast Topics Covered",
+    text: "Looking for a podcast that matches your vibe? We've got laughs, tech, health, and more!",
+    cta: { label: "Browse Topics", href: "#episodes" },
+  },
+};
+
+/* ---------------------------------------------------------------------------
+   About Approach
+--------------------------------------------------------------------------- */
+export const aboutApproach = {
+  title: "Our Approach",
+  body: "At TYMP, we focus on making podcasts simple and inclusive, using innovative technology to connect creators and listeners worldwide.",
+  heading: "Where Every Story Finds an Audience",
+  features: [
+    { title: "Cross-Platform Syncing", text: undefined },
+    { title: "Podcast Sharing", text: undefined },
+    { title: "User Playlists", text: undefined },
+    {
+      title: "Multi-Language Support",
+      text: "Enjoy content in multiple languages with ease. Switch seamlessly and explore a diverse range of stories.",
+    },
+    { title: "Exclusive Content", text: undefined },
+  ],
+};
+
+/* ---------------------------------------------------------------------------
+   About Features (full-bleed: heading + photo + 3 cards)
+--------------------------------------------------------------------------- */
+export const aboutFeatures = {
+  title: "Features That Enhance Your\nListening Experience",
+  body: "Hello there! Dive into these amazing features designed to elevate your listening experience to new heights! Enjoy personalized recommendations tailored just for you, and take your favorite tunes offline so you can jam out anywhere, anytime!",
+  cta: { label: "Browse Episodes", href: "#episodes" },
+  photo: images.featurePhoto,
+  squiggle: images.featureBadge,
+  bgShape: images.featureBg,
+  underline: images.featuresLine,
+  subscriberCount: "12M+ Subscriber",
+  subscriberAvatars: [images.clientOne, images.clientTwo],
+  availabilityLabel: "Available on",
+  availabilityIcons: [
+    { name: "Google Podcasts", icon: images.listenGoogle },
+    { name: "Spotify", icon: images.listenSpotify },
+    { name: "Apple Podcasts", icon: images.listenApple },
+    { name: "Pocket Casts", icon: images.listenPocket },
+  ],
+  cards: [
+    {
+      icon: "headphones",
+      title: "Seamless Streaming",
+      text: "Enjoy your music anywhere, anytime! Whether at home, commuting, or relaxing in the park, let the tunes lift your spirits!",
+    },
+    {
+      icon: "bell",
+      title: "Episode Notifications",
+      text: "Stay updated with your favorite podcasts! Click subscribe for instant alerts on new episodes and enjoy your listening experience!",
+    },
+    {
+      icon: "volume",
+      title: "High-Quality Audio",
+      text: "Get ready for awesome sound that totally amps up your music and podcasts! This setup makes every tune and episode unforgettable.",
+    },
+  ],
+};
+
+/* ---------------------------------------------------------------------------
+   About (mission/values block)
+--------------------------------------------------------------------------- */
+export const aboutBlock = {
+  pill: "Discover the Journey Behind Us",
+  title: "Discover the Passion Behind\nOur Podcast Journey",
+  body: "We're dedicated to uniting people through our engaging podcasts, where we share incredible stories and showcase a diverse range of voices.",
+  bullets: [
+    "Personalized playlists",
+    "Awesome audio streaming vibes!",
+    "Featured Episodes & Highlights",
+  ],
+  image: images.discovery,
+};
+
+/* ---------------------------------------------------------------------------
+   About Hosts (about-page header copy)
+--------------------------------------------------------------------------- */
+export const aboutHostsHeader = {
+  title: "Meet Our Team That Make\nEvery Story Special",
+};
+
+export const aboutHostsCta = { label: "Show Our All Team", href: "#hosts" };
+
+/* ---------------------------------------------------------------------------
+   About Hero
+--------------------------------------------------------------------------- */
+export const aboutHero = {
+  title: "Get to Know TYMP Amplifying\nIdeas and Inspiring Minds",
+  subtitle:
+    "Hey there! Join our newsletter for the latest updates, fun podcast recommendations, and some awesome content delivered straight to your inbox!",
+  cta: { label: "Start Listening", href: "#newsletter" },
+  glassPill: "Discover the Journey Behind Us",
+  image: images.aboutHero,
+  stats: [
+    { value: "150", suffix: "K+", label: "Episode released" },
+    { value: "12", suffix: "M+", label: "Online subscriber" },
+    { value: "20", suffix: "M+", label: "Worldwide Listeners" },
+  ],
+};
+
+/* ---------------------------------------------------------------------------
    Navigation
 --------------------------------------------------------------------------- */
 export const navItems = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   { label: "Episodes", href: "#episodes" },
+  { label: "About", href: "/about" },
   { label: "Hosts", href: "#hosts" },
   { label: "Pricing", href: "#pricing" },
 ];
@@ -427,7 +559,7 @@ export const footer = {
     {
       title: "Company",
       links: [
-        { label: "About Us", href: "#" },
+        { label: "About Us", href: "/about" },
         { label: "Our Host", href: "#hosts" },
         { label: "Newsletter", href: "#newsletter" },
         { label: "Blog & Articles", href: "#blog" },

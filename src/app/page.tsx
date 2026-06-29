@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Episodes } from "@/components/sections/Episodes";
 import { Discovery } from "@/components/sections/Discovery";
@@ -13,6 +14,7 @@ import { Footer } from "@/components/sections/Footer";
 export default function Home() {
   return (
     <>
+      <Navbar />
       <main>
         <Hero />
         <Episodes />
