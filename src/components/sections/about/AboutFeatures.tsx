@@ -68,9 +68,9 @@ function FeatureCard({ icon, title, text }: { icon: string; title: string; text:
 function FeatureVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[468px]">
-      {/* Squiggle doodle above the photo */}
+      {/* Squiggle doodle above the photo (hidden on mobile to avoid overflow) */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute hidden sm:block"
         style={{ left: "39%", top: -36, width: 91, height: 70 }}
       >
         <Image
@@ -82,9 +82,9 @@ function FeatureVisual() {
         />
       </div>
 
-      {/* Orange background shape behind photo */}
+      {/* Orange background shape behind photo (hidden on mobile to avoid overflow) */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute hidden sm:block"
         style={{ left: "12%", top: 47, width: 346, height: 349 }}
       >
         <Image

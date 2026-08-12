@@ -4,6 +4,7 @@ import { Play } from "lucide-react";
 import { MotionSection } from "../ui/MotionSection";
 import { HeroCta } from "../ui/HeroCta";
 import { aboutHero, listenOn } from "@/lib/content";
+import { images } from "@/lib/assets";
 
 const TITLE_FONT = "var(--font-urbanist), Urbanist, sans-serif";
 const BODY_FONT = "var(--font-public-sans), Public Sans, sans-serif";
@@ -43,33 +44,44 @@ function GlowBlobs() {
 
 function GlassPlayPill({ label }: { label: string }) {
   return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center" aria-hidden>
-      <div
-        className="flex items-center gap-3 rounded-full px-5 py-3 backdrop-blur-md"
+    <div
+      className="absolute left-1/2 bottom-6 z-10 flex -translate-x-1/2 items-center justify-between gap-3 rounded-full px-5 py-3 backdrop-blur-[10px]"
+      style={{
+        background: "rgba(255,255,255,0.2)",
+        border: "1px solid rgba(255,255,255,0.3)",
+        maxWidth: "calc(100% - 32px)",
+        width: "max-content",
+      }}
+      aria-hidden
+    >
+      <span
         style={{
-          background: "rgba(255,255,255,0.2)",
-          border: "1px solid rgba(255,255,255,0.3)",
+          fontFamily: TITLE_FONT,
+          fontWeight: 600,
+          fontSize: 24,
+          lineHeight: "28.8px",
+          letterSpacing: "-0.72px",
+          color: "#FFFFFF",
+          whiteSpace: "nowrap",
         }}
       >
-        <span
-          className="grid size-9 shrink-0 place-items-center rounded-full"
-          style={{ background: "rgba(255,255,255,0.25)" }}
-        >
-          <Play size={14} fill="#FFFFFF" strokeWidth={0} className="ml-[2px] text-white" />
-        </span>
-        <span
-          style={{
-            fontFamily: TITLE_FONT,
-            fontWeight: 600,
-            fontSize: 24,
-            lineHeight: "28.8px",
-            letterSpacing: "-0.48px",
-            color: "#FFFFFF",
-          }}
-        >
-          {label}
-        </span>
-      </div>
+        {label}
+      </span>
+      <span
+        className="grid shrink-0 place-items-center rounded-full"
+        style={{
+          width: 52,
+          height: 52,
+          background: "#FFFFFF",
+        }}
+      >
+        <Play
+          size={20}
+          fill="#F17F3F"
+          strokeWidth={0}
+          style={{ marginLeft: 3 }}
+        />
+      </span>
     </div>
   );
 }
@@ -83,8 +95,8 @@ function HeroStats() {
             <span
               style={{
                 fontFamily: TITLE_FONT,
-                fontWeight: 700,
-                fontSize: "clamp(36px, 3.4vw, 48px)",
+                fontWeight: 600,
+                fontSize: 40,
                 lineHeight: 1,
                 letterSpacing: "-0.96px",
                 color: "#111418",
@@ -96,7 +108,7 @@ function HeroStats() {
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
-                fontSize: "clamp(36px, 3.4vw, 48px)",
+                fontSize: 40,
                 lineHeight: 1,
                 letterSpacing: "-0.96px",
                 color: "#F17F3F",
@@ -124,26 +136,45 @@ function HeroStats() {
   );
 }
 
-/* "Listen on" + icons sit in ONE horizontal row (matches the design) */
 function ListenOn() {
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
       <span
         style={{
           fontFamily: TITLE_FONT,
           fontWeight: 600,
           fontSize: 24,
           lineHeight: "28.8px",
-          letterSpacing: "-0.48px",
+          letterSpacing: "-0.72px",
           color: "#111418",
         }}
       >
         Listen on
       </span>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
         {listenOn.map((platform) => (
-          <span key={platform.name} className="relative size-11 shrink-0" title={platform.name}>
-            <Image src={platform.icon} alt={platform.name} fill className="object-contain" sizes="44px" />
+          <span
+            key={platform.name}
+            className="relative flex shrink-0 items-center justify-center rounded-full"
+            style={{
+              width: 44,
+              height: 44,
+              background:
+                platform.name === "Spotify"
+                  ? "#1ED760"
+                  : platform.name === "Pocket Casts"
+                  ? "#F17F3F"
+                  : "rgba(0,0,0,0.06)",
+            }}
+            title={platform.name}
+          >
+            <Image
+              src={platform.icon}
+              alt={platform.name}
+              fill
+              className="object-contain"
+              sizes="44px"
+            />
           </span>
         ))}
       </div>
@@ -152,17 +183,21 @@ function ListenOn() {
 }
 
 export function AboutHero() {
+  // Split the title into two lines: "Get to Know TYMP Amplifying" and "Ideas and Inspiring Minds"
+  const titleLine1 = "Get to Know TYMP Amplifying";
+  const titleLine2 = "Ideas and Inspiring Minds";
+
   return (
-    <section className="relative bg-podhub-ink">
-      {/* ── Dark hero — fills the viewport (≈100vh) ────────── */}
-      <div className="relative flex min-h-screen flex-col overflow-hidden bg-podhub-ink">
+    <section className="relative bg-white">
+      {/* ── Dark hero band ───────────────────────────────────────── */}
+      <div className="relative flex min-h-[80vh] flex-col overflow-hidden bg-podhub-ink">
         <GlowBlobs />
 
-        {/* Heading — held in the upper portion so the card can overlap below it */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-[30vh] pt-28 text-center sm:px-8 lg:pt-32">
+        {/* Heading — centered in the upper portion */}
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-[14vh] pt-28 text-center sm:px-8 lg:pb-[34vh] lg:pt-32">
           <MotionSection className="mx-auto w-full" style={{ maxWidth: 1050 }}>
+            {/* Title line 1 */}
             <h1
-              className="whitespace-pre-line"
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
@@ -172,8 +207,35 @@ export function AboutHero() {
                 color: "#FFFFFF",
               }}
             >
-              {aboutHero.title}
+              {titleLine1}
             </h1>
+
+            {/* Title line 2 + underline */}
+            <div className="relative inline-block">
+              <h1
+                style={{
+                  fontFamily: TITLE_FONT,
+                  fontWeight: 700,
+                  fontSize: "clamp(34px, 5.5vw, 64px)",
+                  lineHeight: 1.2,
+                  letterSpacing: "-0.04em",
+                  color: "#FFFFFF",
+                }}
+              >
+                {titleLine2}
+              </h1>
+              {/* Wavy orange underline under "Inspiring" */}
+              <div className="pointer-events-none absolute" style={{ left: "46%", top: "100%", width: 244 }}>
+                <Image
+                  src={images.inspiredSectionLine}
+                  alt=""
+                  width={244}
+                  height={16}
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
+
             <p
               className="mx-auto mt-5"
               style={{
@@ -195,10 +257,21 @@ export function AboutHero() {
         </div>
       </div>
 
-      {/* ── White card — stacked onto the bottom of the dark hero ── */}
+      {/* ── White card — overlaps the hero's bottom edge ─────────── */}
       <MotionSection className="relative z-20 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-0">
+        {/* Warm glow halo behind the card */}
         <div
-          className="-mt-20 rounded-[16px] bg-white p-4 shadow-[0_-24px_60px_-24px_rgba(0,0,0,0.4)] sm:-mt-24 sm:p-6 lg:-mt-[28vh] lg:p-8"
+          className="animate-glow-pulse pointer-events-none absolute left-1/2 top-0 z-0 h-[300px] w-[min(1000px,95%)] -translate-x-1/2 -translate-y-1/2"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(241,127,63,0.5) 0%, rgba(241,127,63,0.15) 45%, rgba(241,127,63,0) 75%)",
+            filter: "blur(24px)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="card-float-hover group relative -mt-16 rounded-[16px] bg-white p-4 shadow-card-float sm:-mt-20 sm:p-6 lg:-mt-[40vh] lg:p-8"
+          style={{ border: "1px solid rgba(241,127,63,0.12)" }}
         >
           {/* Image */}
           <div
@@ -209,9 +282,18 @@ export function AboutHero() {
               src={aboutHero.image}
               alt="TYMP podcast hosts recording a conversation"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.05]"
               sizes="(max-width: 1024px) 100vw, 1136px"
               priority
+            />
+            {/* Subtle depth gradient */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(25,20,16,0) 55%, rgba(25,20,16,0.28) 100%)",
+              }}
+              aria-hidden
             />
             <GlassPlayPill label={aboutHero.glassPill} />
           </div>
