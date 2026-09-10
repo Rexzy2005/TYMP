@@ -276,33 +276,37 @@ function PlanCard({ plan, billingCycle }: { plan: Plan; billingCycle: BillingCyc
 
 function UpgradeHeading() {
   return (
-    <div className="relative mx-auto h-[122px] w-[1200px] text-center">
-      <div className="relative mx-auto h-[58px] w-[640px]">
-        <h2
-          className="whitespace-nowrap"
-          style={{
-            fontFamily: TITLE_FONT,
-            fontWeight: 700,
-            fontSize: 48,
-            lineHeight: "57.6px",
-            letterSpacing: "-0.96px",
-            color: "#111418",
-          }}
-        >
-          {pricingHeader.title}
-        </h2>
-        <Image
-          src={images.upgradeUnderline}
-          alt=""
-          width={196}
-          height={12}
-          className="pointer-events-none absolute left-0 top-12 h-3 w-[196px]"
-        />
-      </div>
-      <p
-        className="mx-auto mt-4"
+    <div className="relative mx-auto text-center">
+      <h2
         style={{
-          width: 548,
+          fontFamily: TITLE_FONT,
+          fontWeight: 700,
+          fontSize: 48,
+          lineHeight: "57.6px",
+          letterSpacing: "-0.96px",
+          color: "#111418",
+        }}
+      >
+        <span className="relative inline-block">
+          Upgrade
+          <span
+            className="pointer-events-none absolute left-0 top-[88%] h-[10px] w-full min-w-[180px]"
+            aria-hidden
+          >
+            <Image
+              src={images.upgradeUnderline}
+              alt=""
+              width={196}
+              height={12}
+              className="h-full w-full object-contain"
+            />
+          </span>
+        </span>{" "}
+        Your Listening Today
+      </h2>
+      <p
+        className="mx-auto mt-4 max-w-[548px]"
+        style={{
           fontFamily: BODY_FONT,
           fontWeight: 400,
           fontSize: 16,
@@ -321,26 +325,26 @@ export function Pricing() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
   return (
-    <section id="pricing" className="relative overflow-hidden bg-white">
+    <section id="pricing" className="relative overflow-hidden bg-white py-20 lg:py-0">
       <Image
         src={images.upgradeBgPattern}
         alt=""
         fill
         sizes="1440px"
-        className="pointer-events-none z-0 scale-110 object-cover blur-2xl"
+        className="pointer-events-none z-0 object-cover opacity-70"
         priority={false}
       />
 
-      <div className="relative z-10 mx-auto hidden h-[1001px] w-[1440px] xl:block">
-        <MotionSection className="absolute left-[120px] top-[100px]">
+      <div className="relative z-10 mx-auto hidden max-w-[1240px] flex-col items-center px-6 py-[100px] sm:px-8 lg:px-0 xl:flex">
+        <MotionSection>
           <UpgradeHeading />
         </MotionSection>
 
-        <MotionSection className="absolute left-[616.5px] top-[254px]">
+        <MotionSection className="mt-8">
           <BillingToggle value={billingCycle} onChange={setBillingCycle} />
         </MotionSection>
 
-        <MotionSection className="absolute left-[120px] top-[358px] grid h-[543px] w-[1200px] grid-cols-[384px_384px_384px] items-start gap-6">
+        <MotionSection className="mt-14 grid w-full max-w-[1200px] grid-cols-[384px_384px_384px] items-start justify-center gap-6">
           <div style={{ paddingTop: 22.5 }}>
             <PlanCard plan={plans[0]} billingCycle={billingCycle} />
           </div>

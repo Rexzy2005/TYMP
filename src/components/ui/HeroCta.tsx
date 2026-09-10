@@ -15,6 +15,7 @@ type HeroCtaProps = {
   href: string;
   variant?: "solid" | "outline";
   labelColor?: string;
+  borderColor?: string;
   className?: string;
 };
 
@@ -23,6 +24,7 @@ export function HeroCta({
   href,
   variant = "solid",
   labelColor,
+  borderColor,
   className = "",
 }: HeroCtaProps) {
   const isSolid = variant === "solid";
@@ -35,7 +37,7 @@ export function HeroCta({
       } ${className}`}
       style={{
         background: isSolid ? "#F17F3F" : "transparent",
-        border: isSolid ? "1px solid #F17F3F" : "1px solid #F17F3F",
+        border: isSolid ? "1px solid #F17F3F" : `1px solid ${borderColor ?? "#F17F3F"}`,
         boxShadow: isSolid ? "0 14px 40px -12px rgba(241,127,63,0.55)" : "none",
         fontFamily: "var(--font-urbanist), Urbanist, sans-serif",
         fontWeight: 700,

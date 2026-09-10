@@ -122,7 +122,7 @@ function HostCta() {
 
 function HostHeading() {
   return (
-    <div className="relative h-[115.2px] w-[567px]">
+    <div className="relative text-center">
       <h2
         style={{
           fontFamily: TITLE_FONT,
@@ -133,20 +133,25 @@ function HostHeading() {
           color: "#FFFFFF",
         }}
       >
-        <span className="absolute left-[5.5px] top-[-0.24px] block h-[58px] w-[566.9px] whitespace-nowrap">
-          Meet Our Hosts That Make
-        </span>
-        <span className="absolute left-[98.9px] top-[57.36px] block h-[58px] w-[370px] whitespace-nowrap">
-          Every Story Shine
-        </span>
+        Meet Our{" "}
+        <span className="relative inline-block">
+          Hosts
+          <span
+            className="pointer-events-none absolute left-0 top-[88%] h-[6px] w-full min-w-[110px]"
+            aria-hidden
+          >
+            <Image
+              src={images.hostUnderline}
+              alt=""
+              width={125}
+              height={6}
+              className="h-full w-full object-contain"
+            />
+          </span>
+        </span>{" "}
+        That Make<br />
+        Every Story Shine
       </h2>
-      <Image
-        src={images.hostUnderline}
-        alt=""
-        width={125}
-        height={6}
-        className="pointer-events-none absolute left-[204.1px] top-[51.1px] h-[6.1px] w-[124.7px]"
-      />
     </div>
   );
 }
@@ -157,7 +162,7 @@ export function Hosts() {
       <div
         className="pointer-events-none absolute rounded-full"
         style={{
-          left: 1180.8,
+          left: "80%",
           top: 44.7,
           width: 316.8,
           height: 231.7,
@@ -169,7 +174,7 @@ export function Hosts() {
       <div
         className="pointer-events-none absolute rounded-full"
         style={{
-          left: 14.4,
+          left: "2%",
           top: 706.1,
           width: 316.8,
           height: 231.7,
@@ -179,18 +184,18 @@ export function Hosts() {
         }}
       />
 
-      <div className="relative mx-auto hidden h-[1002px] w-[1440px] xl:block">
-        <MotionSection className="absolute left-[436.5px] top-[100px] h-[116px] w-[567px]">
+      <div className="relative mx-auto hidden max-w-[1240px] flex-col items-center px-6 py-[100px] sm:px-8 lg:px-0 xl:flex">
+        <MotionSection className="text-center">
           <HostHeading />
         </MotionSection>
 
-        <MotionSection className="absolute left-[120px] top-[271px] flex gap-6">
+        <MotionSection className="mt-14 flex justify-center gap-6">
           {hosts.map((host) => (
             <HostCard key={host.name} name={host.name} role={host.role} image={host.image} />
           ))}
         </MotionSection>
 
-        <MotionSection className="absolute left-[617px] top-[846px]">
+        <MotionSection className="mt-14 flex justify-center">
           <HostCta />
         </MotionSection>
       </div>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
 
 import { MotionSection } from "../../ui/MotionSection";
 import { aboutApproach } from "@/lib/content";
@@ -16,24 +15,24 @@ function GlowBlobs() {
         style={{
           left: "6%",
           top: "20%",
-          width: 320,
-          height: 234,
+          width: 380,
+          height: 380,
           background: "#F17F3F",
-          opacity: 0.3,
-          filter: "blur(120px)",
+          opacity: 0.25,
+          filter: "blur(140px)",
         }}
         aria-hidden
       />
       <div
         className="pointer-events-none absolute z-0 rounded-full"
         style={{
-          right: "4%",
-          bottom: "8%",
-          width: 317,
-          height: 232,
+          right: "6%",
+          bottom: "10%",
+          width: 360,
+          height: 360,
           background: "#F17F3F",
-          opacity: 0.22,
-          filter: "blur(110px)",
+          opacity: 0.2,
+          filter: "blur(130px)",
         }}
         aria-hidden
       />
@@ -41,147 +40,152 @@ function GlowBlobs() {
   );
 }
 
-function FeatureItem({ title, text, highlight = false }: { title: string; text?: string; highlight?: boolean }) {
-  return (
-    <li className="flex flex-col">
-      <div className="flex items-start gap-3">
-        <span
-          className="mt-1 grid size-6 shrink-0 place-items-center rounded-full"
-          style={{
-            background: highlight ? "#F17F3F" : "#3A2520",
-            color: highlight ? "#FFFFFF" : "#F17F3F",
-          }}
-        >
-          <Check size={14} strokeWidth={2.5} />
-        </span>
-        <span
-          style={{
-            fontFamily: TITLE_FONT,
-            fontWeight: 600,
-            fontSize: 24,
-            lineHeight: "28.8px",
-            letterSpacing: "-0.48px",
-            color: highlight ? "#F17F3F" : "#FFFFFF",
-          }}
-        >
-          {title}
-        </span>
-      </div>
-      {text ? (
-        <p
-          className="ml-9 mt-2"
-          style={{
-            fontFamily: BODY_FONT,
-            fontWeight: 400,
-            fontSize: 16,
-            lineHeight: "24px",
-            letterSpacing: "-0.64px",
-            color: "#CFD0D1",
-            maxWidth: 486,
-          }}
-        >
-          {text}
-        </p>
-      ) : null}
-    </li>
-  );
-}
-
 export function ApproachSection() {
-  const featuredIndex = aboutApproach.features.findIndex((f) => f.text);
-
   return (
-    <section className="relative overflow-hidden bg-[#1D1413] text-white">
+    <section className="relative overflow-hidden bg-podhub-ink py-20 text-white lg:py-[100px]">
       <GlowBlobs />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 py-20 sm:px-8 sm:py-24 lg:px-0 lg:py-[100px]">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-stretch lg:justify-between lg:gap-16">
-          {/* Left — image + eyebrow + body */}
-          <MotionSection className="flex w-full flex-col lg:w-[552px]">
-            {/* Photo */}
-            <div className="relative aspect-[552/414] w-full overflow-hidden rounded-2xl">
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
+        <div className="grid items-start gap-12 lg:grid-cols-[552px_minmax(0,1fr)] lg:gap-16">
+          {/* Left Column: Image + Approach copy */}
+          <MotionSection className="relative flex flex-col">
+            {/* Top-left squiggle doodle */}
+            <div
+              className="pointer-events-none absolute -top-8 -left-5 z-10 w-[64px]"
+              aria-hidden
+            >
+              <Image
+                src={images.storyVector}
+                alt=""
+                width={64}
+                height={50}
+                className="h-auto w-full object-contain brightness-0 invert"
+              />
+            </div>
+
+            {/* Photo Card */}
+            <div className="relative aspect-[552/402] w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <Image
                 src={images.approachImage}
-                alt="Podcaster at desk with headphones"
+                alt="Podcaster speaking into microphone"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 552px"
               />
-              {/* subtle dark gradient for legibility of any overlay text */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: "linear-gradient(180deg, rgba(29,20,19,0) 60%, rgba(29,20,19,0.45) 100%)",
-                }}
-                aria-hidden
-              />
             </div>
 
-            {/* Eyebrow + body below the photo */}
+            {/* Below photo: Our Approach */}
             <div className="mt-8 flex flex-col">
-              <span
+              <h3
                 style={{
                   fontFamily: TITLE_FONT,
-                  fontWeight: 600,
-                  fontSize: 24,
-                  lineHeight: "28.8px",
-                  letterSpacing: "-0.48px",
-                  color: "#F17F3F",
+                  fontWeight: 700,
+                  fontSize: 28,
+                  lineHeight: "34px",
+                  letterSpacing: "-0.5px",
+                  color: "#FFFFFF",
                 }}
               >
                 {aboutApproach.title}
-              </span>
-
+              </h3>
               <p
                 className="mt-4"
                 style={{
                   fontFamily: BODY_FONT,
                   fontWeight: 400,
                   fontSize: 16,
-                  lineHeight: "24px",
-                  letterSpacing: "-0.64px",
+                  lineHeight: "26px",
+                  letterSpacing: "-0.4px",
                   color: "#CFD0D1",
-                  maxWidth: 552,
+                  maxWidth: 520,
                 }}
               >
                 {aboutApproach.body}
               </p>
-
-              {/* Decorative orange bar */}
-              <div
-                className="mt-6 h-1 w-24 rounded-full"
-                style={{ background: "linear-gradient(90deg, #F17F3F, rgba(241,127,63,0.3))" }}
-                aria-hidden
-              />
             </div>
           </MotionSection>
 
-          {/* Right — heading + features list */}
-          <MotionSection className="flex w-full flex-col lg:w-[558px]">
+          {/* Right Column: Heading + Features Timeline */}
+          <MotionSection className="flex flex-col pt-2 lg:pt-0">
+            {/* Heading */}
             <h2
-              className="whitespace-pre-line"
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.2,
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(34px, 4.5vw, 48px)",
+                lineHeight: 1.18,
+                letterSpacing: "-0.03em",
                 color: "#FFFFFF",
               }}
             >
-              {aboutApproach.heading}
+              Where Every{" "}
+              <span className="relative inline-block">
+                Story Finds
+                <span
+                  className="pointer-events-none absolute left-0 top-[90%] h-[10px] w-full"
+                  aria-hidden
+                >
+                  <Image
+                    src={images.discoveryLine}
+                    alt=""
+                    width={220}
+                    height={10}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              </span>
+              <br />
+              an Audience
             </h2>
 
-            <ul className="mt-8 flex flex-col gap-5">
-              {aboutApproach.features.map((f, i) => (
-                <FeatureItem
-                  key={f.title}
-                  title={f.title}
-                  text={f.text}
-                  highlight={i === featuredIndex}
-                />
-              ))}
-            </ul>
+            {/* Features list with continuous left vertical border */}
+            <div className="mt-10 border-l-2 border-white/15 pl-6 sm:pl-8 space-y-7">
+              {aboutApproach.features.map((feature) => {
+                const isHighlight = !!feature.text;
+                return (
+                  <div key={feature.title} className="relative group">
+                    {/* Active orange left border line indicator */}
+                    {isHighlight && (
+                      <span
+                        className="absolute -left-[26px] sm:-left-[34px] top-0 bottom-0 w-[3px] rounded-full bg-[#F17F3F]"
+                        aria-hidden
+                      />
+                    )}
+
+                    <h4
+                      style={{
+                        fontFamily: TITLE_FONT,
+                        fontWeight: 600,
+                        fontSize: 24,
+                        lineHeight: "30px",
+                        letterSpacing: "-0.5px",
+                        color: isHighlight ? "#F17F3F" : "rgba(255, 255, 255, 0.75)",
+                      }}
+                      className="transition-colors group-hover:text-white"
+                    >
+                      {feature.title}
+                    </h4>
+
+                    {feature.text && (
+                      <p
+                        className="mt-2.5"
+                        style={{
+                          fontFamily: BODY_FONT,
+                          fontWeight: 400,
+                          fontSize: 15,
+                          lineHeight: "24px",
+                          letterSpacing: "-0.3px",
+                          color: "#CFD0D1",
+                          maxWidth: 480,
+                        }}
+                      >
+                        {feature.text}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </MotionSection>
         </div>
       </div>

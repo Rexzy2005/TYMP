@@ -10,43 +10,45 @@ const BODY_FONT = "var(--font-public-sans), Public Sans, sans-serif";
 
 type Post = (typeof posts)[number];
 
-function BlogHeading({ compact = false }: { compact?: boolean }) {
+function BlogHeading() {
   return (
-    <div className={compact ? "mx-auto w-full max-w-[606px] text-center" : "h-[122px] w-[1200px] text-center"}>
-      <div className={compact ? "relative mx-auto inline-block" : "relative mx-auto h-[58px] w-[606px]"}>
-        <h2
-          className="relative z-10 whitespace-nowrap"
-          style={{
-            fontFamily: TITLE_FONT,
-            fontWeight: 700,
-            fontSize: compact ? "clamp(34px, 8vw, 48px)" : 48,
-            lineHeight: compact ? "1.12" : "57.6px",
-            letterSpacing: compact ? "-0.72px" : "-0.96px",
-            color: "#111418",
-          }}
-        >
-          {blogHeader.title}
-        </h2>
-        <Image
-          src={images.blogUnderline}
-          alt=""
-          width={196}
-          height={12}
-          className={
-            compact
-              ? "absolute -bottom-1 left-[28%] z-0 h-3 w-[196px] max-w-[44%]"
-              : "absolute left-[108px] top-12 z-0 h-3 w-[196px]"
-          }
-        />
-      </div>
+    <div className="mx-auto w-full max-w-[620px] text-center">
+      <h2
+        style={{
+          fontFamily: TITLE_FONT,
+          fontWeight: 700,
+          fontSize: "clamp(34px, 8vw, 48px)",
+          lineHeight: "1.2",
+          letterSpacing: "-0.96px",
+          color: "#111418",
+        }}
+      >
+        Stay{" "}
+        <span className="relative inline-block">
+          Updated
+          <span
+            className="pointer-events-none absolute left-0 top-[88%] h-3 w-full min-w-[150px]"
+            aria-hidden
+          >
+            <Image
+              src={images.blogUnderline}
+              alt=""
+              width={196}
+              height={12}
+              className="h-full w-full object-contain"
+            />
+          </span>
+        </span>{" "}
+        with Our Blogs
+      </h2>
       <p
-        className={compact ? "mx-auto mt-4 max-w-[502px]" : "mx-auto mt-4 w-[502px]"}
+        className="mx-auto mt-4 max-w-[502px]"
         style={{
           fontFamily: BODY_FONT,
           fontWeight: 400,
-          fontSize: compact ? 15 : 16,
-          lineHeight: compact ? "22px" : "24px",
-          letterSpacing: compact ? "-0.45px" : "-0.64px",
+          fontSize: 16,
+          lineHeight: "24px",
+          letterSpacing: "-0.64px",
           color: "#4E5255",
         }}
       >
@@ -120,7 +122,7 @@ export function Blog() {
   return (
     <section className="relative overflow-hidden bg-white pb-[60px] pt-[62px] lg:pb-[100px] lg:pt-[100px]" id="blog">
       <MotionSection className="mx-auto px-6 sm:px-16 lg:px-0">
-        <BlogHeading compact />
+        <BlogHeading />
       </MotionSection>
 
       <MotionSection className="mx-auto mt-12 hidden w-full max-w-[1200px] grid-cols-[minmax(0,792fr)_384fr] gap-6 px-6 sm:grid sm:px-16 lg:px-0">

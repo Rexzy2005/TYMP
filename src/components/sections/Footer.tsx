@@ -149,14 +149,16 @@ export function Footer() {
                       <li key={link.label}>
                         <a
                           href={link.href}
-                          className="transition hover:text-white"
+                          className={`transition hover:text-white ${
+                            link.label === "Home" ? "underline underline-offset-4 text-white" : ""
+                          }`}
                           style={{
                             fontFamily: BODY_FONT,
                             fontWeight: 400,
                             fontSize: 16,
                             lineHeight: "24px",
                             letterSpacing: "-0.64px",
-                            color: "#E7E7E8",
+                            color: link.label === "Home" ? "#FFFFFF" : "#E7E7E8",
                           }}
                         >
                           {link.label}

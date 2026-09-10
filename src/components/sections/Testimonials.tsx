@@ -205,7 +205,7 @@ function TestimonialCardStack({
   const following = testimonials[(activeIndex + 2) % testimonials.length];
 
   return (
-    <div className="absolute" style={{ left: 616, top: 100, width: 704, height: 485 }}>
+    <div className="relative h-[488px] w-[704px]">
       <div className="absolute" style={{ left: 253, top: -54 }}>
         <Squiggle />
       </div>
@@ -339,14 +339,12 @@ export function Testimonials() {
     <section className="relative overflow-hidden bg-[#FEFCF8]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_92%_94%,rgba(241,127,63,0.22)_0%,rgba(241,127,63,0.10)_18%,rgba(241,127,63,0)_42%)]" />
 
-      <div className="relative mx-auto hidden h-[685px] w-[1440px] xl:block">
+      <div className="relative mx-auto hidden h-[685px] max-w-[1240px] px-6 sm:px-8 lg:px-0 xl:block">
         <MotionSection
-          className="absolute"
-          style={{ left: 120, top: 212.74, width: 429, height: 260 }}
+          className="absolute left-0 top-[190px] w-[430px]"
         >
-          <div className="relative h-[116px] w-[429px]">
+          <div className="relative">
             <h2
-              className="whitespace-pre-line"
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
@@ -356,19 +354,28 @@ export function Testimonials() {
                 color: "#111418",
               }}
             >
-              {testimonialHeader.title}
+              Stories from Our<br />
+              <span className="relative inline-block">
+                Awesome
+                <span
+                  className="pointer-events-none absolute left-0 top-[88%] h-[8px] w-full min-w-[180px]"
+                  aria-hidden
+                >
+                  <Image
+                    src={images.awesomeLine}
+                    alt=""
+                    width={201}
+                    height={7}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              </span>{" "}
+              Listeners
             </h2>
-            <Image
-              src={images.discoveryLine}
-              alt=""
-              width={201}
-              height={9}
-              className="pointer-events-none absolute left-0 top-[109px] h-[9px] w-[201px]"
-            />
           </div>
 
           <p
-            className="mt-4"
+            className="mt-6"
             style={{
               width: 429,
               fontFamily: BODY_FONT,
@@ -388,7 +395,7 @@ export function Testimonials() {
           </div>
         </MotionSection>
 
-        <MotionSection>
+        <MotionSection className="absolute right-0 top-[100px]">
           <TestimonialCardStack activeIndex={activeIndex} direction={direction} />
         </MotionSection>
       </div>
@@ -397,15 +404,24 @@ export function Testimonials() {
         <MotionSection className="mx-auto max-w-[560px]">
           <div className="relative">
             <h2 className="font-display text-[36px] leading-[43px] text-[#111418] sm:text-[42px] sm:leading-[50px]">
-              {testimonialHeader.title}
+              Stories from Our<br />
+              <span className="relative inline-block">
+                Awesome
+                <span
+                  className="pointer-events-none absolute left-0 top-[88%] h-[8px] w-full min-w-[140px]"
+                  aria-hidden
+                >
+                  <Image
+                    src={images.awesomeLine}
+                    alt=""
+                    width={201}
+                    height={7}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              </span>{" "}
+              Listeners
             </h2>
-            <Image
-              src={images.discoveryLine}
-              alt=""
-              width={180}
-              height={8}
-              className="mt-1 h-2 w-[180px]"
-            />
           </div>
           <p className="mt-5 text-sm leading-6 text-[#4E5255]">{testimonialHeader.body}</p>
           <div className="mt-7 flex items-center gap-3">

@@ -97,8 +97,6 @@ function EpisodeCard({ number, title, host, category, duration, image }: Episode
 }
 
 export function Episodes() {
-  const [line1, line2] = episodesHeader.title.split("\n");
-
   return (
     <section id="episodes" className="relative overflow-hidden bg-podhub-cream py-20 lg:py-[100px]">
       {/* Soft colour blushes (very subtle, like the design's blurred blobs) */}
@@ -110,7 +108,7 @@ export function Episodes() {
         <MotionSection className="mx-auto text-center">
           <div className="relative inline-block">
             <h2
-              className="whitespace-pre-line text-center"
+              className="text-center"
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
@@ -120,19 +118,30 @@ export function Episodes() {
                 color: "#111418",
               }}
             >
-              {line1}
-              {"\n"}
-              {line2}
+              Discover the Latest{" "}
+              <span className="relative inline-block">
+                Episodes
+                <span
+                  className="pointer-events-none absolute left-0 top-[88%] h-[8px] w-full"
+                  aria-hidden
+                >
+                  <Image
+                    src={images.line2}
+                    alt=""
+                    width={186}
+                    height={8}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              </span>
+              <br />
+              and Featured Highlights
             </h2>
-            {/* Line2 underline under the word "Episodes" (first line, right side) */}
-            <div className="pointer-events-none absolute" style={{ right: 12, top: 44, width: 186, height: 8 }}>
-              <Image src={images.line2} alt="" width={186} height={8} className="hidden h-full w-full object-contain sm:block" />
-            </div>
           </div>
         </MotionSection>
 
-        {/* Cards — 2x2 grid, 604px each, ~8px gap */}
-        <MotionSection className="mt-12 grid grid-cols-1 gap-4 lg:mt-[72px] lg:grid-cols-2 lg:gap-2">
+        {/* Cards — 2x2 grid, 588px each with balanced 24px gap */}
+        <MotionSection className="mt-12 grid grid-cols-1 gap-6 lg:mt-[72px] lg:grid-cols-2 lg:gap-6">
           {episodes.map((ep) => (
             <EpisodeCard key={ep.number} {...ep} />
           ))}

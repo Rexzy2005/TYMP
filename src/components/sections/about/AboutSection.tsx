@@ -2,7 +2,6 @@ import Image from "next/image";
 import { BadgeCheck, Play } from "lucide-react";
 
 import { MotionSection } from "../../ui/MotionSection";
-import { HeroCta } from "../../ui/HeroCta";
 import { aboutBlock } from "@/lib/content";
 import { images } from "@/lib/assets";
 
@@ -10,41 +9,31 @@ const TITLE_FONT = "var(--font-urbanist), Urbanist, sans-serif";
 const BODY_FONT = "var(--font-public-sans), Public Sans, sans-serif";
 
 export function AboutSection() {
-  const [t1, t2] = aboutBlock.title.split("\n");
-
   return (
     <section className="relative overflow-hidden bg-white py-20 lg:py-[100px]">
-      {/* Soft warm backdrop to evoke the Figma bg fill (SVG not in repo) */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 30%, rgba(241,127,63,0.10) 0%, rgba(241,127,63,0.04) 32%, rgba(255,255,255,0) 60%)",
-        }}
-      />
-
       <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-[44px]">
-          {/* Image Block — 552 x 414 */}
-          <MotionSection className="relative w-full max-w-[552px] shrink-0">
+        <div className="grid items-center gap-12 lg:grid-cols-[552px_minmax(0,1fr)] lg:gap-16">
+          {/* Left Column: Image Block with Doodle Squiggle + Glass Play Pill */}
+          <MotionSection className="relative w-full max-w-[552px]">
+            {/* Top-left squiggle doodle */}
             <div
-              className="pointer-events-none absolute"
-              style={{ right: -30, top: -50, width: 83, height: 70 }}
+              className="pointer-events-none absolute -left-6 -top-8 z-10 w-[72px]"
+              aria-hidden
             >
               <Image
                 src={images.discoveryVector}
                 alt=""
-                width={83}
-                height={70}
-                className="h-full w-full object-contain"
+                width={72}
+                height={60}
+                className="h-auto w-full object-contain"
               />
             </div>
 
-            <div className="relative aspect-[552/414] w-full overflow-hidden rounded-2xl">
+            {/* Photo Card */}
+            <div className="relative aspect-[552/414] w-full overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-black/[0.04]">
               <Image
                 src={aboutBlock.image}
-                alt="TYMP podcast journey"
+                alt="TYMP podcast host journey"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 552px"
@@ -52,45 +41,48 @@ export function AboutSection() {
 
               {/* Glass caption pill on image */}
               <div
-                className="absolute left-1/2 flex h-12 w-[min(307px,calc(100%-32px))] -translate-x-1/2 items-center justify-between gap-3 rounded-full py-2 pl-4 pr-2"
-                style={{ bottom: 24, background: "rgba(255,255,255,0.2)", backdropFilter: "blur(8px)" }}
+                className="absolute left-1/2 bottom-6 z-10 flex -translate-x-1/2 items-center justify-between gap-3 rounded-full px-5 py-2.5 backdrop-blur-md shadow-md"
+                style={{
+                  background: "rgba(255, 255, 255, 0.22)",
+                  border: "1px solid rgba(255, 255, 255, 0.35)",
+                  maxWidth: "calc(100% - 32px)",
+                  width: "max-content",
+                }}
               >
                 <span
                   style={{
                     fontFamily: BODY_FONT,
                     fontWeight: 500,
-                    fontSize: 18,
-                    lineHeight: "27px",
-                    letterSpacing: "-0.72px",
+                    fontSize: 16,
+                    lineHeight: "24px",
+                    letterSpacing: "-0.4px",
                     color: "#FFFFFF",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {aboutBlock.pill}
                 </span>
-                <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white">
-                  <Play size={16} fill="#251814" strokeWidth={0} className="ml-0.5" />
+                <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white shadow-sm">
+                  <Play size={14} fill="#F17F3F" strokeWidth={0} className="ml-0.5" />
                 </span>
               </div>
             </div>
           </MotionSection>
 
-          {/* Content Block */}
-          <MotionSection className="flex w-full max-w-[624px] flex-1 flex-col pt-0 text-center lg:pt-[15px] lg:text-left">
+          {/* Right Column: Content Block */}
+          <MotionSection className="flex flex-col text-center lg:text-left">
             <h2
-              className="whitespace-pre-line"
               style={{
                 fontFamily: TITLE_FONT,
                 fontWeight: 700,
-                fontSize: "clamp(34px, 8vw, 48px)",
+                fontSize: "clamp(34px, 4.5vw, 48px)",
                 lineHeight: 1.2,
-                letterSpacing: "-0.02em",
+                letterSpacing: "-0.03em",
                 color: "#111418",
-                maxWidth: 624,
               }}
             >
-              {t1}
-              {"\n"}
-              {t2}
+              Discover the Passion Behind<br />
+              Our Podcast Journey
             </h2>
 
             <p
@@ -99,52 +91,36 @@ export function AboutSection() {
                 fontFamily: BODY_FONT,
                 fontWeight: 400,
                 fontSize: 16,
-                lineHeight: "24px",
-                letterSpacing: "-0.64px",
+                lineHeight: "26px",
+                letterSpacing: "-0.4px",
                 color: "#4E5255",
+                maxWidth: 560,
               }}
             >
               {aboutBlock.body}
             </p>
 
-            <ul className="mt-8 flex flex-col items-start gap-3 lg:items-stretch">
-              {aboutBlock.bullets.map((b) => (
-                <li key={b} className="flex items-center gap-3">
-                  <BadgeCheck size={22} className="text-[#111418]" strokeWidth={1.6} />
+            {/* Checklist */}
+            <ul className="mt-8 flex flex-col gap-4 text-left">
+              {aboutBlock.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-center gap-3">
+                  <BadgeCheck size={22} className="text-[#111418] shrink-0" strokeWidth={2} />
                   <span
                     style={{
                       fontFamily: BODY_FONT,
-                      fontWeight: 400,
+                      fontWeight: 500,
                       fontSize: 16,
                       lineHeight: "24px",
-                      letterSpacing: "-0.64px",
-                      color: "#4E5255",
+                      letterSpacing: "-0.3px",
+                      color: "#111418",
                     }}
                   >
-                    {b}
+                    {bullet}
                   </span>
                 </li>
               ))}
             </ul>
-
-            <div className="mt-9 flex justify-center lg:justify-start">
-              <HeroCta label="Learn More" href="#episodes" variant="solid" />
-            </div>
           </MotionSection>
-        </div>
-
-        {/* curly arrow decoration */}
-        <div
-          className="pointer-events-none absolute"
-          style={{ right: 30, top: 240, width: 122, height: 142 }}
-        >
-          <Image
-            src={images.discoveryVectorTwo}
-            alt=""
-            width={122}
-            height={142}
-            className="h-full w-full object-contain"
-          />
         </div>
       </div>
     </section>

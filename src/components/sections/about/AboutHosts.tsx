@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, X, createLucideIcon } from "lucide-react";
 
 import { MotionSection } from "../../ui/MotionSection";
@@ -20,25 +21,63 @@ const ThreadsIcon = createLucideIcon("Threads", [
   ["path", { d: "M14.2 13.5c-.4 1.3-1.4 2.1-2.7 2.1-1.4 0-2.5-.9-2.5-2.2 0-1.2 1-2 2.8-2h1.1", key: "th-loop" }],
 ]);
 
-const socialIcons = [
-  { label: "X", Icon: X },
-  { label: "Instagram", Icon: InstagramIcon },
-  { label: "Threads", Icon: ThreadsIcon },
-];
+function GlowBlobs() {
+  return (
+    <>
+      <div
+        className="pointer-events-none absolute z-0 rounded-full"
+        style={{
+          left: "10%",
+          top: "15%",
+          width: 360,
+          height: 360,
+          background: "#F17F3F",
+          opacity: 0.25,
+          filter: "blur(130px)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute z-0 rounded-full"
+        style={{
+          right: "10%",
+          bottom: "15%",
+          width: 360,
+          height: 360,
+          background: "#F17F3F",
+          opacity: 0.2,
+          filter: "blur(130px)",
+        }}
+        aria-hidden
+      />
+    </>
+  );
+}
 
 function SocialButtons() {
   return (
     <div className="flex items-center gap-2">
-      {socialIcons.map(({ label, Icon }) => (
-        <a
-          key={label}
-          href="#"
-          aria-label={label}
-          className="grid size-10 place-items-center text-white transition hover:text-podhub-orange"
-        >
-          <Icon size={24} strokeWidth={2.1} />
-        </a>
-      ))}
+      <a
+        href="#"
+        aria-label="X"
+        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#F17F3F]"
+      >
+        <X size={18} strokeWidth={2} />
+      </a>
+      <a
+        href="#"
+        aria-label="Instagram"
+        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#F17F3F]"
+      >
+        <InstagramIcon size={18} strokeWidth={2} />
+      </a>
+      <a
+        href="#"
+        aria-label="Threads"
+        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#F17F3F]"
+      >
+        <ThreadsIcon size={18} strokeWidth={2} />
+      </a>
     </div>
   );
 }
@@ -46,28 +85,27 @@ function SocialButtons() {
 function HostCard({ name, role, image }: { name: string; role: string; image: string }) {
   return (
     <article
-      className="group flex min-h-[519px] w-full max-w-[384px] flex-col rounded-2xl p-6"
-      style={{ background: "rgba(241, 127, 63, 0.10)" }}
+      className="group flex h-full w-full flex-col rounded-2xl bg-[#251B17] p-6 border border-white/10 transition-all duration-300 hover:border-[#F17F3F]/40 shadow-lg"
     >
-      <div className="relative aspect-[336/358] w-full overflow-hidden rounded-lg">
+      <div className="relative aspect-[336/358] w-full overflow-hidden rounded-xl">
         <Image
           src={image}
           alt={name}
           fill
-          sizes="(max-width: 420px) 100vw, 336px"
-          className="object-cover transition duration-500 group-hover:scale-[1.035]"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
+          className="object-cover transition duration-500 group-hover:scale-[1.03]"
         />
       </div>
 
-      <div className="mt-8 flex w-full flex-wrap items-center justify-between gap-4">
-        <div className="min-w-0 max-w-[200px]">
+      <div className="mt-6 flex w-full items-center justify-between gap-4">
+        <div>
           <h3
             style={{
               fontFamily: TITLE_FONT,
               fontWeight: 600,
-              fontSize: 24,
-              lineHeight: "28.8px",
-              letterSpacing: "-0.72px",
+              fontSize: 22,
+              lineHeight: "28px",
+              letterSpacing: "-0.5px",
               color: "#FFFFFF",
             }}
           >
@@ -78,140 +116,81 @@ function HostCard({ name, role, image }: { name: string; role: string; image: st
             style={{
               fontFamily: BODY_FONT,
               fontWeight: 400,
-              fontSize: 16,
-              lineHeight: "24px",
-              letterSpacing: "-0.64px",
-              color: "#E7E7E8",
+              fontSize: 15,
+              lineHeight: "22px",
+              letterSpacing: "-0.3px",
+              color: "#CFD0D1",
             }}
           >
             {role}
           </p>
         </div>
+
         <SocialButtons />
       </div>
     </article>
   );
 }
 
-function HostCta() {
-  return (
-    <a
-      href={aboutHostsCta.href}
-      className="inline-flex h-14 items-center gap-4 rounded-full bg-podhub-orange py-[6px] pl-4 pr-[6px] text-white shadow-orange-glow transition hover:bg-podhub-orange-dark"
-      style={{
-        fontFamily: TITLE_FONT,
-        fontWeight: 700,
-        fontSize: 16,
-        lineHeight: "16px",
-        letterSpacing: "-0.32px",
-      }}
-    >
-      <span className="whitespace-nowrap">{aboutHostsCta.label}</span>
-      <span className="grid size-11 place-items-center rounded-full bg-white text-[#111418]">
-        <ArrowUpRight size={22} strokeWidth={2.5} />
-      </span>
-    </a>
-  );
-}
-
-function HostHeading() {
-  const [t1, t2] = aboutHostsHeader.title.split("\n");
-  return (
-    <div className="relative mx-auto h-[116px] w-[567px] text-center">
-      <h2
-        style={{
-          fontFamily: TITLE_FONT,
-          fontWeight: 700,
-          fontSize: 48,
-          lineHeight: "57.6px",
-          letterSpacing: "-0.96px",
-          color: "#FFFFFF",
-        }}
-      >
-        <span className="block whitespace-nowrap">{t1}</span>
-        <span className="block whitespace-nowrap">{t2}</span>
-      </h2>
-      <Image
-        src={images.hostUnderline}
-        alt=""
-        width={125}
-        height={6}
-        className="pointer-events-none absolute left-1/2 top-[110px] h-[6px] w-[125px] -translate-x-1/2"
-      />
-    </div>
-  );
-}
-
 export function AboutHosts() {
   return (
-    <section className="relative overflow-hidden bg-[#1D1413] text-white">
-      <div
-        className="pointer-events-none absolute rounded-full"
-        style={{
-          left: 1180.8,
-          top: 44.7,
-          width: 316.8,
-          height: 231.7,
-          background: "#F17F3F",
-          opacity: 0.9,
-          filter: "blur(115px)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute rounded-full"
-        style={{
-          left: 14.4,
-          top: 706.1,
-          width: 316.8,
-          height: 231.7,
-          background: "#F17F3F",
-          opacity: 0.9,
-          filter: "blur(115px)",
-        }}
-      />
+    <section className="relative overflow-hidden bg-podhub-ink py-20 text-white lg:py-[100px]">
+      <GlowBlobs />
 
-      <div className="relative mx-auto hidden h-[1002px] w-[1440px] xl:block">
-        <MotionSection className="absolute left-[436.5px] top-[100px] h-[116px] w-[567px]">
-          <HostHeading />
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
+        {/* Heading */}
+        <MotionSection className="mx-auto max-w-[680px] text-center">
+          <h2
+            style={{
+              fontFamily: TITLE_FONT,
+              fontWeight: 700,
+              fontSize: "clamp(34px, 4.5vw, 48px)",
+              lineHeight: 1.2,
+              letterSpacing: "-0.03em",
+              color: "#FFFFFF",
+            }}
+          >
+            Meet Our{" "}
+            <span className="relative inline-block">
+              Team
+              <span
+                className="pointer-events-none absolute left-0 top-[90%] h-[8px] w-full"
+                aria-hidden
+              >
+                <Image
+                  src={images.hostUnderline}
+                  alt=""
+                  width={140}
+                  height={8}
+                  className="h-full w-full object-contain"
+                />
+              </span>
+            </span>{" "}
+            That Make<br />
+            Every Story Special
+          </h2>
         </MotionSection>
 
-        <MotionSection className="absolute left-[120px] top-[271px] flex gap-6">
+        {/* 3 Host Cards Grid */}
+        <div className="mt-14 grid gap-6 sm:mt-16 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {hosts.map((host) => (
-            <HostCard key={host.name} name={host.name} role={host.role} image={host.image} />
-          ))}
-        </MotionSection>
-
-        <MotionSection className="absolute left-[617px] top-[846px]">
-          <HostCta />
-        </MotionSection>
-      </div>
-
-      <div className="relative mx-auto px-6 py-20 xl:hidden">
-        <MotionSection>
-          <div className="mx-auto max-w-[620px] text-center">
-            <h2 className="font-display whitespace-pre-line text-[38px] leading-[46px] text-white sm:text-5xl sm:leading-[57.6px]">
-              {aboutHostsHeader.title}
-            </h2>
-            <Image
-              src={images.hostUnderline}
-              alt=""
-              width={125}
-              height={6}
-              className="mx-auto mt-1 h-[6px] w-[125px]"
-            />
-          </div>
-        </MotionSection>
-
-        <MotionSection className="mx-auto mt-14 grid max-w-[1200px] gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {hosts.map((host) => (
-            <div key={host.name} className="flex justify-center">
+            <MotionSection key={host.name}>
               <HostCard name={host.name} role={host.role} image={host.image} />
-            </div>
+            </MotionSection>
           ))}
-        </MotionSection>
+        </div>
 
+        {/* Centered CTA */}
         <MotionSection className="mt-14 flex justify-center">
-          <HostCta />
+          <Link
+            href={aboutHostsCta.href}
+            className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#F17F3F] pl-6 pr-2 text-base font-semibold text-white shadow-[0_4px_25px_rgba(241,127,63,0.45)] transition-all duration-300 hover:bg-[#ff8f52] hover:scale-[1.02] active:scale-[0.98]"
+          >
+            <span>{aboutHostsCta.label}</span>
+            <span className="grid size-10 place-items-center rounded-full bg-white text-[#111418] transition-transform duration-300 group-hover:rotate-45">
+              <ArrowUpRight size={20} strokeWidth={2.5} />
+            </span>
+          </Link>
         </MotionSection>
       </div>
     </section>

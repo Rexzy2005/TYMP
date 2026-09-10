@@ -81,9 +81,8 @@ export function Features() {
             className="absolute"
             style={{ left: 20, top: 63.8, width: 579 }}
           >
-            {/* Title wrap — 579 x 116, relative so underline can be absolute.
-               Each line wrapped in display:block span to guarantee exactly 2 lines. */}
-            <div className="relative" style={{ width: 579, height: 116 }}>
+            {/* Title wrap — 579 x 116 */}
+            <div className="relative" style={{ width: 579 }}>
               <h2
                 style={{
                   fontFamily: TITLE_FONT,
@@ -94,21 +93,24 @@ export function Features() {
                   color: "#111418",
                 }}
               >
-                <span style={{ display: "inline" }}>{t1}</span> <span style={{ display: "inline" }}>{t2}</span>
+                Features That Enhance Your<br />
+                Listening{" "}
+                <span className="relative inline-block">
+                  Experience
+                  <span
+                    className="pointer-events-none absolute left-0 top-[88%] h-[8px] w-full min-w-[200px]"
+                    aria-hidden
+                  >
+                    <Image
+                      src={images.featuresLine}
+                      alt=""
+                      width={232}
+                      height={8}
+                      className="h-full w-full object-contain"
+                    />
+                  </span>
+                </span>
               </h2>
-              {/* Orange wavy underline under "Listening Experience" — features Line.svg, 232x8 */}
-              <div
-                className="pointer-events-none absolute"
-                style={{ left: 185.08, top: 108.74, width: 232, height: 8 }}
-              >
-                <Image
-                  src={images.featuresLine}
-                  alt=""
-                  width={232}
-                  height={8}
-                  className="h-full w-full object-contain"
-                />
-              </div>
             </div>
 
             {/* Body — Public Sans 16, 579 wide */}

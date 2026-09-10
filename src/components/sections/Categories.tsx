@@ -185,35 +185,42 @@ export function Categories() {
       />
 
       <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
-        {/* Title block — relative so CTA can be absolutely positioned */}
-        <div className="relative flex flex-col items-center justify-between gap-8 text-center lg:h-[116px] lg:flex-row lg:text-left">
+        {/* Title block — flex row with title on left and CTA right-aligned */}
+        <div className="flex flex-col items-center justify-between gap-8 text-center sm:gap-6 lg:flex-row lg:text-left">
           {/* Title + underline (left) */}
-          <div className="relative w-full max-w-[554px] lg:h-[116px]">
+          <div className="relative max-w-[560px]">
             <h2
-              className="whitespace-pre-line"
-              style={{ fontFamily: TITLE_FONT, fontWeight: 700, fontSize: "clamp(34px, 8vw, 48px)", lineHeight: "1.2", letterSpacing: "-0.02em", color: "#FFFFFF" }}
+              style={{
+                fontFamily: TITLE_FONT,
+                fontWeight: 700,
+                fontSize: "clamp(34px, 8vw, 48px)",
+                lineHeight: "1.2",
+                letterSpacing: "-0.02em",
+                color: "#FFFFFF",
+              }}
             >
-              {t1}
-              {"\n"}
-              {t2}
+              Discover Podcasts That<br />
+              Match Your{" "}
+              <span className="relative inline-block">
+                Mood!
+                <span
+                  className="pointer-events-none absolute left-0 top-[88%] h-[12px] w-full min-w-[120px]"
+                  aria-hidden
+                >
+                  <Image
+                    src={images.discoveryLine}
+                    alt=""
+                    width={140}
+                    height={13}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              </span>
             </h2>
-            {/* Orange wavy underline under "Mood!" — discovery.svg, relative to container: x=254.7 y=109.2 w=140 h=13 */}
-            <div
-              className="pointer-events-none absolute hidden lg:block"
-              style={{ left: 254.7, top: 109.2, width: 140, height: 13 }}
-            >
-              <Image
-                src={images.discoveryLine}
-                alt=""
-                width={140}
-                height={13}
-                className="h-full w-full object-contain"
-              />
-            </div>
           </div>
 
-          {/* CTA — right-aligned with cards, vertically centered in title block */}
-          <div className="lg:absolute lg:left-[1094px] lg:top-[30px] lg:h-14 lg:w-[226px]">
+          {/* CTA — aligned cleanly to the right edge of cards */}
+          <div className="shrink-0">
             <HeroCta label={categoriesHeader.cta.label} href={categoriesHeader.cta.href} variant="solid" />
           </div>
         </div>

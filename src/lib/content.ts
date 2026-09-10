@@ -136,13 +136,14 @@ export const aboutHero = {
 --------------------------------------------------------------------------- */
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Episodes", href: "#episodes" },
   { label: "About", href: "/about" },
-  { label: "Hosts", href: "#hosts" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Episodes", href: "/#episodes" },
+  { label: "Hosts", href: "/#hosts" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Blog", href: "/#blog" },
 ];
 
-export const navCta = { label: "Subscribe", href: "#newsletter" };
+export const navCta = { label: "Subscribe", href: "/#newsletter" };
 
 /* ---------------------------------------------------------------------------
    Hero
@@ -377,21 +378,21 @@ export const testimonials = [
       "Every episode feels carefully made. I always leave with a fresh idea, a better mood, or a story worth sharing.",
     author: "Ronald Richard",
     role: "Expert Product Designer",
-    image: images.clientTwo,
+    image: images.testimonialRonald,
   },
   {
     quote:
       "PodHub is part of my morning routine. The hosts make complex topics feel clear, warm, and easy to enjoy.",
     author: "Maya Hudson",
     role: "Documentary Maker",
-    image: images.clientOne,
+    image: images.testimonialMaya,
   },
   {
     quote:
       "The recommendations are spot on. I found three new shows in one week, and now my commute feels genuinely useful.",
     author: "Mason Clarke",
     role: "Wellness Coach",
-    image: images.clientThree,
+    image: images.testimonialMason,
   },
 ];
 
@@ -552,8 +553,8 @@ export const footer = {
     { name: "Facebook", href: "#" },
   ],
   contact: {
-    email: "hello@podhub.io",
-    addressLines: ["1428 Maple Drive, Tampa", "FL 33602"],
+    email: "hello@designmonks.co",
+    addressLines: ["4886 Stroman Drive, South", "Stanton, California"],
   },
   columns: [
     {
@@ -579,7 +580,7 @@ export const footer = {
         { label: "Contact Us", href: "#" },
         { label: "Privacy Policy", href: "#" },
         { label: "Terms & Condition", href: "#" },
-        { label: "Cookie Policy", href: "#" },
+        { label: "404", href: "#" },
       ],
     },
     {
@@ -592,5 +593,5 @@ export const footer = {
       ],
     },
   ],
-  copyright: "© Copyright 2026 - All Rights Reserved.",
+  copyright: "© Copyrights 2025 Design Monks. All rights reserved.",
 };
