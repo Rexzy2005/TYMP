@@ -132,8 +132,8 @@ function PlanCta({ href, label, featured }: { href: string; label: string; featu
       href={href}
       className="flex h-14 w-full items-center justify-between rounded-full py-[6px] pl-4 pr-[6px] transition"
       style={{
-        border: `1px solid #F17F3F`,
-        background: featured ? "#F17F3F" : "#FFFFFF",
+        border: `1px solid #EAB819`,
+        background: featured ? "#EAB819" : "#FFFFFF",
         color: featured ? "#FFFFFF" : "#111418",
       }}
     >
@@ -152,7 +152,7 @@ function PlanCta({ href, label, featured }: { href: string; label: string; featu
       <span
         className="grid size-11 shrink-0 place-items-center rounded-full"
         style={{
-          background: featured ? "#FFFFFF" : "#F17F3F",
+          background: featured ? "#FFFFFF" : "#EAB819",
           color: featured ? "#111418" : "#FFFFFF",
         }}
       >
@@ -173,7 +173,7 @@ function PopularBadge() {
           fontSize: 14,
           lineHeight: "21px",
           letterSpacing: "-0.28px",
-          color: "#F17F3F",
+          color: "#EAB819",
         }}
       >
         Most Popular
@@ -193,7 +193,7 @@ function PlanCard({ plan, billingCycle }: { plan: Plan; billingCycle: BillingCyc
       style={{
         height: featured ? 519 : 474,
         background: featured ? "#F6F6F6" : "#FFFFFF",
-        border: `1px solid ${featured ? "#F17F3F" : "#E2E2E2"}`,
+        border: `1px solid ${featured ? "#EAB819" : "#E2E2E2"}`,
       }}
     >
       <div className="absolute left-6 right-6 top-8 sm:left-8 sm:right-8">
@@ -230,7 +230,7 @@ function PlanCard({ plan, billingCycle }: { plan: Plan; billingCycle: BillingCyc
 
       <div
         className="absolute left-6 right-6 h-px sm:left-8 sm:right-8"
-        style={{ top: featured ? 198 : 153, background: featured ? "#F17F3F" : "#E2E2E2" }}
+        style={{ top: featured ? 198 : 153, background: featured ? "#EAB819" : "#E2E2E2" }}
       />
 
       <div className="absolute left-6 right-6 sm:left-8 sm:right-8" style={{ top: featured ? 223 : 178 }}>

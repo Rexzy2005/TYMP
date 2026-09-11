@@ -15,8 +15,21 @@ export function StorySection() {
   return (
     <section className="relative overflow-hidden bg-white py-20 lg:py-[100px]">
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
-        {/* Heading block */}
-        <MotionSection className="mx-auto max-w-[820px] text-center">
+        {/* Heading block with storyVector */}
+        <MotionSection className="relative mx-auto max-w-[820px] text-center">
+          <span
+            className="pointer-events-none absolute -left-4 top-1 hidden md:-left-12 md:inline-block lg:-left-16"
+            aria-hidden
+          >
+            <Image
+              src={images.storyVector}
+              alt=""
+              width={65}
+              height={54}
+              className="object-contain"
+            />
+          </span>
+
           <h2
             style={{
               fontFamily: TITLE_FONT,
@@ -60,13 +73,13 @@ export function StorySection() {
           </p>
         </MotionSection>
 
-        {/* 3x2 Cards Grid */}
+        {/* 3x2 Cards Grid matching Figma layout */}
         <div className="mt-14 grid gap-6 sm:mt-16 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {/* Row 1, Col 1: Our Story */}
           <MotionSection>
             <div className="flex h-full min-h-[280px] flex-col justify-between rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
               <div>
-                <span className="grid size-12 place-items-center rounded-xl bg-[#FFF3ED] text-[#F17F3F]">
+                <span className="grid size-12 place-items-center rounded-xl bg-[#FDF8E7] text-[#EAB819]">
                   <Zap size={24} strokeWidth={2} />
                 </span>
                 <h3
@@ -99,24 +112,11 @@ export function StorySection() {
             </div>
           </MotionSection>
 
-          {/* Row 1, Col 2: Photo Card */}
-          <MotionSection>
-            <div className="relative h-full min-h-[280px] w-full overflow-hidden rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-              <Image
-                src={images.storyHighlight}
-                alt="Man enjoying podcasts on tablet"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 384px"
-              />
-            </div>
-          </MotionSection>
-
-          {/* Row 1, Col 3: Our Mission */}
+          {/* Row 1, Col 2: Our Mission */}
           <MotionSection>
             <div className="flex h-full min-h-[280px] flex-col justify-between rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
               <div>
-                <span className="grid size-12 place-items-center rounded-xl bg-[#FFF3ED] text-[#F17F3F]">
+                <span className="grid size-12 place-items-center rounded-xl bg-[#FDF8E7] text-[#EAB819]">
                   <Target size={24} strokeWidth={2} />
                 </span>
                 <h3
@@ -149,11 +149,11 @@ export function StorySection() {
             </div>
           </MotionSection>
 
-          {/* Row 2, Col 1: Our Vision */}
+          {/* Row 1, Col 3: Our Vision */}
           <MotionSection>
             <div className="flex h-full min-h-[280px] flex-col justify-between rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
               <div>
-                <span className="grid size-12 place-items-center rounded-xl bg-[#FFF3ED] text-[#F17F3F]">
+                <span className="grid size-12 place-items-center rounded-xl bg-[#FDF8E7] text-[#EAB819]">
                   <Rocket size={24} strokeWidth={2} />
                 </span>
                 <h3
@@ -186,10 +186,27 @@ export function StorySection() {
             </div>
           </MotionSection>
 
+          {/* Row 2, Col 1: Photo Card */}
+          <MotionSection>
+            <div className="relative h-full min-h-[280px] w-full overflow-hidden rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+              <Image
+                src={images.storyHighlight}
+                alt="Man enjoying podcasts on tablet"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 384px"
+              />
+            </div>
+          </MotionSection>
+
           {/* Row 2, Col 2: Topics Covered Card */}
           <MotionSection>
-            <div className="flex h-full min-h-[280px] flex-col justify-between rounded-2xl border border-[#F17F3F]/15 bg-[#FFF9F6] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
-              <div>
+            <div className="relative flex h-full min-h-[280px] flex-col justify-between overflow-hidden rounded-2xl border border-[#EAB819]/15 bg-[#FFF9F6] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
+              <div
+                className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#EAB819]/10 blur-2xl"
+                aria-hidden
+              />
+              <div className="relative z-10">
                 <h3
                   style={{
                     fontFamily: TITLE_FONT,
@@ -217,10 +234,10 @@ export function StorySection() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-black/[0.04]">
+              <div className="relative z-10 mt-6 pt-4 border-t border-black/[0.04]">
                 <Link
                   href={aboutStory.highlight.cta.href}
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-[#111418] transition hover:text-[#F17F3F]"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-[#111418] transition hover:text-[#EAB819]"
                 >
                   <span>{aboutStory.highlight.cta.label}</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -233,7 +250,7 @@ export function StorySection() {
           <MotionSection>
             <div className="flex h-full min-h-[280px] flex-col justify-between rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
               <div>
-                <span className="grid size-12 place-items-center rounded-xl bg-[#FFF3ED] text-[#F17F3F]">
+                <span className="grid size-12 place-items-center rounded-xl bg-[#FDF8E7] text-[#EAB819]">
                   <Gem size={24} strokeWidth={2} />
                 </span>
                 <h3

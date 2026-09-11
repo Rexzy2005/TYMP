@@ -47,6 +47,7 @@ export function Navbar() {
   const isActiveRoute = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/about") return pathname === "/about";
+    if (href === "/episodes") return pathname === "/episodes" || pathname.startsWith("/episodes");
     return false;
   };
 
@@ -81,7 +82,7 @@ export function Navbar() {
                 {item.label}
                 {active && (
                   <span
-                    className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#F17F3F]"
+                    className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EAB819]"
                     aria-hidden
                   />
                 )}
@@ -94,7 +95,7 @@ export function Navbar() {
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href={navCta.href}
-            className="group relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#F17F3F] px-5 text-sm font-semibold text-white shadow-[0_2px_15px_rgba(241,127,63,0.35)] transition-all duration-300 hover:bg-[#ff8f52] hover:shadow-[0_4px_25px_rgba(241,127,63,0.55)] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#EAB819] px-5 text-sm font-semibold text-white shadow-[0_2px_15px_rgba(234,184,25,0.35)] transition-all duration-300 hover:bg-[#F5C738] hover:shadow-[0_4px_25px_rgba(234,184,25,0.55)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>{navCta.label}</span>
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -105,7 +106,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 md:hidden">
           <Link
             href={navCta.href}
-            className="inline-flex h-8 items-center justify-center rounded-full bg-[#F17F3F] px-3.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#ff8f52]"
+            className="inline-flex h-8 items-center justify-center rounded-full bg-[#EAB819] px-3.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#F5C738]"
           >
             {navCta.label}
           </Link>
@@ -113,7 +114,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#F17F3F]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#EAB819]"
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
@@ -138,12 +139,12 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition ${
                   active
-                    ? "bg-[#F17F3F]/15 text-[#F17F3F] font-semibold"
+                    ? "bg-[#EAB819]/15 text-[#EAB819] font-semibold"
                     : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 <span>{item.label}</span>
-                {active && <span className="h-2 w-2 rounded-full bg-[#F17F3F]" />}
+                {active && <span className="h-2 w-2 rounded-full bg-[#EAB819]" />}
               </Link>
             );
           })}
@@ -152,7 +153,7 @@ export function Navbar() {
             <Link
               href={navCta.href}
               onClick={() => setIsOpen(false)}
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#F17F3F] text-center font-semibold text-white shadow-lg transition hover:bg-[#ff8f52]"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#EAB819] text-center font-semibold text-white shadow-lg transition hover:bg-[#F5C738]"
             >
               <span>{navCta.label}</span>
               <ArrowUpRight className="h-4 w-4" />

@@ -18,7 +18,7 @@ function GlowBlobs() {
           top: "10%",
           width: 480,
           height: 480,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.28,
           filter: "blur(140px)",
         }}
@@ -31,7 +31,7 @@ function GlowBlobs() {
           top: "15%",
           width: 420,
           height: 420,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.18,
           filter: "blur(130px)",
         }}
@@ -75,7 +75,7 @@ function GlassPlayPill({ label }: { label: string }) {
       >
         <Play
           size={18}
-          fill="#F17F3F"
+          fill="#EAB819"
           strokeWidth={0}
           className="ml-0.5"
         />
@@ -157,25 +157,15 @@ function ListenOn() {
         {listenOn.map((platform) => (
           <span
             key={platform.name}
-            className="relative flex shrink-0 items-center justify-center rounded-full transition-transform hover:scale-105 shadow-sm"
-            style={{
-              width: 44,
-              height: 44,
-              background:
-                platform.name === "Spotify"
-                  ? "#1ED760"
-                  : platform.name === "Pocket Casts"
-                  ? "#F17F3F"
-                  : "rgba(0,0,0,0.06)",
-            }}
+            className="relative flex size-10 sm:size-11 shrink-0 items-center justify-center rounded-full transition-transform hover:scale-105 shadow-sm overflow-hidden"
             title={platform.name}
           >
             <Image
               src={platform.icon}
               alt={platform.name}
-              fill
-              className="object-contain p-2"
-              sizes="44px"
+              width={44}
+              height={44}
+              className="size-full object-contain"
             />
           </span>
         ))}
@@ -193,39 +183,54 @@ export function AboutHero() {
 
         <div className="relative z-10 mx-auto w-full max-w-[1040px] px-6 text-center sm:px-8">
           <MotionSection>
-            {/* Title Line 1 & Line 2 */}
-            <h1
-              style={{
-                fontFamily: TITLE_FONT,
-                fontWeight: 700,
-                fontSize: "clamp(36px, 6vw, 64px)",
-                lineHeight: 1.15,
-                letterSpacing: "-0.035em",
-                color: "#FFFFFF",
-              }}
-            >
-              Get to Know TYMP Amplifying<br />
-              <span className="relative inline-block">
-                Ideas and{" "}
-                <span className="relative inline-block">
-                  Inspiring
-                  <span
-                    className="pointer-events-none absolute left-0 top-[88%] h-[12px] w-[140px] sm:w-[170px]"
-                    aria-hidden
-                  >
-                    <Image
-                      src={images.inspiredSectionLine}
-                      alt=""
-                      width={170}
-                      height={12}
-                      className="h-full w-full object-contain"
-                      priority
-                    />
-                  </span>
-                </span>
-                {" "}Minds
+            {/* Title Line 1 & Line 2 with Hero Icon */}
+            <div className="relative inline-block text-center">
+              <span
+                className="pointer-events-none absolute -left-12 -top-3 hidden sm:inline-block md:-left-14 md:-top-4"
+                aria-hidden
+              >
+                <Image
+                  src={images.heroIcon}
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                  priority
+                />
               </span>
-            </h1>
+              <h1
+                style={{
+                  fontFamily: TITLE_FONT,
+                  fontWeight: 700,
+                  fontSize: "clamp(36px, 6vw, 64px)",
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.035em",
+                  color: "#FFFFFF",
+                }}
+              >
+                Get to Know TYMP Amplifying<br />
+                <span className="relative inline-block">
+                  Ideas and{" "}
+                  <span className="relative inline-block">
+                    Inspiring
+                    <span
+                      className="pointer-events-none absolute left-0 top-[88%] h-[12px] w-[140px] sm:w-[170px]"
+                      aria-hidden
+                    >
+                      <Image
+                        src={images.inspiredSectionLine}
+                        alt=""
+                        width={170}
+                        height={12}
+                        className="h-full w-full object-contain"
+                        priority
+                      />
+                    </span>
+                  </span>
+                  {" "}Minds
+                </span>
+              </h1>
+            </div>
 
             {/* Subtitle */}
             <p
@@ -247,7 +252,7 @@ export function AboutHero() {
             <div className="mt-8 flex justify-center sm:mt-10">
               <a
                 href={aboutHero.cta.href}
-                className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#F17F3F] pl-6 pr-2 text-base font-semibold text-white shadow-[0_4px_25px_rgba(241,127,63,0.45)] transition-all duration-300 hover:bg-[#ff8f52] hover:scale-[1.02] active:scale-[0.98]"
+                className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#EAB819] pl-6 pr-2 text-base font-semibold text-white shadow-[0_4px_25px_rgba(234,184,25,0.45)] transition-all duration-300 hover:bg-[#F5C738] hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>{aboutHero.cta.label}</span>
                 <span className="grid size-10 place-items-center rounded-full bg-white text-[#111418] transition-transform duration-300 group-hover:rotate-45">

@@ -74,7 +74,7 @@ type HeroStatsCardProps = {
 export function HeroStatsCard({ value, label }: HeroStatsCardProps) {
   return (
     <div className="relative flex h-[90px] w-[229px] items-center gap-3 overflow-hidden rounded-2xl p-3" style={{ background: "#FFFFFF" }}>
-      <div className="flex size-14 shrink-0 items-center justify-center rounded-xl" style={{ background: "#FFEDE2" }}>
+      <div className="flex size-14 shrink-0 items-center justify-center rounded-xl" style={{ background: "#FCF4D4" }}>
         <svg
           width="26"
           height="26"
@@ -143,7 +143,7 @@ export function HeroVisual({ podcastCard, statsCard }: HeroVisualProps) {
           top: "44.3%",
           width: "59.9%",
           height: "53.8%",
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.85,
           filter: "blur(70px)",
         }}

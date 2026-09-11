@@ -15,7 +15,7 @@ export function Hero() {
         style={{
           right: "16%",
           top: "32%",
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.5,
           filter: "blur(110px)",
         }}

@@ -30,9 +30,9 @@ function SliderButton({
       onClick={onClick}
       className="grid size-12 place-items-center rounded-full border transition hover:-translate-y-0.5"
       style={{
-        borderColor: "#F17F3F",
-        background: active ? "#F17F3F" : "#FFFFFF",
-        color: active ? "#FFFFFF" : "#F17F3F",
+        borderColor: "#EAB819",
+        background: active ? "#EAB819" : "#FFFFFF",
+        color: active ? "#FFFFFF" : "#EAB819",
       }}
     >
       <Icon size={20} strokeWidth={1.8} />
@@ -96,7 +96,7 @@ function QuoteCard({ item, direction = 1, scale = 1, className = "" }: QuoteCard
       <Quote
         size={48 * scale}
         strokeWidth={1.7}
-        color="#F17F3F"
+        color="#EAB819"
         className="-scale-x-100"
       />
 
@@ -337,7 +337,7 @@ export function Testimonials() {
 
   return (
     <section className="relative overflow-hidden bg-[#FEFCF8]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_92%_94%,rgba(241,127,63,0.22)_0%,rgba(241,127,63,0.10)_18%,rgba(241,127,63,0)_42%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_92%_94%,rgba(234,184,25,0.22)_0%,rgba(234,184,25,0.10)_18%,rgba(234,184,25,0)_42%)]" />
 
       <div className="relative mx-auto hidden h-[685px] max-w-[1240px] px-6 sm:px-8 lg:px-0 xl:block">
         <MotionSection

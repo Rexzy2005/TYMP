@@ -87,7 +87,7 @@ function EpisodeCard({ number, title, host, category, duration, image }: Episode
             <Clock size={16} className="text-[#4E5255]" />
             {duration}
           </span>
-          <span className="grid size-12 place-items-center rounded-full border border-[#E2E2E2] text-[#111418] transition hover:border-[#F17F3F] hover:text-[#F17F3F]">
+          <span className="grid size-12 place-items-center rounded-full border border-[#E2E2E2] text-[#111418] transition hover:border-[#EAB819] hover:text-[#EAB819]">
             <ArrowRight size={18} strokeWidth={2} />
           </span>
         </div>

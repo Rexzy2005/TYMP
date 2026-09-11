@@ -31,7 +31,7 @@ function GlowBlobs() {
           top: "15%",
           width: 360,
           height: 360,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.25,
           filter: "blur(130px)",
         }}
@@ -44,7 +44,7 @@ function GlowBlobs() {
           bottom: "15%",
           width: 360,
           height: 360,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.2,
           filter: "blur(130px)",
         }}
@@ -60,21 +60,21 @@ function SocialButtons() {
       <a
         href="#"
         aria-label="X"
-        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#F17F3F]"
+        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#EAB819]"
       >
         <X size={18} strokeWidth={2} />
       </a>
       <a
         href="#"
         aria-label="Instagram"
-        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#F17F3F]"
+        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#EAB819]"
       >
         <InstagramIcon size={18} strokeWidth={2} />
       </a>
       <a
         href="#"
         aria-label="Threads"
-        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#F17F3F]"
+        className="grid size-9 place-items-center rounded-full text-white/80 transition hover:text-[#EAB819]"
       >
         <ThreadsIcon size={18} strokeWidth={2} />
       </a>
@@ -85,7 +85,7 @@ function SocialButtons() {
 function HostCard({ name, role, image }: { name: string; role: string; image: string }) {
   return (
     <article
-      className="group flex h-full w-full flex-col rounded-2xl bg-[#251B17] p-6 border border-white/10 transition-all duration-300 hover:border-[#F17F3F]/40 shadow-lg"
+      className="group flex h-full w-full flex-col rounded-2xl bg-[#251B17] p-6 border border-white/10 transition-all duration-300 hover:border-[#EAB819]/40 shadow-lg"
     >
       <div className="relative aspect-[336/358] w-full overflow-hidden rounded-xl">
         <Image
@@ -184,7 +184,7 @@ export function AboutHosts() {
         <MotionSection className="mt-14 flex justify-center">
           <Link
             href={aboutHostsCta.href}
-            className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#F17F3F] pl-6 pr-2 text-base font-semibold text-white shadow-[0_4px_25px_rgba(241,127,63,0.45)] transition-all duration-300 hover:bg-[#ff8f52] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#EAB819] pl-6 pr-2 text-base font-semibold text-white shadow-[0_4px_25px_rgba(234,184,25,0.45)] transition-all duration-300 hover:bg-[#F5C738] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>{aboutHostsCta.label}</span>
             <span className="grid size-10 place-items-center rounded-full bg-white text-[#111418] transition-transform duration-300 group-hover:rotate-45">
