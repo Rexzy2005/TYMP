@@ -41,7 +41,7 @@ function GlowBlobs() {
 
 export function EpisodesHero() {
   return (
-    <section className="relative overflow-hidden bg-podhub-ink pt-28 sm:pt-36 lg:pt-44">
+    <section className="relative overflow-hidden bg-podhub-ink pt-32 sm:pt-40 lg:pt-48">
       <GlowBlobs />
 
       {/* ── Top Header: 2 Columns (Headline on Left, Text on Right) ──── */}

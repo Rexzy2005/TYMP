@@ -179,8 +179,9 @@ export const allEpisodes = [
     host: "Max Hudson",
     category: "Mental Health, Personal Development",
     duration: "1 hr 24 mins",
-    date: "May 12, 2025",
+    date: "Apr 8, 2025",
     image: "/assets/episodes/ep_1.jpg",
+    heroImage: "/assets/episodes/details_hero.jpg",
   },
   {
     id: "ep-02",
@@ -191,6 +192,7 @@ export const allEpisodes = [
     duration: "90 mins",
     date: "May 08, 2025",
     image: "/assets/episodes/ep_2.jpg",
+    heroImage: "/assets/episodes/hero_ep_2.jpg",
   },
   {
     id: "ep-11",
@@ -201,6 +203,7 @@ export const allEpisodes = [
     duration: "30 mins",
     date: "April 29, 2025",
     image: "/assets/episodes/ep_3.jpg",
+    heroImage: "/assets/episodes/hero_ep_11.jpg",
   },
   {
     id: "ep-03",
@@ -211,6 +214,7 @@ export const allEpisodes = [
     duration: "45 mins",
     date: "April 21, 2025",
     image: "/assets/episodes/ep_4.jpg",
+    heroImage: "/assets/episodes/hero_ep_3.jpg",
   },
   {
     id: "ep-04",
@@ -221,6 +225,7 @@ export const allEpisodes = [
     duration: "1 hr",
     date: "April 15, 2025",
     image: "/assets/episodes/ep_5.jpg",
+    heroImage: "/assets/episodes/hero_ep_4.jpg",
   },
   {
     id: "ep-05",
@@ -231,6 +236,7 @@ export const allEpisodes = [
     duration: "1 hr 00 min",
     date: "April 07, 2025",
     image: "/assets/episodes/ep_6.jpg",
+    heroImage: "/assets/episodes/hero_ep_5.jpg",
   },
   {
     id: "ep-06",
@@ -241,6 +247,7 @@ export const allEpisodes = [
     duration: "1 hr 24 mins",
     date: "March 29, 2025",
     image: "/assets/episodes/ep_7.jpg",
+    heroImage: "/assets/episodes/hero_ep_6.jpg",
   },
   {
     id: "ep-07",
@@ -251,6 +258,7 @@ export const allEpisodes = [
     duration: "1 hr 24 mins",
     date: "March 18, 2025",
     image: "/assets/episodes/ep_8.jpg",
+    heroImage: "/assets/episodes/hero_ep_7.jpg",
   },
 ];
 
@@ -272,7 +280,7 @@ export const episodesHeader = {
     "Dive into an extensive collection of podcasts covering diverse topics. From insightful conversations to thrilling storytelling, discover episodes that inspire, entertain, and inform.",
 };
 
-export const episodesCta = { label: "Load More Topics", href: "#" };
+export const episodesCta = { label: "Load More Topics", href: "/episodes" };
 
 /* ---------------------------------------------------------------------------
    Discovery (Listen Now) + Stats

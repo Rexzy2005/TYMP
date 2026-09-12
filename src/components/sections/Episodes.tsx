@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Mic, ArrowRight, Clock } from "lucide-react";
 
@@ -20,6 +21,7 @@ const META_FONT = "var(--font-public-sans), Public Sans, sans-serif";
 const TITLE_FONT = "var(--font-urbanist), Urbanist, sans-serif";
 
 type EpisodeCardProps = {
+  id?: string;
   number: string;
   title: string;
   host: string;
@@ -28,71 +30,73 @@ type EpisodeCardProps = {
   image: string;
 };
 
-function EpisodeCard({ number, title, host, category, duration, image }: EpisodeCardProps) {
+function EpisodeCard({ id = "ep-01", number, title, host, category, duration, image }: EpisodeCardProps) {
   return (
-    <article
-      className="flex w-full flex-col gap-5 rounded-2xl bg-white p-3 sm:flex-row"
-      style={{ boxShadow: "0 10px 40px -24px rgba(17,20,24,0.25)" }}
-    >
-      {/* Image — 179.5 x 252, radius 16 */}
-      <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[252px] sm:w-[180px]">
-        <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 640px) 100vw, 180px" />
-      </div>
-
-      {/* Body — 340 wide */}
-      <div className="flex flex-1 flex-col py-3 pr-3">
-        {/* Top info row: Episode # (left) + Author (right) */}
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <span
-            className="flex items-center gap-1.5"
-            style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#4E5255" }}
-          >
-            <Mic size={16} className="text-[#4E5255]" />
-            {number}
-          </span>
-          <span style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#111418" }}>
-            {host}
-          </span>
+    <Link href={`/episodes/${id}`} className="group block w-full">
+      <article
+        className="flex w-full flex-col gap-5 rounded-2xl bg-white p-3 sm:flex-row transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
+        style={{ boxShadow: "0 10px 40px -24px rgba(17,20,24,0.25)" }}
+      >
+        {/* Image — 179.5 x 252, radius 16 */}
+        <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[252px] sm:w-[180px]">
+          <Image src={image} alt={title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 180px" />
         </div>
 
-        {/* Title — Urbanist SemiBold 24px */}
-        <h3
-          className="mt-4 whitespace-pre-line"
-          style={{
-            fontFamily: TITLE_FONT,
-            fontWeight: 600,
-            fontSize: "clamp(21px, 4.8vw, 24px)",
-            lineHeight: "1.2",
-            letterSpacing: "-0.72px",
-            color: "#111418",
-          }}
-        >
-          {title}
-        </h3>
+        {/* Body — 340 wide */}
+        <div className="flex flex-1 flex-col py-3 pr-3">
+          {/* Top info row: Episode # (left) + Author (right) */}
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <span
+              className="flex items-center gap-1.5"
+              style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#4E5255" }}
+            >
+              <Mic size={16} className="text-[#EAB819]" />
+              {number}
+            </span>
+            <span style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#111418" }}>
+              {host}
+            </span>
+          </div>
 
-        {/* Category */}
-        <p
-          className="mt-2"
-          style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, lineHeight: "24px", letterSpacing: "-0.64px", color: "#4E5255" }}
-        >
-          {category}
-        </p>
-
-        {/* Bottom row: duration (left) + play button (right) */}
-        <div className="mt-auto flex items-center justify-between pt-6">
-          <span
-            className="flex items-center gap-1.5"
-            style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#4E5255" }}
+          {/* Title — Urbanist SemiBold 24px */}
+          <h3
+            className="mt-4 whitespace-pre-line transition-colors group-hover:text-[#EAB819]"
+            style={{
+              fontFamily: TITLE_FONT,
+              fontWeight: 600,
+              fontSize: "clamp(21px, 4.8vw, 24px)",
+              lineHeight: "1.2",
+              letterSpacing: "-0.72px",
+              color: "#111418",
+            }}
           >
-            <Clock size={16} className="text-[#4E5255]" />
-            {duration}
-          </span>
-          <span className="grid size-12 place-items-center rounded-full border border-[#E2E2E2] text-[#111418] transition hover:border-[#EAB819] hover:text-[#EAB819]">
-            <ArrowRight size={18} strokeWidth={2} />
-          </span>
+            {title}
+          </h3>
+
+          {/* Category */}
+          <p
+            className="mt-2"
+            style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, lineHeight: "24px", letterSpacing: "-0.64px", color: "#4E5255" }}
+          >
+            {category}
+          </p>
+
+          {/* Bottom row: duration (left) + play button (right) */}
+          <div className="mt-auto flex items-center justify-between pt-6">
+            <span
+              className="flex items-center gap-1.5"
+              style={{ fontFamily: META_FONT, fontWeight: 400, fontSize: 16, letterSpacing: "-0.64px", color: "#4E5255" }}
+            >
+              <Clock size={16} className="text-[#4E5255]" />
+              {duration}
+            </span>
+            <div className="grid size-12 place-items-center rounded-full border border-[#E2E2E2] text-[#111418] transition-all duration-200 group-hover:border-[#EAB819] group-hover:bg-[#EAB819] group-hover:text-black">
+              <ArrowRight size={18} strokeWidth={2} />
+            </div>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 }
 

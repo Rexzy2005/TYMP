@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Mic, Clock, ArrowRight, Search, ChevronDown, RotateCw, Check } from "lucide-react";
 
 import { MotionSection } from "../../ui/MotionSection";
@@ -137,85 +138,86 @@ export function EpisodesCatalog() {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
               {displayedEpisodes.map((ep) => (
                 <MotionSection key={ep.id}>
-                  <article className="group flex h-full flex-col sm:flex-row overflow-hidden rounded-[24px] border border-[#E9EAEC] bg-white p-4 sm:p-5 transition-all duration-300 hover:border-transparent hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
-                    {/* Left: Host Picture */}
-                    <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[16px] sm:h-full sm:w-[150px] md:w-[170px] lg:w-[176px]">
-                      <Image
-                        src={ep.image}
-                        alt={ep.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, 180px"
-                      />
-                    </div>
-
-                    {/* Right: Details */}
-                    <div className="flex flex-1 flex-col justify-between pt-4 sm:pl-5 sm:pt-0">
-                      <div>
-                        {/* Top row: Episode Number + Host Name */}
-                        <div className="flex items-center justify-between gap-2">
-                          <span
-                            className="flex items-center gap-1.5 text-[14px] font-medium text-[#111418]"
-                            style={{ fontFamily: META_FONT }}
-                          >
-                            <Mic size={15} className="text-[#111418]" />
-                            {ep.number}
-                          </span>
-                          <span
-                            className="text-[14px] font-medium text-[#111418]"
-                            style={{ fontFamily: META_FONT }}
-                          >
-                            {ep.host}
-                          </span>
-                        </div>
-
-                        {/* Title */}
-                        <h3
-                          className="mt-3 line-clamp-2 text-[#111418] transition-colors group-hover:text-[#EAB819]"
-                          style={{
-                            fontFamily: TITLE_FONT,
-                            fontWeight: 700,
-                            fontSize: "clamp(19px, 2.2vw, 24px)",
-                            lineHeight: 1.25,
-                            letterSpacing: "-0.02em",
-                          }}
-                        >
-                          {ep.title}
-                        </h3>
-
-                        {/* Category Subtitle */}
-                        <p
-                          className="mt-1.5 text-[14px] sm:text-[15px] text-[#717477]"
-                          style={{
-                            fontFamily: META_FONT,
-                            fontWeight: 400,
-                            lineHeight: 1.4,
-                          }}
-                        >
-                          {ep.category}
-                        </p>
+                  <Link href={`/episodes/${ep.id}`} className="block h-full cursor-pointer">
+                    <article className="group flex h-full flex-col sm:flex-row overflow-hidden rounded-[24px] border border-[#E9EAEC] bg-white p-4 sm:p-5 transition-all duration-300 hover:border-[#EAB819]/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+                      {/* Left: Host Picture */}
+                      <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-[16px] sm:h-full sm:w-[150px] md:w-[170px] lg:w-[176px]">
+                        <Image
+                          src={ep.image}
+                          alt={ep.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, 180px"
+                        />
                       </div>
 
-                      {/* Bottom row: Duration on left, Arrow button on right */}
-                      <div className="mt-5 flex items-center justify-between border-t border-[#F0F1F2] pt-3.5 sm:mt-6 sm:pt-4">
-                        <div
-                          className="flex items-center gap-1.5 text-[14px] text-[#717477]"
-                          style={{ fontFamily: META_FONT }}
-                        >
-                          <Clock size={15} className="text-[#717477]" />
-                          <span>{ep.duration}</span>
+                      {/* Right: Details */}
+                      <div className="flex flex-1 flex-col justify-between pt-4 sm:pl-5 sm:pt-0">
+                        <div>
+                          {/* Top row: Episode Number + Host Name */}
+                          <div className="flex items-center justify-between gap-2">
+                            <span
+                              className="flex items-center gap-1.5 text-[14px] font-medium text-[#111418]"
+                              style={{ fontFamily: META_FONT }}
+                            >
+                              <Mic size={15} className="text-[#EAB819]" />
+                              {ep.number}
+                            </span>
+                            <span
+                              className="text-[14px] font-medium text-[#111418]"
+                              style={{ fontFamily: META_FONT }}
+                            >
+                              {ep.host}
+                            </span>
+                          </div>
+
+                          {/* Title */}
+                          <h3
+                            className="mt-3 line-clamp-2 text-[#111418] transition-colors group-hover:text-[#EAB819]"
+                            style={{
+                              fontFamily: TITLE_FONT,
+                              fontWeight: 700,
+                              fontSize: "clamp(19px, 2.2vw, 24px)",
+                              lineHeight: 1.25,
+                              letterSpacing: "-0.02em",
+                            }}
+                          >
+                            {ep.title}
+                          </h3>
+
+                          {/* Category Subtitle */}
+                          <p
+                            className="mt-1.5 text-[14px] sm:text-[15px] text-[#717477]"
+                            style={{
+                              fontFamily: META_FONT,
+                              fontWeight: 400,
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            {ep.category}
+                          </p>
                         </div>
 
-                        <button
-                          type="button"
-                          className="grid size-10 place-items-center rounded-full border border-[#D5D7DA] bg-white text-[#111418] transition-all duration-200 group-hover:border-[#111418] group-hover:bg-[#111418] group-hover:text-white"
-                          aria-label={`Listen to ${ep.title}`}
-                        >
-                          <ArrowRight size={17} className="transition-transform group-hover:translate-x-0.5" />
-                        </button>
+                        {/* Bottom row: Duration on left, Arrow button on right */}
+                        <div className="mt-5 flex items-center justify-between border-t border-[#F0F1F2] pt-3.5 sm:mt-6 sm:pt-4">
+                          <div
+                            className="flex items-center gap-1.5 text-[14px] text-[#717477]"
+                            style={{ fontFamily: META_FONT }}
+                          >
+                            <Clock size={15} className="text-[#717477]" />
+                            <span>{ep.duration}</span>
+                          </div>
+
+                          <div
+                            className="grid size-10 place-items-center rounded-full border border-[#D5D7DA] bg-white text-[#111418] transition-all duration-200 group-hover:border-[#EAB819] group-hover:bg-[#EAB819] group-hover:text-black"
+                            aria-label={`Listen to ${ep.title}`}
+                          >
+                            <ArrowRight size={17} className="transition-transform group-hover:translate-x-0.5" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </Link>
                 </MotionSection>
               ))}
             </div>
