@@ -140,7 +140,7 @@ function HeroStatsCard() {
 
 function ListenOn() {
   return (
-    <div className="mt-14 mb-4 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+    <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
       <span
         style={{
           fontFamily: TITLE_FONT,
