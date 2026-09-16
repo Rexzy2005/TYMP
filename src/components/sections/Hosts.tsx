@@ -135,7 +135,7 @@ function HostHeading() {
       >
         Meet Our{" "}
         <span className="relative inline-block">
-          Hosts
+          Team
           <span
             className="pointer-events-none absolute left-0 top-[88%] h-[6px] w-full min-w-[110px]"
             aria-hidden

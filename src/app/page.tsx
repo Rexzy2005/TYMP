@@ -6,7 +6,6 @@ import { Categories } from "@/components/sections/Categories";
 import { Features } from "@/components/sections/Features";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Hosts } from "@/components/sections/Hosts";
-import { Pricing } from "@/components/sections/Pricing";
 import { Blog } from "@/components/sections/Blog";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { Footer } from "@/components/sections/Footer";
@@ -17,13 +16,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Episodes />
         <Discovery />
+        <Episodes />
         <Categories />
         <Features />
         <Testimonials />
         <Hosts />
-        <Pricing />
         <Blog />
         <Newsletter />
       </main>

@@ -102,7 +102,7 @@ export function EpisodesHero() {
 
         {/* ── Floating Stats Card with Values & Listen On Logos ─────── */}
         <MotionSection>
-          <div className="relative z-20 -mb-14 sm:-mb-16 mt-10 sm:mt-12 lg:mt-16 w-full rounded-[20px] sm:rounded-[24px] bg-white p-5 sm:p-7 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-black/[0.04]">
+          <div className="relative z-20 -mb-14 sm:-mb-16 mt-10 sm:mt-12 lg:mt-16 w-full rounded-[20px] rounded-b-none sm:rounded-[24px] sm:rounded-b-none bg-white p-5 sm:p-7 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-black/[0.04]">
             <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
               {/* Left: 3 Stats Columns */}
               <div className="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-8 flex-1">

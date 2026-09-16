@@ -13,7 +13,7 @@ export function StorySection() {
   const [card1, card2, card3, card4] = aboutStory.cards;
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-[100px]">
+    <section className="relative overflow-hidden bg-white pb-20 lg:pb-[100px] pt-15">
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
         {/* Heading block with storyVector */}
         <MotionSection className="relative mx-auto max-w-[820px] text-center">
