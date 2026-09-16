@@ -103,7 +103,7 @@ function HostCta() {
   return (
     <a
       href={hostsCta.href}
-      className="inline-flex h-14 items-center gap-4 rounded-full bg-podhub-orange py-[6px] pl-4 pr-[6px] text-white shadow-orange-glow transition hover:bg-podhub-orange-dark"
+      className="group inline-flex h-14 items-center gap-4 rounded-full bg-podhub-orange py-[6px] pl-4 pr-[6px] text-white shadow-orange-glow transition-all duration-300 hover:bg-podhub-orange-dark hover:scale-[1.02] active:scale-[0.98]"
       style={{
         fontFamily: TITLE_FONT,
         fontWeight: 700,
@@ -113,7 +113,7 @@ function HostCta() {
       }}
     >
       <span className="whitespace-nowrap">{hostsCta.label}</span>
-      <span className="grid size-11 place-items-center rounded-full bg-white text-[#111418]">
+      <span className="grid size-11 place-items-center rounded-full bg-white text-[#111418] transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:rotate-45">
         <ArrowUpRight size={22} strokeWidth={2.5} />
       </span>
     </a>

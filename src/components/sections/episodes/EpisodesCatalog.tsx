@@ -63,7 +63,7 @@ export function EpisodesCatalog() {
               />
               <button
                 type="button"
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-[#111418] text-white transition-transform hover:scale-105 active:scale-95"
+                className="grid size-10 shrink-0 place-items-center rounded-full bg-[#111418] text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 aria-label="Search"
               >
                 <Search size={16} />
@@ -76,7 +76,7 @@ export function EpisodesCatalog() {
             <button
               type="button"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
-              className="flex w-full items-center justify-between rounded-full border border-[#E1E2E4] bg-white px-5 py-3 text-left text-[15px] font-medium text-[#111418] shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all hover:border-[#CFD0D1] focus:outline-none"
+              className="flex w-full items-center justify-between rounded-full border border-[#E1E2E4] bg-white px-5 py-3 text-left text-[15px] font-medium text-[#111418] shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#CFD0D1] hover:scale-[1.02] active:scale-[0.98] focus:outline-none"
               style={{ fontFamily: META_FONT }}
             >
               <span className="truncate">{selectedCategory}</span>
@@ -99,7 +99,7 @@ export function EpisodesCatalog() {
                       setSelectedCategory(cat);
                       setIsDropdownOpen(false);
                     }}
-                    className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[14px] transition-colors hover:bg-gray-50 ${
+                    className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[14px] transition-all duration-300 hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] ${
                       selectedCategory === cat
                         ? "font-semibold text-[#EAB819]"
                         : "text-[#4E5255]"
@@ -129,7 +129,7 @@ export function EpisodesCatalog() {
                   setSelectedCategory("Episodes Category");
                   setSearchQuery("");
                 }}
-                className="mt-4 inline-flex items-center rounded-full bg-[#EAB819] px-5 py-2 text-sm font-medium text-white shadow hover:bg-[#F5C738]"
+                className="mt-4 inline-flex items-center rounded-full bg-[#EAB819] px-5 py-2 text-sm font-medium text-white shadow transition-all duration-300 hover:bg-[#F5C738] hover:scale-[1.02] active:scale-[0.98]"
               >
                 Reset Filters
               </button>
@@ -230,7 +230,7 @@ export function EpisodesCatalog() {
             type="button"
             onClick={handleLoadMore}
             disabled={isLoadingMore}
-            className="group flex items-center gap-3 rounded-full bg-[#EAB819] py-2.5 pl-6 pr-2.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(234,184,25,0.3)] transition-all hover:bg-[#D4A20D] hover:shadow-[0_12px_28px_rgba(234,184,25,0.4)] active:scale-95 disabled:opacity-75"
+            className="group flex items-center gap-3 rounded-full bg-[#EAB819] py-2.5 pl-6 pr-2.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(234,184,25,0.3)] transition-all duration-300 hover:bg-[#D4A20D] hover:shadow-[0_12px_28px_rgba(234,184,25,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-75"
             style={{ fontFamily: TITLE_FONT }}
           >
             <span>{isLoadingMore ? "Loading Topics..." : "Load More Topics"}</span>

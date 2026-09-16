@@ -32,7 +32,7 @@ export function HeroCta({
   return (
     <a
       href={href}
-      className={`box-border inline-flex h-[56px] items-center gap-4 rounded-full py-[6px] pl-6 pr-[6px] transition ${
+      className={`group box-border inline-flex h-[56px] items-center gap-4 rounded-full py-[6px] pl-6 pr-[6px] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${
         isSolid ? "hover:bg-[#D4A20D]" : "hover:opacity-90"
       } ${className}`}
       style={{
@@ -49,13 +49,15 @@ export function HeroCta({
     >
       <span className="whitespace-nowrap">{label}</span>
       <span
-        className="grid size-11 shrink-0 place-items-center rounded-full"
-        style={{ background: isSolid ? "#FFFFFF" : "#EAB819" }}
+        className={`grid size-11 shrink-0 place-items-center rounded-full transition-all duration-300 group-hover:rotate-45 ${
+          isSolid
+            ? "bg-white text-[#111418] group-hover:bg-black group-hover:text-white"
+            : "bg-[#EAB819] text-white"
+        }`}
       >
         <ArrowUpRight
           size={18}
           strokeWidth={2.5}
-          style={{ color: isSolid ? "#111418" : "#FFFFFF" }}
         />
       </span>
     </a>
