@@ -187,7 +187,7 @@ export function AboutHosts() {
             className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#EAB819] pl-6 pr-2 text-base font-semibold text-white shadow-[0_4px_25px_rgba(234,184,25,0.45)] transition-all duration-300 hover:bg-[#F5C738] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>{aboutHostsCta.label}</span>
-            <span className="grid size-10 place-items-center rounded-full bg-white text-[#111418] transition-transform duration-300 group-hover:rotate-45">
+            <span className="grid size-10 place-items-center rounded-full bg-white text-[#111418] transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:rotate-45">
               <ArrowUpRight size={20} strokeWidth={2.5} />
             </span>
           </Link>

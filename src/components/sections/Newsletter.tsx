@@ -29,7 +29,7 @@ function NewsletterForm() {
       />
       <button
         type="submit"
-        className="h-14 rounded-full bg-[#EAB819] px-6 text-white transition hover:bg-[#D4A20D] sm:w-[118px]"
+        className="h-14 rounded-full bg-[#EAB819] px-6 text-white transition-all duration-300 hover:bg-[#D4A20D] hover:scale-[1.02] active:scale-[0.98] sm:w-[118px]"
         style={{
           fontFamily: TITLE_FONT,
           fontWeight: 700,

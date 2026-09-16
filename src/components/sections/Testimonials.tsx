@@ -28,7 +28,7 @@ function SliderButton({
       type="button"
       aria-label={direction === "previous" ? "Previous testimonial" : "Next testimonial"}
       onClick={onClick}
-      className="grid size-12 place-items-center rounded-full border transition hover:-translate-y-0.5"
+      className="grid size-12 place-items-center rounded-full border transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
       style={{
         borderColor: "#EAB819",
         background: active ? "#EAB819" : "#FFFFFF",
