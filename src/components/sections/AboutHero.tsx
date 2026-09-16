@@ -87,7 +87,7 @@ function GlassPlayPill({ label }: { label: string }) {
 function HeroStatsCard() {
   return (
     <div
-      className="relative z-30 mx-auto w-full max-w-[1040px] rounded-[24px] bg-white px-6 py-8 sm:px-12 sm:py-10 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-black/[0.04]"
+      className="relative z-30 mx-auto w-full max-w-[1040px] rounded-[24px] bg-white px-6 py-8 sm:px-12 sm:py-10 border border-black/[0.04]"
     >
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-gray-100 text-center sm:text-left">
         {aboutHero.stats.map((stat, idx) => (
