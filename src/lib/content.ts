@@ -139,7 +139,6 @@ export const navItems = [
   { label: "About", href: "/about" },
   { label: "Episodes", href: "/episodes" },
   { label: "Hosts", href: "/#hosts" },
-  { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/#blog" },
 ];
 
@@ -641,7 +640,6 @@ export const footer = {
       links: [
         { label: "Home", href: "#home" },
         { label: "Episodes", href: "/episodes" },
-        { label: "Pricing Plan", href: "#pricing" },
       ],
     },
     {
