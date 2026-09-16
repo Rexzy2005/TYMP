@@ -17,8 +17,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Episodes />
         <Discovery />
+        <Episodes />
         <Categories />
         <Features />
         <Testimonials />
