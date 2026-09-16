@@ -63,7 +63,7 @@ export function AboutSection() {
                   {aboutBlock.pill}
                 </span>
                 <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white shadow-sm">
-                  <Play size={14} fill="#F17F3F" strokeWidth={0} className="ml-0.5" />
+                  <Play size={14} fill="#EAB819" strokeWidth={0} className="ml-0.5" />
                 </span>
               </div>
             </div>

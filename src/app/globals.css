@@ -2,14 +2,14 @@
 
 /* ---------------------------------------------------------------------------
    PodHub design tokens
-   Colors derived from /assets/Markdown.md (orange #F17F3F, dark #191410)
+   Colors derived from /assets/Markdown.md (orange #EAB819, dark #191410)
    with the rest of the palette inferred from the landing-page reference.
 --------------------------------------------------------------------------- */
 :root {
-  --podhub-orange: #f17f3f;
-  --podhub-orange-light: #ff9966;
-  --podhub-orange-dark: #d9662a;
-  --podhub-orange-soft: #fce4d3;
+  --podhub-orange: #eab819;
+  --podhub-orange-light: #f5c738;
+  --podhub-orange-dark: #d4a20d;
+  --podhub-orange-soft: #fcf4d4;
 
   --podhub-ink: #191410; /* page bg in dark sections, primary text in light */
   --podhub-ink-2: #221a13; /* card bg on dark */
@@ -25,8 +25,8 @@
   --podhub-spotify: #1ed760;
   --podhub-apple: #31a8ff;
   --podhub-pocket: #a855f7;
-  --podhub-rss: #f17f3f;
-  --podhub-star: #f5a623;
+  --podhub-rss: #eab819;
+  --podhub-star: #eab819;
 
   --font-urbanist: var(--font-urbanist), system-ui, sans-serif;
   --font-public-sans: var(--font-public-sans), system-ui, sans-serif;
@@ -99,7 +99,7 @@ h6,
 /* Reusable shadow tokens (consumed by Tailwind via shadow-* utilities below) */
 @layer utilities {
   .shadow-orange-glow {
-    box-shadow: 0 14px 40px -12px rgba(241, 127, 63, 0.55);
+    box-shadow: 0 14px 40px -12px rgba(234, 184, 25, 0.55);
   }
   .shadow-soft {
     box-shadow: 0 8px 24px -12px rgba(25, 20, 16, 0.18);
@@ -115,7 +115,7 @@ h6,
   .shadow-card-float {
     box-shadow:
       0 32px 64px -30px rgba(25, 20, 16, 0.45),
-      0 14px 32px -20px rgba(241, 127, 63, 0.22);
+      0 14px 32px -20px rgba(234, 184, 25, 0.22);
   }
 
   /* Hover lift for floating cards — eased transform + deeper shadow */
@@ -129,7 +129,7 @@ h6,
     transform: translateY(-6px);
     box-shadow:
       0 46px 84px -30px rgba(25, 20, 16, 0.5),
-      0 20px 44px -20px rgba(241, 127, 63, 0.34);
+      0 20px 44px -20px rgba(234, 184, 25, 0.34);
   }
 
   /* Gentle, slow glow pulse used behind floating cards */
@@ -148,19 +148,19 @@ h6,
     animation: glowPulse 6s ease-in-out infinite;
   }
 
-  /* Soft orange radial for hero / category backgrounds */
+  /* Soft primary radial for hero / category backgrounds */
   .bg-radial-orange {
     background-image: radial-gradient(
       120% 80% at 70% 30%,
-      rgba(241, 127, 63, 0.35) 0%,
-      rgba(241, 127, 63, 0) 55%
+      rgba(234, 184, 25, 0.35) 0%,
+      rgba(234, 184, 25, 0) 55%
     );
   }
   .bg-radial-orange-strong {
     background-image: radial-gradient(
       80% 60% at 70% 40%,
-      rgba(255, 153, 102, 0.45) 0%,
-      rgba(241, 127, 63, 0.15) 40%,
+      rgba(245, 199, 56, 0.45) 0%,
+      rgba(234, 184, 25, 0.15) 40%,
       rgba(25, 20, 16, 0) 75%
     );
   }

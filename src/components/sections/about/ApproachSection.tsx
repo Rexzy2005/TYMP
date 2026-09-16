@@ -17,7 +17,7 @@ function GlowBlobs() {
           top: "20%",
           width: 380,
           height: 380,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.25,
           filter: "blur(140px)",
         }}
@@ -30,7 +30,7 @@ function GlowBlobs() {
           bottom: "10%",
           width: 360,
           height: 360,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.2,
           filter: "blur(130px)",
         }}
@@ -147,7 +147,7 @@ export function ApproachSection() {
                     {/* Active orange left border line indicator */}
                     {isHighlight && (
                       <span
-                        className="absolute -left-[26px] sm:-left-[34px] top-0 bottom-0 w-[3px] rounded-full bg-[#F17F3F]"
+                        className="absolute -left-[26px] sm:-left-[34px] top-0 bottom-0 w-[3px] rounded-full bg-[#EAB819]"
                         aria-hidden
                       />
                     )}
@@ -159,7 +159,7 @@ export function ApproachSection() {
                         fontSize: 24,
                         lineHeight: "30px",
                         letterSpacing: "-0.5px",
-                        color: isHighlight ? "#F17F3F" : "rgba(255, 255, 255, 0.75)",
+                        color: isHighlight ? "#EAB819" : "rgba(255, 255, 255, 0.75)",
                       }}
                       className="transition-colors group-hover:text-white"
                     >

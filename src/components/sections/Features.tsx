@@ -47,7 +47,7 @@ function FeatureCard({ icon, title, text }: { icon: string; title: string; text:
       {/* Icon — 68x68 light-orange tile, 38px glyph centered */}
       <div
         className="grid size-[68px] place-items-center rounded-xl"
-        style={{ background: "#FFE7DC", color: "#F17F3F" }}
+        style={{ background: "#FCF4D4", color: "#EAB819" }}
       >
         <FeatureIcon name={icon} />
       </div>
@@ -216,7 +216,7 @@ export function Features() {
                 ))}
                 <span
                   className="grid size-8 place-items-center rounded-full ring-2 ring-white"
-                  style={{ marginLeft: -8, background: "#F17F3F", color: "#FFFFFF" }}
+                  style={{ marginLeft: -8, background: "#EAB819", color: "#FFFFFF" }}
                 >
                   <BadgeCheck size={16} strokeWidth={2.2} />
                 </span>

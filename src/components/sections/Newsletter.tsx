@@ -17,7 +17,7 @@ function NewsletterForm() {
         id="newsletter-email"
         type="email"
         placeholder="Enter your email"
-        className="h-[59px] min-w-0 flex-1 rounded-full border border-[#F17F3F] bg-transparent px-6 outline-none transition placeholder:text-[#4E5255] focus:border-[#D9662A]"
+        className="h-[59px] min-w-0 flex-1 rounded-full border border-[#EAB819] bg-transparent px-6 outline-none transition placeholder:text-[#4E5255] focus:border-[#D4A20D]"
         style={{
           fontFamily: BODY_FONT,
           fontWeight: 400,
@@ -29,7 +29,7 @@ function NewsletterForm() {
       />
       <button
         type="submit"
-        className="h-14 rounded-full bg-[#F17F3F] px-6 text-white transition hover:bg-[#D9662A] sm:w-[118px]"
+        className="h-14 rounded-full bg-[#EAB819] px-6 text-white transition hover:bg-[#D4A20D] sm:w-[118px]"
         style={{
           fontFamily: TITLE_FONT,
           fontWeight: 700,

@@ -76,10 +76,10 @@ export function AboutFeatures() {
               <div className="mt-8 flex justify-center lg:justify-start">
                 <Link
                   href={aboutFeatures.cta.href}
-                  className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full border-2 border-black/[0.12] pl-6 pr-2 text-base font-semibold text-[#111418] transition-all duration-300 hover:border-[#F17F3F] hover:text-[#F17F3F]"
+                  className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full border-2 border-black/[0.12] pl-6 pr-2 text-base font-semibold text-[#111418] transition-all duration-300 hover:border-[#EAB819] hover:text-[#EAB819]"
                 >
                   <span>{aboutFeatures.cta.label}</span>
-                  <span className="grid size-10 place-items-center rounded-full bg-[#F17F3F] text-white transition-transform duration-300 group-hover:rotate-45">
+                  <span className="grid size-10 place-items-center rounded-full bg-[#EAB819] text-white transition-transform duration-300 group-hover:rotate-45">
                     <ArrowUpRight size={20} strokeWidth={2.5} />
                   </span>
                 </Link>
@@ -151,7 +151,7 @@ export function AboutFeatures() {
                     </div>
                   ))}
                   <span
-                    className="grid size-8 place-items-center rounded-full ring-2 ring-white bg-[#F17F3F] text-white"
+                    className="grid size-8 place-items-center rounded-full ring-2 ring-white bg-[#EAB819] text-white"
                     style={{ marginLeft: -8 }}
                   >
                     <BadgeCheck size={16} strokeWidth={2.2} />
@@ -178,7 +178,7 @@ export function AboutFeatures() {
             <MotionSection key={card.title}>
               <article className="flex h-full flex-col justify-between rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition hover:shadow-md">
                 <div>
-                  <div className="grid size-[64px] place-items-center rounded-xl bg-[#FFF3ED] text-[#F17F3F]">
+                  <div className="grid size-[64px] place-items-center rounded-xl bg-[#FDF8E7] text-[#EAB819]">
                     <FeatureIcon name={card.icon} />
                   </div>
 

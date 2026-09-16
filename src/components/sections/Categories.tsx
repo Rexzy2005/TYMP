@@ -37,14 +37,14 @@ function LargeCard({
   return (
     <article
       className="relative flex h-[278px] flex-col justify-between rounded-2xl p-6"
-      style={{ background: "rgba(241,127,63,0.10)" }}
+      style={{ background: "rgba(234,184,25,0.10)" }}
     >
       {/* Top: icon + title + count + arrow */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-5">
           <div
             className="grid size-16 shrink-0 place-items-center rounded-xl"
-            style={{ background: "rgba(241,127,63,0.10)" }}
+            style={{ background: "rgba(234,184,25,0.10)" }}
           >
             <div className="grid size-12 place-items-center text-podhub-orange">
               <CategoryIcon name={icon} size={26} />
@@ -112,13 +112,13 @@ function RegularCard({
   return (
     <article
       className="relative flex h-[278px] flex-col justify-between rounded-2xl p-6"
-      style={{ background: "rgba(241,127,63,0.10)" }}
+      style={{ background: "rgba(234,184,25,0.10)" }}
     >
       {/* Top: icon (left) + arrow (right) */}
       <div className="flex items-start justify-between">
         <div
           className="grid size-16 shrink-0 place-items-center rounded-xl"
-          style={{ background: "rgba(241,127,63,0.10)" }}
+          style={{ background: "rgba(234,184,25,0.10)" }}
         >
           <span className="text-podhub-orange">
             <CategoryIcon name={icon} size={26} />
@@ -177,11 +177,11 @@ export function Categories() {
       {/* Orange blur blobs from JSON — top-right + bottom-left */}
       <div
         className="pointer-events-none absolute right-0 top-0 h-[232px] w-[317px] rounded-full opacity-90"
-        style={{ background: "#F17F3F", filter: "blur(160px)" }}
+        style={{ background: "#EAB819", filter: "blur(160px)" }}
       />
       <div
         className="pointer-events-none absolute bottom-0 left-0 h-[232px] w-[317px] rounded-full opacity-70"
-        style={{ background: "#F17F3F", filter: "blur(180px)" }}
+        style={{ background: "#EAB819", filter: "blur(180px)" }}
       />
 
       <div className="relative mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">

@@ -38,10 +38,10 @@ export function Footer() {
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <Image
               src={images.logo}
-              alt="PodHub"
-              width={269}
-              height={68}
-              className="h-[44px] w-auto sm:h-[48px] lg:h-[68px]"
+              alt="TYMP"
+              width={149}
+              height={48}
+              className="h-10 sm:h-12 w-auto object-contain"
               priority={false}
             />
             <div className="flex flex-col gap-6">
@@ -63,7 +63,7 @@ export function Footer() {
                     key={s.name}
                     href={s.href}
                     aria-label={s.name}
-                    className="transition hover:text-[#F17F3F]"
+                    className="transition hover:text-[#EAB819]"
                   >
                     <SocialGlyph name={s.name} size={27} />
                   </a>
@@ -82,7 +82,7 @@ export function Footer() {
               <div className="flex flex-col gap-[19px]">
                 <a
                   href={`mailto:${footer.contact.email}`}
-                  className="flex items-center gap-4 transition hover:text-[#F17F3F]"
+                  className="flex items-center gap-4 transition hover:text-[#EAB819]"
                 >
                   <Mail size={24} strokeWidth={1.6} />
                   <span
@@ -139,7 +139,7 @@ export function Footer() {
                       fontSize: 20,
                       lineHeight: "30px",
                       letterSpacing: "-0.4px",
-                      color: "#F17F3F",
+                      color: "#EAB819",
                     }}
                   >
                     {col.title}

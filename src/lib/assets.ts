@@ -1,7 +1,7 @@
 export const asset = (name: string) => `/assets/${name}`;
 
 export const images = {
-  logo: asset("logo.png"),
+  logo: asset("mainLogo.svg"),
   hero: asset("Hero_Image.svg"),
   heroIcon: asset("hero section icon.svg"),
   line2: asset("Line2.svg"),
@@ -19,10 +19,10 @@ export const images = {
   discoveryLine: asset("discovery.svg"),
   hostUnderline: asset("vector_host_section.svg"),
   podcastPlayerCard: asset("Podcast Player Card.svg"),
-  listenGoogle: asset("Link - Default.svg"),
-  listenSpotify: asset("Link - Default 2.svg"),
-  listenApple: asset("Link - Default 3.png"),
-  listenPocket: asset("Link - Default 4.svg"),
+  listenGoogle: asset("google_podcasts.png"),
+  listenSpotify: asset("spotify_logo.png"),
+  listenApple: asset("apple_podcasts.png"),
+  listenPocket: asset("pocket_casts.png"),
   clientOne: asset("Client Image 1.svg"),
   clientTwo: asset("Client Image2.svg"),
   clientThree: asset("Client Image 3.svg"),

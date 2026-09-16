@@ -137,9 +137,8 @@ export const aboutHero = {
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Episodes", href: "/#episodes" },
+  { label: "Episodes", href: "/episodes" },
   { label: "Hosts", href: "/#hosts" },
-  { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/#blog" },
 ];
 
@@ -171,46 +170,116 @@ export const hero = {
 /* ---------------------------------------------------------------------------
    Episodes
 --------------------------------------------------------------------------- */
-export const episodes = [
+export const allEpisodes = [
   {
-    number: "Episode 02",
-    title: "Cool Side Hustles That Became \nMillion-Dollar Successes",
-    host: "Max Hudson",
-    category: "Personal Development",
-    duration: "90 mins",
-    image: images.episodeOne,
-  },
-  {
+    id: "ep-01",
     number: "Episode 01",
     title: "Mindful Growth in Everyday Life",
     host: "Max Hudson",
     category: "Mental Health, Personal Development",
     duration: "1 hr 24 mins",
-    image: images.episodeTwo,
+    date: "Apr 8, 2025",
+    image: "/assets/episodes/ep_1.jpg",
+    heroImage: "/assets/episodes/details_hero.jpg",
   },
   {
-    number: "Episode 03",
-    title: "The Art of Deep Work",
-    host: "Ethan Carter",
+    id: "ep-02",
+    number: "Episode 02",
+    title: "Cool Side Hustles That Became Million-Dollar Successes",
+    host: "Max Hudson",
     category: "Personal Development",
-    duration: "45 mins",
-    image: images.episodeThree,
+    duration: "90 mins",
+    date: "May 08, 2025",
+    image: "/assets/episodes/ep_2.jpg",
+    heroImage: "/assets/episodes/hero_ep_2.jpg",
   },
   {
+    id: "ep-11",
     number: "Episode 11",
     title: "The Dopamine Experiment",
     host: "Max Hudson",
     category: "Science and Nature",
     duration: "30 mins",
-    image: images.episodeFour,
+    date: "April 29, 2025",
+    image: "/assets/episodes/ep_3.jpg",
+    heroImage: "/assets/episodes/hero_ep_11.jpg",
+  },
+  {
+    id: "ep-03",
+    number: "Episode 03",
+    title: "The Art of Deep Work",
+    host: "Ethan Carter",
+    category: "Personal Development",
+    duration: "45 mins",
+    date: "April 21, 2025",
+    image: "/assets/episodes/ep_4.jpg",
+    heroImage: "/assets/episodes/hero_ep_3.jpg",
+  },
+  {
+    id: "ep-04",
+    number: "Episode 04",
+    title: "The Science Behind Better Sleep",
+    host: "Ethan Carter",
+    category: "Health & Wellness",
+    duration: "1 hr",
+    date: "April 15, 2025",
+    image: "/assets/episodes/ep_5.jpg",
+    heroImage: "/assets/episodes/hero_ep_4.jpg",
+  },
+  {
+    id: "ep-05",
+    number: "Episode 05",
+    title: "Patterns of the Universe",
+    host: "Mason Clarke",
+    category: "Science and Nature",
+    duration: "1 hr 00 min",
+    date: "April 07, 2025",
+    image: "/assets/episodes/ep_6.jpg",
+    heroImage: "/assets/episodes/hero_ep_5.jpg",
+  },
+  {
+    id: "ep-06",
+    number: "Episode 06",
+    title: "Diving into True Crime Stories",
+    host: "Mason Clarke",
+    category: "True Crime, Investigation",
+    duration: "1 hr 24 mins",
+    date: "March 29, 2025",
+    image: "/assets/episodes/ep_7.jpg",
+    heroImage: "/assets/episodes/hero_ep_6.jpg",
+  },
+  {
+    id: "ep-07",
+    number: "Episode 07",
+    title: "Sarcasm Served Fresh Daily",
+    host: "James Reynolds",
+    category: "True Crime, Investigation",
+    duration: "1 hr 24 mins",
+    date: "March 18, 2025",
+    image: "/assets/episodes/ep_8.jpg",
+    heroImage: "/assets/episodes/hero_ep_7.jpg",
   },
 ];
 
+export const episodes = allEpisodes.slice(0, 4);
+
+export const episodesCategories = [
+  "Episodes Category",
+  "All",
+  "Mental Health",
+  "Personal Development",
+  "Science and Nature",
+  "Health & Wellness",
+  "True Crime, Investigation",
+];
+
 export const episodesHeader = {
-  title: "Discover the Latest Episodes \nand Featured Highlights",
+  title: "Take a Look at All the \nEpisodes Here!",
+  subtitle:
+    "Dive into an extensive collection of podcasts covering diverse topics. From insightful conversations to thrilling storytelling, discover episodes that inspire, entertain, and inform.",
 };
 
-export const episodesCta = { label: "Browse More Episodes", href: "#episodes" };
+export const episodesCta = { label: "Load More Topics", href: "/episodes" };
 
 /* ---------------------------------------------------------------------------
    Discovery (Listen Now) + Stats
@@ -570,8 +639,7 @@ export const footer = {
       title: "Quick Links",
       links: [
         { label: "Home", href: "#home" },
-        { label: "Episodes", href: "#episodes" },
-        { label: "Pricing Plan", href: "#pricing" },
+        { label: "Episodes", href: "/episodes" },
       ],
     },
     {

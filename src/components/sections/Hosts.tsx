@@ -53,7 +53,7 @@ function HostCard({ name, role, image }: HostCardProps) {
   return (
     <article
       className="group flex min-h-[519px] w-full max-w-[384px] flex-col rounded-2xl p-6"
-      style={{ background: "rgba(241, 127, 63, 0.10)" }}
+      style={{ background: "rgba(234, 184, 25, 0.10)" }}
     >
       <div className="relative aspect-[336/358] w-full overflow-hidden rounded-lg">
         <Image
@@ -135,7 +135,7 @@ function HostHeading() {
       >
         Meet Our{" "}
         <span className="relative inline-block">
-          Hosts
+          Team
           <span
             className="pointer-events-none absolute left-0 top-[88%] h-[6px] w-full min-w-[110px]"
             aria-hidden
@@ -166,7 +166,7 @@ export function Hosts() {
           top: 44.7,
           width: 316.8,
           height: 231.7,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.9,
           filter: "blur(115px)",
         }}
@@ -178,7 +178,7 @@ export function Hosts() {
           top: 706.1,
           width: 316.8,
           height: 231.7,
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.9,
           filter: "blur(115px)",
         }}

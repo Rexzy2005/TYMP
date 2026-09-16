@@ -16,8 +16,8 @@ export function PodhubMark({ size = 28, className = "" }: PodhubMarkProps) {
     >
       <defs>
         <linearGradient id="podhub-mark" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#F17F3F" />
-          <stop offset="100%" stopColor="#D9662A" />
+          <stop offset="0%" stopColor="#EAB819" />
+          <stop offset="100%" stopColor="#D4A20D" />
         </linearGradient>
       </defs>
       <path

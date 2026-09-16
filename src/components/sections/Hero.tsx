@@ -8,14 +8,14 @@ import { HeroListenersBadge, HeroVisual } from "./hero/HeroParts";
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-[720px] justify-center overflow-hidden bg-podhub-ink pb-16 pt-24 sm:pt-28 lg:h-[780px] lg:pb-0 lg:pt-0">
+    <section id="home" className="relative flex h-screen w-screen justify-center overflow-hidden bg-podhub-ink pb-16 pt-24 sm:pt-28 lg:pb-0 lg:pt-0">
       {/* Tight orange glow behind the human — contained spread */}
       <div
         className="pointer-events-none absolute z-0 h-[380px] w-[380px] rounded-full"
         style={{
           right: "16%",
           top: "32%",
-          background: "#F17F3F",
+          background: "#EAB819",
           opacity: 0.5,
           filter: "blur(110px)",
         }}
