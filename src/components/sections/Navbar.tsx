@@ -48,6 +48,8 @@ export function Navbar() {
     if (href === "/") return pathname === "/";
     if (href === "/about") return pathname === "/about";
     if (href === "/episodes") return pathname === "/episodes" || pathname.startsWith("/episodes");
+    if (href === "/blog") return pathname === "/blog" || pathname.startsWith("/blog/");
+    if (href === "/hosts") return pathname === "/hosts";
     return false;
   };
 
