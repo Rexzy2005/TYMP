@@ -944,5 +944,5 @@ export const footer = {
       ],
     },
   ],
-  copyright: (year: number) => `© Copyrights ${year} Design Monks. All rights reserved.`,
+  copyright: (year: number) => `© Copyrights ${year} Design TYMP. All rights reserved.`,
 };
