@@ -138,9 +138,9 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Episodes", href: "/episodes" },
-  { label: "Hosts", href: "/hosts" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Team", href: "/hosts" },
   { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const navCta = { label: "Subscribe", href: "/#newsletter" };
@@ -913,7 +913,7 @@ export const footer = {
       title: "Company",
       links: [
         { label: "About Us", href: "/about" },
-        { label: "Our Host", href: "/hosts" },
+        { label: "Our Team", href: "/hosts" },
         { label: "Newsletter", href: "#newsletter" },
         { label: "Blog & Articles", href: "/blog" },
       ],
@@ -923,7 +923,6 @@ export const footer = {
       links: [
         { label: "Home", href: "#home" },
         { label: "Episodes", href: "/episodes" },
-        { label: "Pricing Plan", href: "#pricing" },
       ],
     },
     {
