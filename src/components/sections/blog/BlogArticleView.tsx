@@ -205,7 +205,7 @@ export function BlogArticleView({ slug }: BlogArticleViewProps) {
                     ))}
 
                     {"image" in section && section.image && (
-                      <div className="relative mt-6 aspect-[792/400] w-full overflow-hidden rounded-2xl">
+                      <div className="relative mt-6 aspect-[792/340] w-full overflow-hidden rounded-2xl">
                         <Image
                           src={section.image}
                           alt={section.heading}
@@ -275,7 +275,7 @@ export function BlogArticleView({ slug }: BlogArticleViewProps) {
                     {"imagePair" in section && section.imagePair && (
                       <div className="mt-6 grid grid-cols-2 gap-4">
                         {section.imagePair.map((src, ii) => (
-                          <div key={ii} className="relative aspect-[384/280] w-full overflow-hidden rounded-2xl">
+                          <div key={ii} className="relative aspect-[386/342] w-full overflow-hidden rounded-2xl">
                             <Image
                               src={src}
                               alt={section.heading}
@@ -400,7 +400,7 @@ export function BlogArticleView({ slug }: BlogArticleViewProps) {
                     className="group block w-full shrink-0 sm:w-[calc((100%-3rem)/3)]"
                   >
                     <article className="overflow-hidden rounded-[20px]">
-                      <div className="relative aspect-[384/280] w-full overflow-hidden rounded-[20px]">
+                      <div className="relative aspect-[463/250] w-full overflow-hidden rounded-[20px]">
                         <Image
                           src={p.image}
                           alt={p.title}
