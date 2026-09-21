@@ -76,7 +76,7 @@ export function AboutFeatures() {
               <div className="mt-8 flex justify-center lg:justify-start">
                 <Link
                   href={aboutFeatures.cta.href}
-                  className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full border-2 border-black/[0.12] pl-6 pr-2 text-base font-semibold text-[#111418] transition-all duration-300 hover:border-[#EAB819] hover:text-[#EAB819]"
+                  className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full border-2 border-black/[0.12] pl-6 pr-2 text-base font-semibold text-[#111418] transition-all duration-300 hover:border-[#EAB819] hover:text-[#EAB819] hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <span>{aboutFeatures.cta.label}</span>
                   <span className="grid size-10 place-items-center rounded-full bg-[#EAB819] text-white transition-transform duration-300 group-hover:rotate-45">

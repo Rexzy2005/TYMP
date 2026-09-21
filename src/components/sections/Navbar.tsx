@@ -48,6 +48,8 @@ export function Navbar() {
     if (href === "/") return pathname === "/";
     if (href === "/about") return pathname === "/about";
     if (href === "/episodes") return pathname === "/episodes" || pathname.startsWith("/episodes");
+    if (href === "/blog") return pathname === "/blog" || pathname.startsWith("/blog/");
+    if (href === "/hosts") return pathname === "/hosts";
     return false;
   };
 
@@ -98,7 +100,7 @@ export function Navbar() {
             className="group relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#EAB819] px-5 text-sm font-semibold text-white shadow-[0_2px_15px_rgba(234,184,25,0.35)] transition-all duration-300 hover:bg-[#F5C738] hover:shadow-[0_4px_25px_rgba(234,184,25,0.55)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>{navCta.label}</span>
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
           </Link>
         </div>
 
@@ -106,7 +108,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 md:hidden">
           <Link
             href={navCta.href}
-            className="inline-flex h-8 items-center justify-center rounded-full bg-[#EAB819] px-3.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#F5C738]"
+            className="group inline-flex h-8 items-center justify-center rounded-full bg-[#EAB819] px-3.5 text-xs font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#F5C738] hover:scale-[1.02] active:scale-[0.98]"
           >
             {navCta.label}
           </Link>
@@ -114,7 +116,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#EAB819]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition-all duration-300 hover:bg-white/15 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#EAB819]"
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
@@ -153,10 +155,10 @@ export function Navbar() {
             <Link
               href={navCta.href}
               onClick={() => setIsOpen(false)}
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#EAB819] text-center font-semibold text-white shadow-lg transition hover:bg-[#F5C738]"
+              className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#EAB819] text-center font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#F5C738] hover:scale-[1.02] active:scale-[0.98]"
             >
               <span>{navCta.label}</span>
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
             </Link>
           </div>
         </div>

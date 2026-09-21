@@ -125,7 +125,7 @@ export function EpisodeDetailsView({ episodeId }: EpisodeDetailsViewProps) {
                     <button
                       type="button"
                       onClick={handleShare}
-                      className="group flex items-center justify-between gap-3 sm:gap-4 rounded-full border border-white/25 bg-black/40 px-5 py-2.5 sm:px-6 sm:py-3 text-[14px] sm:text-[15px] font-medium text-white backdrop-blur-md transition-all hover:bg-black/60 active:scale-95 shadow-lg"
+                      className="group flex items-center justify-between gap-3 sm:gap-4 rounded-full border border-white/25 bg-black/40 px-5 py-2.5 sm:px-6 sm:py-3 text-[14px] sm:text-[15px] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-black/60 hover:scale-[1.02] active:scale-[0.98] shadow-lg"
                       style={{ fontFamily: META_FONT }}
                     >
                       <span>
@@ -142,7 +142,7 @@ export function EpisodeDetailsView({ episodeId }: EpisodeDetailsViewProps) {
                     <button
                       type="button"
                       onClick={() => setIsVideoOpen(true)}
-                      className="group flex items-center justify-between gap-3 sm:gap-4 rounded-full border border-white/25 bg-black/40 px-5 py-2.5 sm:px-6 sm:py-3 text-[14px] sm:text-[15px] font-medium text-white backdrop-blur-md transition-all hover:bg-black/60 active:scale-95 shadow-lg"
+                      className="group flex items-center justify-between gap-3 sm:gap-4 rounded-full border border-white/25 bg-black/40 px-5 py-2.5 sm:px-6 sm:py-3 text-[14px] sm:text-[15px] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-black/60 hover:scale-[1.02] active:scale-[0.98] shadow-lg"
                       style={{ fontFamily: META_FONT }}
                     >
                       <span>Play Video</span>
@@ -544,7 +544,7 @@ export function EpisodeDetailsView({ episodeId }: EpisodeDetailsViewProps) {
             {/* Close Button */}
             <button
               onClick={() => setIsVideoOpen(false)}
-              className="absolute right-4 top-4 z-10 grid size-10 place-items-center rounded-full bg-white/10 text-white backdrop-blur hover:bg-white/25 transition-all"
+              className="absolute right-4 top-4 z-10 grid size-10 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all duration-300 hover:bg-white/25 hover:scale-[1.02] active:scale-[0.98]"
               aria-label="Close video player"
             >
               <CloseIcon size={20} />

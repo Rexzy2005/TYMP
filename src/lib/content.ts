@@ -112,7 +112,7 @@ export const aboutHostsHeader = {
   title: "Meet Our Team That Make\nEvery Story Special",
 };
 
-export const aboutHostsCta = { label: "Show Our All Team", href: "#hosts" };
+export const aboutHostsCta = { label: "Show Our All Team", href: "/hosts" };
 
 /* ---------------------------------------------------------------------------
    About Hero
@@ -138,8 +138,8 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Episodes", href: "/episodes" },
-  { label: "Hosts", href: "/#hosts" },
-  { label: "Blog", href: "/#blog" },
+  { label: "Hosts", href: "/hosts" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const navCta = { label: "Subscribe", href: "/#newsletter" };
@@ -503,7 +503,73 @@ export const hostsHeader = {
     "Our hosts bring unique voices, backgrounds, and beats to the platform - each one a different doorway into the world of audio.",
 };
 
-export const hostsCta = { label: "Show Our All Hosts", href: "#hosts" };
+export const hostsCta = { label: "Show Our All Hosts", href: "/hosts" };
+
+/* Full roster shown on the dedicated /hosts team page. */
+export const teamMembers = [
+  {
+    name: "Max Hudson",
+    role: "Documentary Maker",
+    image: images.hostOne,
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Ethan Carter",
+    role: "Tech Analyst & Podcast Host",
+    image: images.hostTwo,
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Mason Clarke",
+    role: "Health & Wellness Coach",
+    image: images.hostThree,
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "James Reynolds",
+    role: "Business Entrepreneur",
+    image: "/assets/episodes/guest_jacob.jpg",
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Benjamin Scott",
+    role: "Sports Commentator Analyst",
+    image: "/assets/episodes/ep_5.jpg",
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Ryan Mitchell",
+    role: "Science and Nature Host",
+    image: "/assets/episodes/ep_7.jpg",
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Alex Hayes",
+    role: "Digital Marketing Expert",
+    image: "/assets/episodes/guest_howard.jpg",
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Noah Bennett",
+    role: "AI & Innovation Specialist",
+    image: "/assets/episodes/ep_8.jpg",
+    socials: ["x", "instagram", "threads"],
+  },
+  {
+    name: "Jack Thompson",
+    role: "Motivational Speaker",
+    image: "/assets/episodes/ep_1.jpg",
+    socials: ["x", "instagram", "threads"],
+  },
+];
+
+export const teamPageHeader = {
+  eyebrow: "Meet The Team",
+  title: "Meet Our Team\nThe People Behind our Success",
+  highlight: "Behind our",
+  body:
+    "Discover the vibrant storytellers and experts behind TYMP. Our hosts engage in lively discussions, sharing insights and humor on a variety of topics. Whether you seek inspiration or entertainment, their voices will keep you captivated.",
+};
 
 /* ---------------------------------------------------------------------------
    Pricing
@@ -557,30 +623,197 @@ export const pricingHeader = {
 --------------------------------------------------------------------------- */
 export const posts = [
   {
+    slug: "breaking-down-the-headlines",
     title: "Breaking Down the Headlines: Best Podcasts for Current Affairs",
     category: "Trending",
     date: "January 26, 24",
     readTime: "20 mins read",
     featured: true,
     image: images.blogOne,
+    author: "David Michaels",
+    excerpt:
+      "Podcasts are a big part of how we entertain and learn these days. Whether you're into true crime or comedy, here are some tips to make your listening even better.",
   },
   {
+    slug: "ultimate-guide-finding-perfect-podcast",
     title: "The Ultimate Guide to Finding Your Perfect Podcast",
     category: "Tips & Tricks",
     date: "April 18, 2025",
     readTime: "10 mins read",
     featured: false,
     image: images.blogTwo,
+    author: "Max Hudson",
+    excerpt:
+      "With millions of shows out there, finding the right podcast can feel overwhelming. Here's a simple framework for narrowing down exactly what to listen to next.",
   },
   {
+    slug: "essential-podcast-apps-and-tools",
     title: "Essential Podcast Apps and Tools for Every Listener",
     category: "Tools",
     date: "April 8, 2025",
     readTime: "10 mins read",
     featured: false,
     image: images.blogThree,
+    author: "Ethan Carter",
+    excerpt:
+      "From playback speed tricks to smart recommendation engines, these are the apps and features that make everyday listening effortless.",
+  },
+  {
+    slug: "best-podcasts-to-inspire-educate-entertain",
+    title: "The Best Podcasts to Inspire, Educate, and Entertain",
+    category: "Trending",
+    date: "Mar 13, 2025",
+    readTime: "04 mins read",
+    featured: false,
+    image: "/assets/episodes/hero_ep_1.jpg",
+    author: "Mason Clarke",
+    excerpt:
+      "A curated shortlist of shows that manage to do it all - make you laugh, teach you something new, and leave you counting down to the next episode.",
+  },
+  {
+    slug: "stay-consistent-with-your-listening-routine",
+    title: "How to Stay Consistent With Your Podcast Listening Routine",
+    category: "Habits",
+    date: "Jan 27, 2025",
+    readTime: "12 mins read",
+    featured: false,
+    image: "/assets/episodes/hero_ep_2.jpg",
+    author: "James Reynolds",
+    excerpt:
+      "Building a listening habit is a lot like building any other habit. Here's how to actually stick with it, even on your busiest weeks.",
+  },
+  {
+    slug: "science-of-active-listening",
+    title: "The Science of Active Listening and How Podcasts Can Help",
+    category: "Wellness",
+    date: "Jan 18, 2025",
+    readTime: "05 mins read",
+    featured: false,
+    image: "/assets/episodes/hero_ep_4.jpg",
+    author: "Ryan Mitchell",
+    excerpt:
+      "Active listening is a trainable skill, and podcasts happen to be one of the best low-stakes ways to practice it every single day.",
+  },
+  {
+    slug: "perfect-podcast-playlist-for-any-mood",
+    title: "How to Create the Perfect Podcast Playlist for Any Mood",
+    category: "Lifestyle",
+    date: "Apr 8, 2025",
+    readTime: "06 mins read",
+    featured: false,
+    image: "/assets/episodes/hero_ep_5.jpg",
+    author: "Alex Hayes",
+    excerpt:
+      "Whether you're winding down or gearing up for a workout, the right playlist of episodes can completely change how your day feels.",
+  },
+  {
+    slug: "improve-podcast-listening-for-max-enjoyment",
+    title: "How to Improve Your Podcast Listening for Maximum Enjoyment",
+    category: "Tips & Tricks",
+    date: "May 30, 2025",
+    readTime: "08 mins read",
+    featured: false,
+    image: "/assets/episodes/hero_ep_6.jpg",
+    author: "Noah Bennett",
+    excerpt:
+      "Small changes to when, where, and how you listen can make a bigger difference than switching shows entirely. Here's what actually moves the needle.",
+  },
+  {
+    slug: "day-in-the-life-of-a-podcaster",
+    title: "Just Hanging Out Behind the Mic: A Day in the Life of a Podcaster",
+    category: "Lifestyle",
+    date: "Jan 24, 2025",
+    readTime: "06 mins read",
+    featured: false,
+    image: "/assets/episodes/hero_ep_7.jpg",
+    author: "Jack Thompson",
+    excerpt:
+      "Ever wondered what actually happens before, during, and after an episode gets recorded? Here's an honest look behind the curtain.",
   },
 ];
+
+/* Full long-form body for the featured article's detail page. Other posts
+   fall back to a lighter, auto-generated body built from their excerpt. */
+export const featuredPostBody = {
+  slug: "breaking-down-the-headlines",
+  intro: [
+    "Podcasts have transformed the way we consume content, offering a seamless blend of entertainment, education, and storytelling. Whether you listen to podcasts for personal growth, news updates, or pure enjoyment, maximizing your listening experience can help you absorb more information and enhance your overall engagement.",
+    "From choosing the right content to optimizing your environment, here's a comprehensive guide to getting the most out of your podcast experience.",
+  ],
+  sections: [
+    {
+      heading: "Pick Podcasts You Actually Like",
+      paragraphs: [
+        "With over 5 million podcasts available worldwide, finding the right ones can be overwhelming. The key to an enjoyable experience is discovering shows that genuinely capture your attention.",
+      ],
+      image: "/assets/episodes/hero_ep_3.jpg",
+      list: [
+        "What topics excite me? (Self-improvement, storytelling, history, true crime, business, etc.)",
+        "Do I prefer structured discussions, casual conversations, or deep-dive interviews?",
+        "Am I looking for entertainment, education, or a mix of both?",
+      ],
+      quote: {
+        text: "Adjusting playback speed lets you control your learning pace — just be careful not to sacrifice comprehension for speed.",
+        author: "David Michaels, Podcast Creator",
+      },
+      proTip:
+        "Don't force yourself to listen at 2x speed just to save time. The goal is enjoyment and retention, not just finishing episodes quickly.",
+    },
+    {
+      heading: "Check Out Different Ways to Play",
+      paragraphs: [
+        "Most podcast players allow you to adjust playback speed and customize the listening experience. Experimenting with these settings can help you find a comfortable balance between comprehension and efficiency.",
+      ],
+      subheading: "Playback Speed Options",
+      list: [
+        "1x Speed (Normal): Best for casual listening and storytelling podcasts.",
+        "1.2x – 1.5x Speed: Great for educational or business-related content to consume information faster.",
+        "0.8x Speed: Helpful for complex topics that require deep focus.",
+        "Before Sleep: Opt for storytelling or mindfulness podcasts to help you relax.",
+      ],
+      imagePair: ["/assets/episodes/ep_2.jpg", "/assets/episodes/ep_4.jpg"],
+      proTip:
+        "Use podcast platforms like Spotify, Apple Podcasts, Pocket Casts, or Overcast to explore top-rated shows, trending topics, and AI-powered recommendations based on your listening history.",
+    },
+    {
+      heading: "Create an Epic Listening Zone",
+      paragraphs: [
+        "Your environment plays a huge role in how well you absorb and enjoy a podcast. A noisy or distracting setting can make it difficult to focus, reducing the impact of the content.",
+      ],
+      subheading: "Where You Listen Matters",
+      list: [
+        "At Home: Find a quiet spot or listen while doing household tasks like cooking or cleaning.",
+        "During Commute: Use noise-canceling headphones to block out background noise.",
+        "During Workouts: Choose high-energy or motivational podcasts to keep you engaged.",
+        "Before Sleep: Opt for storytelling or mindfulness podcasts to help you relax.",
+      ],
+      closing:
+        "Here's a helpful suggestion: When you're tuning into a podcast, especially one that's educational or involves a deep dive into complex topics, it's beneficial to find a relaxed and comfortable spot to listen. Ideally, this should be a place with minimal distractions, allowing you to fully engage with the content and absorb the information being presented. This way, you can enhance your understanding and enjoy the experience without interruptions.",
+    },
+  ],
+};
+
+export const blogCategories = [
+  "Select Category",
+  "All",
+  "Trending",
+  "Tips & Tricks",
+  "Tools",
+  "Habits",
+  "Wellness",
+  "Lifestyle",
+];
+
+export const blogPageHeader = {
+  title: "Unlock Knowledge With\nOur Engaging Blogs",
+  highlight: "Engaging",
+  body:
+    "Stay ahead with expert insights, industry trends, and in-depth guides. Explore thought-provoking articles designed to inform, inspire, and elevate your knowledge.",
+};
+
+export const blogExploreHeader = {
+  title: "Explore Our Most\nPopular Blog & Articles",
+};
 
 export const blogHeader = {
   eyebrow: "Our Blog",
@@ -589,7 +822,7 @@ export const blogHeader = {
     "Discover insights, tips, and the latest trends in the podcasting world. Stay informed and inspired with our curated articles.",
 };
 
-export const blogCta = { label: "Browse More Blogs", href: "#blog" };
+export const blogCta = { label: "Browse More Blogs", href: "/blog" };
 
 /* ---------------------------------------------------------------------------
    Newsletter
@@ -622,7 +855,7 @@ export const footer = {
     { name: "Facebook", href: "#" },
   ],
   contact: {
-    email: "hello@designmonks.co",
+    email: "hello@tymp.com",
     addressLines: ["4886 Stroman Drive, South", "Stanton, California"],
   },
   columns: [
@@ -630,9 +863,9 @@ export const footer = {
       title: "Company",
       links: [
         { label: "About Us", href: "/about" },
-        { label: "Our Host", href: "#hosts" },
+        { label: "Our Host", href: "/hosts" },
         { label: "Newsletter", href: "#newsletter" },
-        { label: "Blog & Articles", href: "#blog" },
+        { label: "Blog & Articles", href: "/blog" },
       ],
     },
     {
@@ -640,6 +873,7 @@ export const footer = {
       links: [
         { label: "Home", href: "#home" },
         { label: "Episodes", href: "/episodes" },
+        { label: "Pricing Plan", href: "#pricing" },
       ],
     },
     {
@@ -661,5 +895,5 @@ export const footer = {
       ],
     },
   ],
-  copyright: "© Copyrights 2025 Design Monks. All rights reserved.",
+  copyright: (year: number) => `© Copyrights ${year} Design Monks. All rights reserved.`,
 };

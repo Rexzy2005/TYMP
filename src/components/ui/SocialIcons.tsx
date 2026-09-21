@@ -8,7 +8,14 @@ import {
   Link,
   Camera,
   Globe,
+  createLucideIcon,
 } from "lucide-react";
+
+const Threads = createLucideIcon("Threads", [
+  ["path", { d: "M16.6 8.7c-.8-2.4-2.6-3.8-5.1-3.8-3.9 0-6.5 3-6.5 7.1 0 4.3 2.8 7.1 7 7.1 3.3 0 5.8-1.8 5.8-4.5 0-2.3-1.8-3.8-4.8-3.8h-1.2", key: "th-main" }],
+  ["path", { d: "M18.8 10.1c-1.4-1.2-3.5-1.9-6.4-1.9", key: "th-top" }],
+  ["path", { d: "M14.2 13.5c-.4 1.3-1.4 2.1-2.7 2.1-1.4 0-2.5-.9-2.5-2.2 0-1.2 1-2 2.8-2h1.1", key: "th-loop" }],
+]);
 
 type SocialIconKey =
   | "x"
@@ -18,6 +25,7 @@ type SocialIconKey =
   | "spotify"
   | "facebook"
   | "linkedin"
+  | "threads"
   | "rss";
 
 type SocialIconProps = {
@@ -45,6 +53,8 @@ export function SocialIcon({ name, size = 18, className = "" }: SocialIconProps)
       return <Globe {...props} />;
     case "linkedin":
       return <Link {...props} />;
+    case "threads":
+      return <Threads {...props} />;
     case "rss":
       return <Rss {...props} />;
     default:

@@ -16,7 +16,7 @@ type ButtonProps = {
 };
 
 const base =
-  "font-display inline-flex items-center justify-center gap-2 rounded-full font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-podhub-orange/40";
+  "group font-display inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-podhub-orange/40";
 
 const sizes: Record<ButtonSize, string> = {
   sm: "h-9 px-4 text-xs",
@@ -51,11 +51,11 @@ export function Button({
     <ArrowRight
       size={14}
       strokeWidth={2.5}
-      className={
-        variant === "solid"
-          ? "text-podhub-orange"
-          : "text-white/80 group-hover:text-podhub-orange"
-      }
+        className={`transition-transform duration-300 group-hover:rotate-45 ${
+          variant === "solid"
+            ? "text-podhub-orange"
+            : "text-white/80 group-hover:text-podhub-orange"
+        }`}
     />
   ) : null;
 
