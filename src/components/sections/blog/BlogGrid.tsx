@@ -151,7 +151,7 @@ export function BlogGrid() {
                 <MotionSection key={post.slug}>
                   <Link href={`/blog/${post.slug}`} className="group block h-full">
                     <article className="flex h-full flex-col overflow-hidden rounded-[20px]">
-                      <div className="relative aspect-[384/280] w-full overflow-hidden rounded-[20px]">
+                      <div className="relative aspect-[463/250] w-full overflow-hidden rounded-[20px]">
                         <Image
                           src={post.image}
                           alt={post.title}
