@@ -880,7 +880,7 @@ export const contactInfoHeader = {
 };
 
 export const contactInfoCards = [
-  { label: "Let's Talk", value: "hello@designmonks.co", href: "mailto:hello@designmonks.co", icon: "mail" },
+  { label: "Let's Talk", value: "hello@tymp.com", href: "mailto:hello@tymp.com", icon: "mail" },
   { label: "Call Us", value: "(056) +123 456 789", href: "tel:+056123456789", icon: "phone" },
 ];
 
@@ -905,7 +905,7 @@ export const footer = {
     { name: "Facebook", href: "#" },
   ],
   contact: {
-    email: "hello@designmonks.co",
+    email: "hello@tymp.com",
     addressLines: ["4886 Stroman Drive, South", "Stanton, California"],
   },
   columns: [
