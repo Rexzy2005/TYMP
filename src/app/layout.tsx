@@ -15,7 +15,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PodHub - Where Stories Come Alive",
+  title: "The Yellow Mic",
   description:
     "Stream, save, and stay inspired. PodHub is your home for podcasts, playlists, and creator spotlights.",
 };
