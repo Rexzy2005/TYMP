@@ -139,6 +139,7 @@ export const navItems = [
   { label: "About", href: "/about" },
   { label: "Episodes", href: "/episodes" },
   { label: "Hosts", href: "/hosts" },
+  { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -510,55 +511,55 @@ export const teamMembers = [
   {
     name: "Max Hudson",
     role: "Documentary Maker",
-    image: images.hostOne,
+    image: "/assets/team/max-hudson.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Ethan Carter",
     role: "Tech Analyst & Podcast Host",
-    image: images.hostTwo,
+    image: "/assets/team/ethan-carter.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Mason Clarke",
     role: "Health & Wellness Coach",
-    image: images.hostThree,
+    image: "/assets/team/mason-clarke.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "James Reynolds",
     role: "Business Entrepreneur",
-    image: "/assets/episodes/guest_jacob.jpg",
+    image: "/assets/team/james-reynolds.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Benjamin Scott",
     role: "Sports Commentator Analyst",
-    image: "/assets/episodes/ep_5.jpg",
+    image: "/assets/team/benjamin-scott.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Ryan Mitchell",
     role: "Science and Nature Host",
-    image: "/assets/episodes/ep_7.jpg",
+    image: "/assets/team/ryan-mitchell.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Alex Hayes",
     role: "Digital Marketing Expert",
-    image: "/assets/episodes/guest_howard.jpg",
+    image: "/assets/team/alex-hayes.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Noah Bennett",
     role: "AI & Innovation Specialist",
-    image: "/assets/episodes/ep_8.jpg",
+    image: "/assets/team/noah-bennett.jpg",
     socials: ["x", "instagram", "threads"],
   },
   {
     name: "Jack Thompson",
     role: "Motivational Speaker",
-    image: "/assets/episodes/ep_1.jpg",
+    image: "/assets/team/jack-thompson.jpg",
     socials: ["x", "instagram", "threads"],
   },
 ];
@@ -629,7 +630,7 @@ export const posts = [
     date: "January 26, 24",
     readTime: "20 mins read",
     featured: true,
-    image: images.blogOne,
+    image: "/assets/blog/breaking-down-the-headlines.jpg",
     author: "David Michaels",
     excerpt:
       "Podcasts are a big part of how we entertain and learn these days. Whether you're into true crime or comedy, here are some tips to make your listening even better.",
@@ -641,7 +642,7 @@ export const posts = [
     date: "April 18, 2025",
     readTime: "10 mins read",
     featured: false,
-    image: images.blogTwo,
+    image: "/assets/blog/ultimate-guide-finding-perfect-podcast.jpg",
     author: "Max Hudson",
     excerpt:
       "With millions of shows out there, finding the right podcast can feel overwhelming. Here's a simple framework for narrowing down exactly what to listen to next.",
@@ -653,7 +654,7 @@ export const posts = [
     date: "April 8, 2025",
     readTime: "10 mins read",
     featured: false,
-    image: images.blogThree,
+    image: "/assets/blog/essential-podcast-apps-and-tools.jpg",
     author: "Ethan Carter",
     excerpt:
       "From playback speed tricks to smart recommendation engines, these are the apps and features that make everyday listening effortless.",
@@ -665,7 +666,7 @@ export const posts = [
     date: "Mar 13, 2025",
     readTime: "04 mins read",
     featured: false,
-    image: "/assets/episodes/hero_ep_1.jpg",
+    image: "/assets/blog/best-podcasts-to-inspire-educate-entertain.jpg",
     author: "Mason Clarke",
     excerpt:
       "A curated shortlist of shows that manage to do it all - make you laugh, teach you something new, and leave you counting down to the next episode.",
@@ -677,7 +678,7 @@ export const posts = [
     date: "Jan 27, 2025",
     readTime: "12 mins read",
     featured: false,
-    image: "/assets/episodes/hero_ep_2.jpg",
+    image: "/assets/blog/stay-consistent-with-your-listening-routine.jpg",
     author: "James Reynolds",
     excerpt:
       "Building a listening habit is a lot like building any other habit. Here's how to actually stick with it, even on your busiest weeks.",
@@ -689,7 +690,7 @@ export const posts = [
     date: "Jan 18, 2025",
     readTime: "05 mins read",
     featured: false,
-    image: "/assets/episodes/hero_ep_4.jpg",
+    image: "/assets/blog/science-of-active-listening.jpg",
     author: "Ryan Mitchell",
     excerpt:
       "Active listening is a trainable skill, and podcasts happen to be one of the best low-stakes ways to practice it every single day.",
@@ -701,7 +702,7 @@ export const posts = [
     date: "Apr 8, 2025",
     readTime: "06 mins read",
     featured: false,
-    image: "/assets/episodes/hero_ep_5.jpg",
+    image: "/assets/blog/perfect-podcast-playlist-for-any-mood.jpg",
     author: "Alex Hayes",
     excerpt:
       "Whether you're winding down or gearing up for a workout, the right playlist of episodes can completely change how your day feels.",
@@ -713,7 +714,7 @@ export const posts = [
     date: "May 30, 2025",
     readTime: "08 mins read",
     featured: false,
-    image: "/assets/episodes/hero_ep_6.jpg",
+    image: "/assets/blog/improve-podcast-listening-for-max-enjoyment.jpg",
     author: "Noah Bennett",
     excerpt:
       "Small changes to when, where, and how you listen can make a bigger difference than switching shows entirely. Here's what actually moves the needle.",
@@ -725,7 +726,7 @@ export const posts = [
     date: "Jan 24, 2025",
     readTime: "06 mins read",
     featured: false,
-    image: "/assets/episodes/hero_ep_7.jpg",
+    image: "/assets/blog/day-in-the-life-of-a-podcaster.jpg",
     author: "Jack Thompson",
     excerpt:
       "Ever wondered what actually happens before, during, and after an episode gets recorded? Here's an honest look behind the curtain.",
@@ -746,7 +747,7 @@ export const featuredPostBody = {
       paragraphs: [
         "With over 5 million podcasts available worldwide, finding the right ones can be overwhelming. The key to an enjoyable experience is discovering shows that genuinely capture your attention.",
       ],
-      image: "/assets/episodes/hero_ep_3.jpg",
+      image: "/assets/blog/article-pick-podcasts.jpg",
       list: [
         "What topics excite me? (Self-improvement, storytelling, history, true crime, business, etc.)",
         "Do I prefer structured discussions, casual conversations, or deep-dive interviews?",
@@ -771,7 +772,7 @@ export const featuredPostBody = {
         "0.8x Speed: Helpful for complex topics that require deep focus.",
         "Before Sleep: Opt for storytelling or mindfulness podcasts to help you relax.",
       ],
-      imagePair: ["/assets/episodes/ep_2.jpg", "/assets/episodes/ep_4.jpg"],
+      imagePair: ["/assets/blog/article-playback-1.jpg", "/assets/blog/article-playback-2.jpg"],
       proTip:
         "Use podcast platforms like Spotify, Apple Podcasts, Pocket Casts, or Overcast to explore top-rated shows, trending topics, and AI-powered recommendations based on your listening history.",
     },
@@ -843,6 +844,55 @@ export const newsletter = {
 };
 
 /* ---------------------------------------------------------------------------
+   Contact Page
+--------------------------------------------------------------------------- */
+export const contactPageHeader = {
+  title: "Talk to Us – Let's Make\nSomething Amazing Together!",
+  highlight: "Amazing",
+  body:
+    "Do you have a story to share, expertise to offer, or insights that can inspire our audience? We're always looking for passionate guests to join us on the show!",
+};
+
+export const contactFormImage = "/assets/contact/form-mic.jpg";
+
+export const contactReasons = [
+  "General Inquiry",
+  "Guest Booking",
+  "Sponsorship & Ads",
+  "Press & Media",
+  "Feedback",
+  "Something Else",
+];
+
+export const guestTopics = [
+  "Technology",
+  "Business",
+  "Health & Wellness",
+  "Personal Development",
+  "Comedy & Entertainment",
+  "Something Else",
+];
+
+export const contactInfoHeader = {
+  title: "Let's Get in Touch Today!",
+  body:
+    "Reach out to us today! Whether you have questions, need assistance, or just want to connect, we're here to help. Let's start the conversation!",
+};
+
+export const contactInfoCards = [
+  { label: "Let's Talk", value: "hello@designmonks.co", href: "mailto:hello@designmonks.co", icon: "mail" },
+  { label: "Call Us", value: "(056) +123 456 789", href: "tel:+056123456789", icon: "phone" },
+];
+
+export const contactAddress = {
+  line1: "4886 Stroman Drive, South",
+  line2: "Stanton, California",
+  /* Stanton, CA - used to center the embedded map */
+  lat: 33.8025,
+  lng: -118.0067,
+};
+
+/* ---------------------------------------------------------------------------
    Footer
 --------------------------------------------------------------------------- */
 export const footer = {
@@ -855,7 +905,7 @@ export const footer = {
     { name: "Facebook", href: "#" },
   ],
   contact: {
-    email: "hello@tymp.com",
+    email: "hello@designmonks.co",
     addressLines: ["4886 Stroman Drive, South", "Stanton, California"],
   },
   columns: [
@@ -879,7 +929,7 @@ export const footer = {
     {
       title: "Useful Links",
       links: [
-        { label: "Contact Us", href: "#" },
+        { label: "Contact Us", href: "/contact" },
         { label: "Privacy Policy", href: "#" },
         { label: "Terms & Condition", href: "#" },
         { label: "404", href: "#" },
