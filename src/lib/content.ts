@@ -138,9 +138,9 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Episodes", href: "/episodes" },
-  { label: "Hosts", href: "/hosts" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Team", href: "/hosts" },
   { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const navCta = { label: "Subscribe", href: "/#newsletter" };
@@ -880,7 +880,7 @@ export const contactInfoHeader = {
 };
 
 export const contactInfoCards = [
-  { label: "Let's Talk", value: "hello@designmonks.co", href: "mailto:hello@designmonks.co", icon: "mail" },
+  { label: "Let's Talk", value: "hello@tymp.com", href: "mailto:hello@tymp.com", icon: "mail" },
   { label: "Call Us", value: "(056) +123 456 789", href: "tel:+056123456789", icon: "phone" },
 ];
 
@@ -905,7 +905,7 @@ export const footer = {
     { name: "Facebook", href: "#" },
   ],
   contact: {
-    email: "hello@designmonks.co",
+    email: "hello@tymp.com",
     addressLines: ["4886 Stroman Drive, South", "Stanton, California"],
   },
   columns: [
@@ -913,7 +913,7 @@ export const footer = {
       title: "Company",
       links: [
         { label: "About Us", href: "/about" },
-        { label: "Our Host", href: "/hosts" },
+        { label: "Our Team", href: "/hosts" },
         { label: "Newsletter", href: "#newsletter" },
         { label: "Blog & Articles", href: "/blog" },
       ],
@@ -923,7 +923,6 @@ export const footer = {
       links: [
         { label: "Home", href: "#home" },
         { label: "Episodes", href: "/episodes" },
-        { label: "Pricing Plan", href: "#pricing" },
       ],
     },
     {
@@ -945,5 +944,5 @@ export const footer = {
       ],
     },
   ],
-  copyright: (year: number) => `© Copyrights ${year} Design Monks. All rights reserved.`,
+  copyright: (year: number) => `© Copyrights ${year} Design TYMP. All rights reserved.`,
 };
