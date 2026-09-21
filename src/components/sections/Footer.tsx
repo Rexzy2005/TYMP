@@ -30,6 +30,8 @@ function SocialGlyph({ name, size = 27 }: { name: string; size?: number }) {
 }
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-[#251913] text-white">
       <div className="mx-auto w-full max-w-[1240px] px-6 sm:px-8 lg:px-0">
@@ -124,7 +126,7 @@ export function Footer() {
                   color: "#CFD0D1",
                 }}
               >
-                {footer.copyright}
+                {footer.copyright(currentYear)}
               </p>
             </div>
 
@@ -183,7 +185,7 @@ export function Footer() {
               color: "#CFD0D1",
             }}
           >
-            {footer.copyright}
+            {footer.copyright(currentYear)}
           </p>
         </div>
       </div>

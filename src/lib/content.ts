@@ -139,7 +139,6 @@ export const navItems = [
   { label: "About", href: "/about" },
   { label: "Episodes", href: "/episodes" },
   { label: "Hosts", href: "/hosts" },
-  { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -856,7 +855,7 @@ export const footer = {
     { name: "Facebook", href: "#" },
   ],
   contact: {
-    email: "hello@designmonks.co",
+    email: "hello@tymp.com",
     addressLines: ["4886 Stroman Drive, South", "Stanton, California"],
   },
   columns: [
@@ -896,5 +895,5 @@ export const footer = {
       ],
     },
   ],
-  copyright: "© Copyrights 2025 Design Monks. All rights reserved.",
+  copyright: (year: number) => `© Copyrights ${year} Design Monks. All rights reserved.`,
 };
